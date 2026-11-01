@@ -1,0 +1,23 @@
+{
+  "name": "@vgui/css",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "*.css",
+    "themes",
+    "README.md",
+    "assets",
+    "LICENSE.vgui-css"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./index.css",
+    "./tokens.css": "./tokens.css",
+    "./components.css": "./components.css",
+    "./themes/olive.css": "./themes/olive.css",
+    "./themes/slate.css": "./themes/slate.css",
+    "./assets/*": "./assets/*"
+  }
+}

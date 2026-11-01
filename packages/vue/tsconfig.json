@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": [
+    "lib/**/*.ts",
+    "lib/**/*.vue",
+    "playground/**/*.ts",
+    "playground/**/*.vue",
+    "vite.config.ts"
+  ],
+  "compilerOptions": {
+    "types": ["vite/client", "node"]
+  }
+}

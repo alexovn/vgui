@@ -1,0 +1,23 @@
+@layer vgui.base, vgui.themes, vgui.components;
+@layer vgui.base {
+  :where(.vgui-theme, [data-vgui-theme]) {
+    --vgui-font: Tahoma, Arial, sans-serif;
+    --vgui-font-size: 0.75rem;
+    --vgui-bg: #4c5844;
+    --vgui-input: #3e4637;
+    --vgui-text: #d8ded3;
+    --vgui-muted: #a0aa95;
+    --vgui-light: #899281;
+    --vgui-dark: #292d23;
+    --vgui-accent: #c4b550;
+    --vgui-selection: #958831;
+    --vgui-checkmark: url('./assets/checkmark-olive.png');
+    --vgui-error: #ffb4a8;
+    font: var(--vgui-font-size)/1.5 var(--vgui-font);
+    color: var(--vgui-text);
+    color-scheme: dark;
+  }
+  :where([class*='vgui-']) {
+    box-sizing: border-box;
+  }
+}

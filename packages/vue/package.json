@@ -1,0 +1,37 @@
+{
+  "name": "@vgui/vue",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vgui.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite --mode playground",
+    "build": "vite build && vue-tsc -p tsconfig.build.json",
+    "build:playground": "vite build --mode playground",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "preview": "vite preview --mode playground"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.44"
+  },
+  "dependencies": {
+    "reka-ui": "2.11.0",
+    "@vgui/css": "workspace:*"
+  },
+  "devDependencies": {
+    "vue": "3.5.44",
+    "vue-tsc": "3.3.14",
+    "vite": "8.3.5",
+    "@vitejs/plugin-vue": "6.0.10",
+    "@types/node": "^24.0.0"
+  }
+}

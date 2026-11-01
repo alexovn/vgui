@@ -1,0 +1,13 @@
+@layer vgui.themes {
+  [data-vgui-theme='slate'] {
+    --vgui-bg: #464646;
+    --vgui-input: #303030;
+    --vgui-text: #dedede;
+    --vgui-muted: #a0a0a0;
+    --vgui-light: #c8c8c8;
+    --vgui-dark: rgb(40 40 40 / 75%);
+    --vgui-accent: #e3b651;
+    --vgui-selection: #887544;
+    --vgui-checkmark: url('../assets/checkmark-slate.png');
+  }
+}

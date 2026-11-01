@@ -1,0 +1,394 @@
+@layer vgui.components {
+  .vgui-panel,
+  .vgui-group,
+  .vgui-dialog {
+    background: var(--vgui-bg);
+    border: 1px solid;
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
+      var(--vgui-light);
+    padding: 12px;
+  }
+  .vgui-panel-title,
+  .vgui-dialog-title {
+    margin: 0 0 12px;
+    font: bold 0.8rem var(--vgui-font);
+    color: var(--vgui-text);
+  }
+  .vgui-label {
+    display: inline-block;
+    margin-block: 3px;
+  }
+  .vgui-button,
+  .vgui-select-trigger,
+  .vgui-tab,
+  .vgui-menu-trigger {
+    font: inherit;
+    color: var(--vgui-text);
+    background: var(--vgui-bg);
+    border: 1px solid;
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
+      var(--vgui-light);
+    border-radius: 0;
+    padding: 3px 12px;
+    min-height: 24px;
+    cursor: default;
+  }
+  .vgui-button:hover,
+  .vgui-select-trigger:hover,
+  .vgui-menu-trigger[data-state='open'] {
+    color: var(--vgui-accent);
+  }
+  .vgui-button:active,
+  .vgui-button[data-state='on'] {
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
+      var(--vgui-dark);
+  }
+  .vgui-input,
+  .vgui-textarea,
+  .vgui-select-trigger {
+    font: inherit;
+  }
+  .vgui-input,
+  .vgui-textarea,
+  .vgui-tree,
+  .vgui-table {
+    background: var(--vgui-input);
+    color: var(--vgui-text);
+    border: 1px solid;
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
+      var(--vgui-dark);
+    padding: 4px 6px;
+    border-radius: 0;
+  }
+  .vgui-input[readonly],
+  .vgui-textarea[readonly] {
+    color: var(--vgui-muted);
+  }
+  :where([class*='vgui-']):focus-visible {
+    outline: 1px dotted var(--vgui-accent);
+    outline-offset: 2px;
+  }
+  :where([class*='vgui-']):is(:disabled, [data-disabled]) {
+    color: var(--vgui-muted);
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+  :where([class*='vgui-'])[aria-invalid='true'] {
+    outline: 1px solid var(--vgui-error);
+  }
+  .vgui-checkbox,
+  .vgui-radio {
+    display: inline-grid;
+    place-items: center;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    color: var(--vgui-text);
+    background: var(--vgui-input);
+    border: 1px solid;
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
+      var(--vgui-dark);
+  }
+  .vgui-radio {
+    border-radius: 50%;
+  }
+  .vgui-checkmark {
+    width: 13px;
+    height: 13px;
+    background: var(--vgui-checkmark) center / 13px 13px no-repeat;
+  }
+  [data-state='indeterminate'] > .vgui-checkmark {
+    width: 8px;
+    height: 2px;
+    background: currentColor;
+  }
+  .vgui-radio-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+  }
+  .vgui-choice,
+  .vgui-radio-option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .vgui-radio-group {
+    display: grid;
+    gap: 8px;
+  }
+  .vgui-select-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-width: 140px;
+  }
+  .vgui-popup,
+  .vgui-tooltip {
+    z-index: 1100;
+    background: var(--vgui-bg);
+    color: var(--vgui-text);
+    padding: 3px;
+    border: 1px solid;
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
+      var(--vgui-light);
+    box-shadow: 2px 2px 0 #0006;
+    max-height: var(--reka-select-content-available-height, 70vh);
+    overflow: auto;
+    font: var(--vgui-font-size)/1.5 var(--vgui-font);
+  }
+  .vgui-select-item,
+  .vgui-menu-item,
+  .vgui-tree-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 8px;
+    outline-offset: -2px;
+    user-select: none;
+  }
+  .vgui-select-item[data-highlighted],
+  .vgui-menu-item[data-highlighted],
+  .vgui-tree-item[data-selected] {
+    background: var(--vgui-selection);
+    color: #fff;
+  }
+  .vgui-menu-shortcut {
+    margin-left: auto;
+    padding-left: 24px;
+    color: var(--vgui-muted);
+  }
+  .vgui-menu-label {
+    padding: 4px 8px;
+    color: var(--vgui-accent);
+  }
+  .vgui-menubar {
+    display: flex;
+    gap: 2px;
+  }
+  .vgui-menu-trigger {
+    border-color: transparent;
+  }
+  .vgui-separator {
+    height: 2px;
+    border: 0;
+    background: var(--vgui-dark);
+    box-shadow: 0 1px var(--vgui-light);
+    margin: 6px 0;
+  }
+  .vgui-separator[data-orientation='vertical'] {
+    width: 2px;
+    height: auto;
+    align-self: stretch;
+    margin: 0 6px;
+  }
+  .vgui-tabs-list {
+    display: flex;
+    gap: 2px;
+    padding-left: 6px;
+  }
+  .vgui-tab {
+    color: var(--vgui-muted);
+  }
+  .vgui-tab[data-state='active'] {
+    color: var(--vgui-text);
+    border-bottom-color: var(--vgui-bg);
+    position: relative;
+    z-index: 1;
+  }
+  .vgui-tab-content {
+    padding: 12px;
+    border: 1px solid;
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
+      var(--vgui-light);
+    margin-top: -1px;
+  }
+  .vgui-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0007;
+    z-index: 1000;
+  }
+  .vgui-dialog {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    width: min(480px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+    overflow: auto;
+    font: var(--vgui-font-size)/1.5 var(--vgui-font);
+    color: var(--vgui-text);
+    box-shadow: 3px 3px 0 #0005;
+  }
+  .vgui-dialog-title {
+    padding-right: 28px;
+  }
+  .vgui-dialog-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 0 5px;
+    min-height: 18px;
+  }
+  .vgui-dialog-description {
+    color: var(--vgui-muted);
+  }
+  .vgui-dialog-footer {
+    display: flex;
+    justify-content: end;
+    gap: 6px;
+    margin-top: 16px;
+  }
+  .vgui-tooltip {
+    padding: 3px 6px;
+    max-width: min(320px, 90vw);
+  }
+  .vgui-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 160px;
+    height: 24px;
+    touch-action: none;
+  }
+  .vgui-slider-track {
+    height: 4px;
+    width: 100%;
+    background: var(--vgui-input);
+    border-top: 1px solid var(--vgui-dark);
+    border-bottom: 1px solid var(--vgui-light);
+  }
+  .vgui-slider-range {
+    position: absolute;
+    height: 4px;
+    background: var(--vgui-selection);
+  }
+  .vgui-slider-thumb,
+  .vgui-scroll-thumb {
+    display: block;
+    background: var(--vgui-bg);
+    border: 1px solid;
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
+      var(--vgui-light);
+  }
+  .vgui-slider-thumb {
+    width: 10px;
+    height: 20px;
+  }
+  .vgui-progress {
+    height: 18px;
+    overflow: hidden;
+    padding: 2px;
+    background: var(--vgui-input);
+    border: 1px solid var(--vgui-dark);
+  }
+  .vgui-progress-indicator {
+    height: 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--vgui-accent) 0 7px,
+      transparent 7px 9px
+    );
+  }
+  .vgui-progress[data-state='indeterminate'] .vgui-progress-indicator {
+    width: 100%;
+    opacity: 0.5;
+  }
+  .vgui-scroll-area {
+    overflow: hidden;
+    position: relative;
+  }
+  .vgui-scroll-viewport {
+    width: 100%;
+    height: 100%;
+  }
+  .vgui-scrollbar {
+    display: flex;
+    padding: 1px;
+    background: var(--vgui-input);
+    user-select: none;
+    touch-action: none;
+  }
+  .vgui-scrollbar[data-orientation='vertical'] {
+    width: 14px;
+  }
+  .vgui-scrollbar[data-orientation='horizontal'] {
+    height: 14px;
+    flex-direction: column;
+  }
+  .vgui-scroll-thumb {
+    flex: 1;
+    min-height: 20px;
+  }
+  .vgui-table {
+    width: 100%;
+    border-spacing: 0;
+    text-align: left;
+  }
+  .vgui-table th {
+    background: var(--vgui-bg);
+    border-right: 1px solid var(--vgui-dark);
+    font-weight: normal;
+  }
+  .vgui-table :is(th, td) {
+    padding: 4px 8px;
+  }
+  .vgui-table tbody tr:hover {
+    background: var(--vgui-selection);
+  }
+  .vgui-tree {
+    list-style: none;
+    margin: 0;
+  }
+  .vgui-tree-item {
+    padding-left: calc(6px + (var(--vgui-level, 1) - 1) * 16px);
+  }
+  .vgui-tree-toggle {
+    width: 18px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+  }
+  .vgui-slider[data-orientation='vertical'] {
+    flex-direction: column;
+    width: 24px;
+    height: 160px;
+  }
+  .vgui-slider[data-orientation='vertical'] .vgui-slider-track {
+    width: 4px;
+    height: 100%;
+  }
+  .vgui-slider[data-orientation='vertical'] .vgui-slider-range {
+    width: 4px;
+    height: auto;
+  }
+  .vgui-slider[data-orientation='vertical'] .vgui-slider-thumb {
+    width: 20px;
+    height: 10px;
+  }
+  @media (forced-colors: active) {
+    :where([class*='vgui-']):focus-visible {
+      outline: 2px solid Highlight;
+    }
+    .vgui-checkmark {
+      background: none;
+      width: 8px;
+      height: 5px;
+      border-left: 2px solid CanvasText;
+      border-bottom: 2px solid CanvasText;
+      transform: rotate(-45deg);
+    }
+    .vgui-radio-dot {
+      background: CanvasText;
+      forced-color-adjust: none;
+    }
+  }
+}

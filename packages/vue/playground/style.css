@@ -1,0 +1,129 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #20241e;
+}
+.desktop {
+  min-height: 100vh;
+  padding: 36px max(20px, calc((100vw - 1160px) / 2));
+  background: var(--vgui-input);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+}
+h1 {
+  font-size: 28px;
+  font-weight: normal;
+  letter-spacing: -1px;
+  margin: 6px 0;
+}
+p {
+  margin: 8px 0;
+}
+.eyebrow {
+  color: var(--vgui-accent);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.theme-switch {
+  display: grid;
+  gap: 4px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 24px;
+}
+aside {
+  padding-top: 12px;
+  color: var(--vgui-muted);
+}
+aside strong {
+  color: var(--vgui-text);
+}
+nav {
+  display: grid;
+  margin-top: 16px;
+}
+nav a {
+  color: inherit;
+  padding: 7px 0;
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--vgui-accent);
+}
+main {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 10px 0;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  grid-column: 1/-1;
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+fieldset {
+  min-width: 0;
+}
+.state-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: center;
+}
+footer {
+  padding: 8px;
+  border-top: 1px solid var(--vgui-light);
+  color: var(--vgui-muted);
+}
+.nested {
+  padding: 8px;
+  margin-top: 12px;
+  background: var(--vgui-bg);
+}
+caption {
+  text-align: left;
+  color: var(--vgui-muted);
+  padding: 4px 0;
+}
+@media (max-width: 700px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .columns,
+  .state-grid {
+    grid-template-columns: 1fr;
+  }
+  header {
+    align-items: start;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "repo": "ungstein/OG-Steam",
+    "revision": "411aa955e76759bf24cee9dc38fa459cb9040823",
+    "url": "https://github.com/ungstein/OG-Steam/tree/411aa955e76759bf24cee9dc38fa459cb9040823"
+  },
+  {
+    "repo": "ValveSoftware/source-sdk-2013",
+    "revision": "be57e3d01ac7d7aa6a2cacbfef187c0b46616db0",
+    "url": "https://github.com/ValveSoftware/source-sdk-2013/tree/be57e3d01ac7d7aa6a2cacbfef187c0b46616db0"
+  },
+  {
+    "repo": "Facepunch/garrysmod",
+    "revision": "ad8023410600199ad9a12444bc496b9d65226a82",
+    "url": "https://github.com/Facepunch/garrysmod/tree/ad8023410600199ad9a12444bc496b9d65226a82"
+  },
+  {
+    "repo": "AlpyneDreams/vgui.css",
+    "revision": "d8b12f50a89f7f0c59e3a0cb39f07cd8ca5f0ae7",
+    "url": "https://github.com/AlpyneDreams/vgui.css/tree/d8b12f50a89f7f0c59e3a0cb39f07cd8ca5f0ae7"
+  },
+  {
+    "repo": "leonill007/vgui.css",
+    "revision": "0c74bb765fa32219a26aa9a4db506a38dc857b16",
+    "url": "https://github.com/leonill007/vgui.css/tree/0c74bb765fa32219a26aa9a4db506a38dc857b16"
+  },
+  {
+    "repo": "ekmas/cs16.css",
+    "revision": "bc0cb3d93e24aa2786a2d93938807f0264743b9d",
+    "url": "https://github.com/ekmas/cs16.css/tree/bc0cb3d93e24aa2786a2d93938807f0264743b9d"
+  }
+]

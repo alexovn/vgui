@@ -1,0 +1,49 @@
+<script setup lang="ts">
+import {
+  DropdownMenuRoot,
+  DropdownMenuTrigger,
+  DropdownMenuPortal,
+  DropdownMenuContent,
+  useForwardProps,
+} from 'reka-ui'
+import MenuItems from './MenuItems.vue'
+import type { UiMenuItem } from '../types'
+import { useTheme } from '../theme'
+import type { DropdownMenuRootProps, DropdownMenuRootEmits } from 'reka-ui'
+import { computed } from 'vue'
+const props = defineProps<
+  DropdownMenuRootProps & { items: UiMenuItem[]; disabled?: boolean }
+>()
+const emit = defineEmits<
+  DropdownMenuRootEmits & { select: [item: UiMenuItem] }
+>()
+const rootProps = useForwardProps(
+  computed(() => {
+    const { items, disabled, ...root } = props
+    return root
+  }),
+)
+const theme = useTheme()
+</script>
+<template>
+  <DropdownMenuRoot
+    v-bind="rootProps"
+    @update:open="emit('update:open', $event)"
+  >
+    <DropdownMenuTrigger as-child :disabled="disabled">
+      <slot name="trigger" />
+    </DropdownMenuTrigger>
+    <DropdownMenuPortal>
+      <DropdownMenuContent
+        class="vgui-popup"
+        v-bind="{ 'data-vgui-theme': theme }"
+      >
+        <MenuItems
+          kind="DropdownMenu"
+          :items="items"
+          @select="emit('select', $event)"
+        />
+      </DropdownMenuContent>
+    </DropdownMenuPortal>
+  </DropdownMenuRoot>
+</template>
