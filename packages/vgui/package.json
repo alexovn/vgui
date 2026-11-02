@@ -4,6 +4,7 @@
   "type": "module",
   "files": [
     "*.css",
+    "components",
     "themes",
     "README.md",
     "assets",
@@ -18,6 +19,27 @@
     "./components.css": "./components.css",
     "./themes/olive.css": "./themes/olive.css",
     "./themes/slate.css": "./themes/slate.css",
-    "./assets/*": "./assets/*"
+    "./assets/*": "./assets/*",
+    "./common.css": "./common.css",
+    "./components/panel.css": "./components/panel.css",
+    "./components/group-box.css": "./components/group-box.css",
+    "./components/label.css": "./components/label.css",
+    "./components/button.css": "./components/button.css",
+    "./components/input.css": "./components/input.css",
+    "./components/textarea.css": "./components/textarea.css",
+    "./components/checkbox.css": "./components/checkbox.css",
+    "./components/radio-group.css": "./components/radio-group.css",
+    "./components/select.css": "./components/select.css",
+    "./components/popup.css": "./components/popup.css",
+    "./components/menu.css": "./components/menu.css",
+    "./components/separator.css": "./components/separator.css",
+    "./components/tabs.css": "./components/tabs.css",
+    "./components/dialog.css": "./components/dialog.css",
+    "./components/tooltip.css": "./components/tooltip.css",
+    "./components/slider.css": "./components/slider.css",
+    "./components/progress.css": "./components/progress.css",
+    "./components/scroll-area.css": "./components/scroll-area.css",
+    "./components/table.css": "./components/table.css",
+    "./components/tree.css": "./components/tree.css"
   }
 }

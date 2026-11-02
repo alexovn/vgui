@@ -1,0 +1,41 @@
+/* Requires tokens.css and common.css; load a theme separately as needed. */
+@layer vgui.components {
+  .vgui-checkbox {
+    display: inline-grid;
+    place-items: center;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    color: var(--vgui-text);
+    background: var(--vgui-input);
+    border: 1px solid;
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
+      var(--vgui-dark);
+  }
+  .vgui-checkmark {
+    width: 13px;
+    height: 13px;
+    background: var(--vgui-checkmark) center / 13px 13px no-repeat;
+  }
+  [data-state='indeterminate'] > .vgui-checkmark {
+    width: 8px;
+    height: 2px;
+    background: currentColor;
+  }
+  .vgui-choice {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  @media (forced-colors: active) {
+    .vgui-checkmark {
+      background: none;
+      width: 8px;
+      height: 5px;
+      border-left: 2px solid CanvasText;
+      border-bottom: 2px solid CanvasText;
+      transform: rotate(-45deg);
+    }
+  }
+}

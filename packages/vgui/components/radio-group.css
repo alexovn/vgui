@@ -1,0 +1,41 @@
+/* Requires tokens.css and common.css; load a theme separately as needed. */
+@layer vgui.components {
+  .vgui-radio {
+    display: inline-grid;
+    place-items: center;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    color: var(--vgui-text);
+    background: var(--vgui-input);
+    border: 1px solid;
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
+      var(--vgui-dark);
+  }
+  .vgui-radio {
+    border-radius: 50%;
+  }
+  .vgui-radio-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+  }
+  .vgui-radio-option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .vgui-radio-group {
+    display: grid;
+    gap: 8px;
+  }
+  @media (forced-colors: active) {
+    .vgui-radio-dot {
+      background: CanvasText;
+      forced-color-adjust: none;
+    }
+  }
+}

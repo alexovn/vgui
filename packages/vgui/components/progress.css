@@ -1,0 +1,22 @@
+/* Requires tokens.css and common.css; load a theme separately as needed. */
+@layer vgui.components {
+  .vgui-progress {
+    height: 18px;
+    overflow: hidden;
+    padding: 2px;
+    background: var(--vgui-input);
+    border: 1px solid var(--vgui-dark);
+  }
+  .vgui-progress-indicator {
+    height: 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--vgui-accent) 0 7px,
+      transparent 7px 9px
+    );
+  }
+  .vgui-progress[data-state='indeterminate'] .vgui-progress-indicator {
+    width: 100%;
+    opacity: 0.5;
+  }
+}

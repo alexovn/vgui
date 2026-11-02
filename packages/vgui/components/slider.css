@@ -1,0 +1,51 @@
+/* Requires tokens.css and common.css; load a theme separately as needed. */
+@layer vgui.components {
+  .vgui-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 160px;
+    height: 24px;
+    touch-action: none;
+  }
+  .vgui-slider-track {
+    height: 4px;
+    width: 100%;
+    background: var(--vgui-input);
+    border-top: 1px solid var(--vgui-dark);
+    border-bottom: 1px solid var(--vgui-light);
+  }
+  .vgui-slider-range {
+    position: absolute;
+    height: 4px;
+    background: var(--vgui-selection);
+  }
+  .vgui-slider-thumb {
+    display: block;
+    background: var(--vgui-bg);
+    border: 1px solid;
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
+      var(--vgui-light);
+  }
+  .vgui-slider-thumb {
+    width: 10px;
+    height: 20px;
+  }
+  .vgui-slider[data-orientation='vertical'] {
+    flex-direction: column;
+    width: 24px;
+    height: 160px;
+  }
+  .vgui-slider[data-orientation='vertical'] .vgui-slider-track {
+    width: 4px;
+    height: 100%;
+  }
+  .vgui-slider[data-orientation='vertical'] .vgui-slider-range {
+    width: 4px;
+    height: auto;
+  }
+  .vgui-slider[data-orientation='vertical'] .vgui-slider-thumb {
+    width: 20px;
+    height: 10px;
+  }
+}

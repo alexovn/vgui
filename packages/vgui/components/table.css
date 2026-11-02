@@ -1,0 +1,32 @@
+/* Requires tokens.css and common.css; load a theme separately as needed. */
+@layer vgui.components {
+  .vgui-table {
+    background: var(--vgui-input);
+    color: var(--vgui-text);
+    border: 1px solid;
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
+      var(--vgui-dark);
+    padding: 4px 6px;
+    border-radius: 0;
+  }
+  /* Preserve shared disabled text after the base color. */
+  .vgui-table:where(:disabled, [data-disabled]) {
+    color: var(--vgui-muted);
+  }
+  .vgui-table {
+    width: 100%;
+    border-spacing: 0;
+    text-align: left;
+  }
+  .vgui-table th {
+    background: var(--vgui-bg);
+    border-right: 1px solid var(--vgui-dark);
+    font-weight: normal;
+  }
+  .vgui-table :is(th, td) {
+    padding: 4px 8px;
+  }
+  .vgui-table tbody tr:hover {
+    background: var(--vgui-selection);
+  }
+}

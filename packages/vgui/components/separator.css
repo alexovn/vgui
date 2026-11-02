@@ -1,0 +1,16 @@
+/* Requires tokens.css and common.css; load a theme separately as needed. */
+@layer vgui.components {
+  .vgui-separator {
+    height: 2px;
+    border: 0;
+    background: var(--vgui-dark);
+    box-shadow: 0 1px var(--vgui-light);
+    margin: 6px 0;
+  }
+  .vgui-separator[data-orientation='vertical'] {
+    width: 2px;
+    height: auto;
+    align-self: stretch;
+    margin: 0 6px;
+  }
+}

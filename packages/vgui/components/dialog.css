@@ -1,0 +1,59 @@
+@import './button.css';
+
+/* Requires tokens.css and common.css; load a theme separately as needed. */
+@layer vgui.components {
+  .vgui-dialog {
+    background: var(--vgui-bg);
+    border: 1px solid;
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
+      var(--vgui-light);
+    padding: 12px;
+  }
+  .vgui-dialog-title {
+    margin: 0 0 12px;
+    font: bold 0.8rem var(--vgui-font);
+    color: var(--vgui-text);
+  }
+  /* Preserve shared disabled text after the base color. */
+  .vgui-dialog-title:where(:disabled, [data-disabled]) {
+    color: var(--vgui-muted);
+  }
+  .vgui-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0007;
+    z-index: 1000;
+  }
+  .vgui-dialog {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    width: min(480px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+    overflow: auto;
+    font: var(--vgui-font-size)/1.5 var(--vgui-font);
+    color: var(--vgui-text);
+    box-shadow: 3px 3px 0 #0005;
+  }
+  .vgui-dialog-title {
+    padding-right: 28px;
+  }
+  .vgui-dialog-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 0 5px;
+    min-height: 18px;
+  }
+  .vgui-dialog-description {
+    color: var(--vgui-muted);
+  }
+  .vgui-dialog-footer {
+    display: flex;
+    justify-content: end;
+    gap: 6px;
+    margin-top: 16px;
+  }
+}

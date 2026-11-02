@@ -1,0 +1,19 @@
+@layer vgui.components {
+  :where([class*='vgui-']):focus-visible {
+    outline: 1px dotted var(--vgui-accent);
+    outline-offset: 2px;
+  }
+  :where([class*='vgui-']):is(:disabled, [data-disabled]) {
+    color: var(--vgui-muted);
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+  :where([class*='vgui-'])[aria-invalid='true'] {
+    outline: 1px solid var(--vgui-error);
+  }
+  @media (forced-colors: active) {
+    :where([class*='vgui-']):focus-visible {
+      outline: 2px solid Highlight;
+    }
+  }
+}
