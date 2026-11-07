@@ -1,0 +1,7 @@
+export type { UiTableColumn, UiTableRow } from '../components/UiTable.vue'
+export type { UiTab } from '../components/UiTabs.vue'
+export type { UiTreeNode } from '../components/UiTree.vue'
+export type * from './component-props'
+export type { UiMenu, UiMenuItem } from './menu'
+export type { UiOption } from './option'
+export type { UiTheme } from './theme'

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UiMenuItem } from '../menu'
+import type { UiMenuItem } from '../types/menu'
 import {
   ContextMenuItem,
   ContextMenuPortal,

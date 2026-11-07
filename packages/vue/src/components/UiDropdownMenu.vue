@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DropdownMenuRootEmits, DropdownMenuRootProps } from 'reka-ui'
-import type { UiMenuItem } from '../menu'
+import type { UiMenuItem } from '../types/menu'
 import {
   DropdownMenuContent,
   DropdownMenuPortal,

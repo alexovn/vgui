@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ContextMenuRootEmits, ContextMenuRootProps } from 'reka-ui'
-import type { UiMenuItem } from '../menu'
+import type { UiMenuItem } from '../types/menu'
 import {
   ContextMenuContent,
   ContextMenuPortal,

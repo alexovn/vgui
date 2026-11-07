@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { SelectRootProps } from 'reka-ui'
-import type { UiOption } from '../option'
+import type { UiOption } from '../types/option'
 import {
   SelectContent,
   SelectIcon,

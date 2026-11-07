@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { TabsRootEmits, TabsRootProps } from 'reka-ui'
-import type { UiOption } from '../option'
+import type { UiOption } from '../types/option'
 import { TabsContent, TabsList, TabsRoot, TabsTrigger, useForwardPropsEmits } from 'reka-ui'
 
 import { computed } from 'vue'
