@@ -120,8 +120,6 @@ function action(item: UiMenuItem) {
           <a href="#servers">Server browser</a>
           <a href="#containers">Containers</a>
           <a href="#states">Control states</a>
-          <a href="#plain">Plain HTML</a>
-          <a href="./css-only.html">CSS-only page ↗</a>
         </nav>
         <Ui.UiSeparator />
         <p>
@@ -386,33 +384,6 @@ function action(item: UiMenuItem) {
             </Ui.UiDropdownMenu>
           </Ui.UiThemeProvider>
         </Ui.UiPanel>
-        <section
-          id="plain"
-          class="vgui-panel"
-        >
-          <h2 class="vgui-panel-title">
-            Framework-independent HTML
-          </h2>
-          <p>These elements use only shared CSS classes.</p>
-          <button
-            class="vgui-button"
-            type="button"
-          >
-            Native button
-          </button>
-          <input
-            class="vgui-input"
-            aria-label="CSS-only input"
-            placeholder="Native input"
-          >
-          <progress
-            aria-label="Native progress"
-            value="65"
-            max="100"
-          >
-            65%
-          </progress>
-        </section>
         <footer role="status">
           {{ message }}
         </footer>

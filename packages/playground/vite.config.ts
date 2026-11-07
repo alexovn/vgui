@@ -18,11 +18,5 @@ export default defineConfig({
   build: {
     outDir: here('./dist'),
     emptyOutDir: true,
-    rolldownOptions: {
-      input: [
-        here('./src/index.html'),
-        here('./src/css-only.html'),
-      ],
-    },
   },
 })

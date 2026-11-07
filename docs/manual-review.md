@@ -15,6 +15,6 @@ Run `pnpm dev` and review both themes in current Chrome, Firefox, and Safari:
 - Inspect the accessibility tree for names, roles, labels, states, dialog title/description, and progress values.
 - At 200% zoom and narrow viewports, ensure text remains readable, dialogs fit the viewport, and content can scroll.
 - Enable forced colors and verify focus, selected states, checkbox/radio indicators, and borders remain distinguishable.
-- Check custom option/cell/node slots and menu action feedback. Ensure the CSS-only section behaves without component logic.
+- Check custom option/cell/node slots and menu action feedback.
 
 Known limits: OS font rasterization differs from the original client; the historical palettes do not promise WCAG AA contrast for every state. Disabled text is intentionally subdued. Reference comparison and browser sign-off remain release gates.

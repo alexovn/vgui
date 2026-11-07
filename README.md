@@ -15,7 +15,7 @@ Requires Node 22.13+ (Node 24 recommended) and pnpm 10.32.1. The recursive build
 
 ESLint is configured at the workspace root with `@antfu/eslint-config`. Run `pnpm lint` to check code and formatting, or `pnpm lint:fix` to apply fixes. The config covers Vue, TypeScript, JSON, YAML, and Markdown, with external formatters for CSS and HTML. It uses single quotes, no semicolons, trailing commas, and blank lines after imports, before function declarations, and between Vue SFC blocks. Build output, temporary reference files, the pnpm store, and the generated lockfile are excluded.
 
-The Vue 3 playground is the private `playground` workspace package in `packages/playground`. Run it directly with `pnpm --filter playground dev`, `pnpm --filter playground build`, or `pnpm --filter playground preview`. It loads the Vue library source directly for live component updates. The CSS-only demo is available at `/css-only.html`.
+The Vue 3 playground is the private `playground` workspace package in `packages/playground`. Run it directly with `pnpm --filter playground dev`, `pnpm --filter playground build`, or `pnpm --filter playground preview`. It loads the Vue library source directly for live component updates.
 
 - [CSS usage](packages/vgui/README.md)
 - [Vue API](packages/vue/README.md)
