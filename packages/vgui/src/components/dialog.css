@@ -10,7 +10,8 @@
   }
   .vgui-dialog-title {
     margin: 0 0 12px;
-    font: bold 0.8rem var(--vgui-font);
+    font: inherit;
+    font-weight: bold;
     color: var(--vgui-text);
   }
   /* Preserve shared disabled text after the base color. */
@@ -32,7 +33,7 @@
     width: min(480px, calc(100vw - 32px));
     max-height: calc(100dvh - 32px);
     overflow: auto;
-    font: var(--vgui-font-size)/1.5 var(--vgui-font);
+    font: inherit;
     color: var(--vgui-text);
     box-shadow: 3px 3px 0 #0005;
   }

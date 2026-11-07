@@ -10,6 +10,6 @@
     box-shadow: 2px 2px 0 #0006;
     max-height: var(--reka-select-content-available-height, 70vh);
     overflow: auto;
-    font: var(--vgui-font-size)/1.5 var(--vgui-font);
+    font: inherit;
   }
 }

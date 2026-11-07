@@ -13,6 +13,8 @@ Import `@vgui/css` for tokens, both themes, and control styles. No JavaScript or
 </div>
 ```
 
+Controls inherit the host application’s font family, size, and line height. Theme selectors only apply palette tokens, text color, and color scheme; they do not set typography. Set fonts on your application container. Panel and dialog titles inherit that font with bold weight.
+
 Switch `data-vgui-theme` to `slate`. Themes can nest. A `.vgui-theme` without an explicit theme uses olive. For selective imports use `@vgui/css/tokens.css`, `@vgui/css/themes/olive.css`, `@vgui/css/themes/slate.css`, and `@vgui/css/components.css` in that order.
 
 For individual controls, replace `components.css` with `common.css` followed by the component stylesheets you use:
@@ -39,7 +41,7 @@ Component dependencies are imported automatically:
 
 Import styles separately for controls supplied through slots, such as a dropdown trigger button or dialog footer controls. Shared border and surface declarations are intentionally repeated where that keeps component ownership clear. Some components repeat disabled text or cursor declarations to preserve the original cascade when common styles load first. `components.css` remains the aggregate for all controls, and `@vgui/css` remains the complete entry point. Splitting files only reduces bundled CSS when you use selective imports; importing either aggregate still includes every component.
 
-Override `--vgui-bg`, `--vgui-input`, `--vgui-text`, `--vgui-muted`, `--vgui-light`, `--vgui-dark`, `--vgui-accent`, `--vgui-selection`, `--vgui-error`, `--vgui-font`, and `--vgui-font-size` on a theme scope. Layers are ordered `vgui.base`, `vgui.themes`, `vgui.components`; unlayered consumer rules can override them.
+Override `--vgui-bg`, `--vgui-input`, `--vgui-text`, `--vgui-muted`, `--vgui-light`, `--vgui-dark`, `--vgui-accent`, `--vgui-selection`, and `--vgui-error` on a theme scope. Layers are ordered `vgui.base`, `vgui.themes`, `vgui.components`; unlayered consumer rules can override them.
 
 A CSS reset is optional. When using Tailwind Preflight, declare the layer order before importing styles so the VGUI controls override the reset and Tailwind utilities can override the controls:
 
@@ -55,4 +57,4 @@ The control styles explicitly define group-box spacing, separate table borders, 
 
 Native `:hover`, `:active`, `:focus-visible`, `:disabled`, `[readonly]`, and `[aria-invalid="true"]` states are supported. Custom markup can use `[data-disabled]`, `[data-state="on"]` on buttons, `[data-state="active"]` on tabs, `[data-highlighted]` on menu/select items, and `[data-selected]` on tree items. Checkbox indicators use `.vgui-checkmark` inside a `.vgui-checkbox` marked `data-state="checked"` or `indeterminate`. CSS defines appearance; consumers supply semantics and interaction behavior for custom markup.
 
-System fonts start with Tahoma and fall back to Arial/sans-serif. Font rasterization varies by OS. Historical palettes retain some low-contrast disabled text; visible focus and forced-color overrides supplement them.
+Controls inherit host fonts; the playground explicitly uses Tahoma with Arial/sans-serif fallbacks. Font rasterization varies by OS. Historical palettes retain some low-contrast disabled text; visible focus and forced-color overrides supplement them.

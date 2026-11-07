@@ -36,6 +36,8 @@ Vue 3 SFC wrappers around native elements and Reka UI. Import the shared stylesh
 
 Trigger slots for dialogs and menus and the tooltip's default slot require one focusable element, normally `UiButton`. Put labels on inputs using `UiLabel` and matching IDs, or `aria-label`. Custom option/value slots must preserve meaningful text; do not insert interactive elements into options.
 
+Controls inherit host typography through normal CSS inheritance; theme selection does not change it. Set application-wide typography on `body` so teleported dialogs, menus, selects, and tooltips inherit it too. Fonts set only on a local container or `UiThemeProvider` do not cross portals. To customize overlay typography separately, style `.vgui-dialog`, `.vgui-popup`, and `.vgui-tooltip`.
+
 Provider themes follow teleported content, including submenus. Custom CSS variables set only on ancestors do not cross portals: set overrides on `[data-vgui-theme]` for both surfaces and overlays. Without a provider the document element's theme is used, defaulting to olive.
 
 For uncontrolled controls use `defaultValue`/`defaultOpen`; controlled controls use `v-model`. Input and textarea models use Vue's native input behavior. Reka-backed form controls retain their hidden native inputs and form integration. See the manual checklist for form reset verification. Dialog dragging, resizing, window management, virtualized trees, and grid engines are outside this release.

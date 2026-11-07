@@ -46,3 +46,9 @@
     scrollbar-color: auto;
   }
 }
+
+@layer base {
+  body {
+    font-family: Tahoma, Arial, sans-serif;
+  }
+}

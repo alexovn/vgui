@@ -8,7 +8,8 @@
   }
   .vgui-panel-title {
     margin: 0 0 12px;
-    font: bold 0.8rem var(--vgui-font);
+    font: inherit;
+    font-weight: bold;
     color: var(--vgui-text);
   }
   /* Preserve shared disabled text after the base color. */

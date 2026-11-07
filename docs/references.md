@@ -23,7 +23,7 @@ Source revisions are pinned in [source-revisions.json](source-revisions.json), c
 | Highlight border | `#899281` from steam_shared                                         | `#c8c8c8` from grey scheme border lighting |
 | Shadow border    | `#292d23` from steam_shared                                         | `rgb(40 40 40 / 75%)` from greysteam       |
 | Accent           | `#c4b550`                                                           | `#e3b651`, web selection/focus accent      |
-| Density          | 12px at default browser font size, 24px minimum buttons, 1px bevels | Same metrics                               |
+| Density          | Host font size, 24px minimum buttons, 1px bevels | Same metrics                               |
 | Fonts            | Tahoma, Arial, sans-serif                                           | Same system fallback stack                 |
 | States           | Armed → hover; depressed → active/pressed; selected → data state    | Same semantic mapping                      |
 
