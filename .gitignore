@@ -24,5 +24,5 @@ dist-ssr
 *.sw?
 
 temp
-# Built playground
+# Built playground (legacy location)
 packages/vue/dist-playground/

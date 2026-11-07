@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import * as Ui from '../lib'
-import type { UiTheme, UiMenuItem } from '../lib'
+import * as Ui from '@vgui/vue'
+import type { UiTheme, UiMenuItem } from '@vgui/vue'
 const theme = ref<UiTheme>('olive')
 const name = ref('Gordon Freeman')
 const enabled = ref<boolean | 'indeterminate'>(true)

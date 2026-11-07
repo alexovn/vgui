@@ -5,10 +5,10 @@
   "type": "module",
   "packageManager": "pnpm@10.32.1",
   "scripts": {
-    "dev": "pnpm --filter @vgui/vue dev",
-    "build": "pnpm --filter @vgui/vue build && pnpm --filter @vgui/vue build:playground",
-    "typecheck": "pnpm --filter @vgui/vue typecheck",
-    "preview": "pnpm --filter @vgui/vue preview"
+    "dev": "pnpm --filter playground dev",
+    "build": "pnpm --filter @vgui/vue build && pnpm --filter playground build",
+    "typecheck": "pnpm --filter @vgui/vue --filter playground typecheck",
+    "preview": "pnpm --filter playground preview"
   },
   "devDependencies": {
     "prettier": "3.9.10",
