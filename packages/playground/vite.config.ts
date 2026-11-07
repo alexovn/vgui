@@ -6,15 +6,18 @@ import { defineConfig } from 'vite'
 const here = (path: string) => fileURLToPath(new URL(path, import.meta.url))
 
 export default defineConfig({
+  root: here('./src'),
   plugins: [vue()],
   resolve: {
     alias: {
-      '@vgui/vue': here('../vue/lib/index.ts'),
+      '@vgui/vue': here('../vue/src/index.ts'),
     },
   },
   build: {
+    outDir: here('./dist'),
+    emptyOutDir: true,
     rolldownOptions: {
-      input: [here('./index.html'), here('./css-only.html')],
+      input: [here('./src/index.html'), here('./src/css-only.html')],
     },
   },
 })

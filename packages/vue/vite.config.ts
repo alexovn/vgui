@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: here('./lib/index.ts'),
+      entry: here('./src/index.ts'),
       formats: ['es'],
       fileName: () => 'vgui.js',
     },

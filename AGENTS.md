@@ -4,9 +4,9 @@
 
 This pnpm workspace provides VGUI-inspired controls with olive and slate themes.
 
-- `packages/vgui/`: shared CSS, component styles, theme files, and checkmark assets; published as `@vgui/css`.
-- `packages/vue/lib/`: Vue 3 components, shared types, and theme helpers; public exports live in `index.ts`.
-- `packages/playground/`: Vite application for developing and reviewing controls.
+- `packages/vgui/src/`: shared CSS, component styles, theme files, and checkmark assets; published as `@vgui/css`.
+- `packages/vue/src/`: Vue 3 components, shared types, and theme helpers; public exports live in `index.ts`.
+- `packages/playground/src/`: Vite application for developing and reviewing controls.
 - `docs/`: source attribution, reference revisions, and the manual review checklist.
 
 Keep styling in the CSS package and component behavior in the Vue package. Complex controls wrap Reka UI; keep their internal parts private.
@@ -27,7 +27,7 @@ Use Node 22.12+ and pnpm 10.32.1. Run commands from the repository root:
 
 Use two-space indentation, LF endings, single quotes, no JavaScript/TypeScript semicolons, trailing commas, and a 100-column formatting width. Oxfmt sorts imports; Oxlint requires braces around control-flow bodies.
 
-Write Vue components using `<script setup lang="ts">` and strict TypeScript. Name public components `Ui*.vue`, such as `UiButton.vue`. Use kebab-case CSS filenames, `vgui-` class names, and `--vgui-*` custom properties. Export new public components and types through `packages/vue/lib/index.ts`.
+Write Vue components using `<script setup lang="ts">` and strict TypeScript. Name public components `Ui*.vue`, such as `UiButton.vue`. Use kebab-case CSS filenames, `vgui-` class names, and `--vgui-*` custom properties. Export new public components and types through `packages/vue/src/index.ts`.
 
 ## Testing Guidelines
 

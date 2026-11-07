@@ -14,9 +14,9 @@
     "strictTemplates": true
   },
   "include": [
-    "packages/vue/lib/**/*.ts",
-    "packages/vue/lib/**/*.vue",
-    "packages/playground/**/*.ts",
-    "packages/playground/**/*.vue"
+    "packages/vue/src/**/*.ts",
+    "packages/vue/src/**/*.vue",
+    "packages/playground/src/**/*.ts",
+    "packages/playground/src/**/*.vue"
   ]
 }
