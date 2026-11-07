@@ -10,6 +10,12 @@ useForwardExpose()
   <textarea
     v-model="model"
     :rows="rows"
-    class="vgui-textarea"
+    class="vgui-textarea textarea"
   />
 </template>
+
+<style scoped>
+.textarea {
+  resize: vertical;
+}
+</style>
