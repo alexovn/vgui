@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UiTheme } from '../types'
+import type { UiTheme } from '../theme'
 
 import { computed, provide } from 'vue'
 import { themeKey } from '../theme'

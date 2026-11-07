@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { RadioGroupRootEmits, RadioGroupRootProps } from 'reka-ui'
-import type { UiOption } from '../types'
+import type { UiOption } from '../option'
 import { RadioGroupIndicator, RadioGroupItem, RadioGroupRoot, useForwardPropsEmits } from 'reka-ui'
 
 import { computed } from 'vue'

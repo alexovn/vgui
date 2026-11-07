@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { TabsRootEmits, TabsRootProps } from 'reka-ui'
-import type { UiTab } from '../types'
+import type { UiOption } from '../option'
 import { TabsContent, TabsList, TabsRoot, TabsTrigger, useForwardPropsEmits } from 'reka-ui'
 
 import { computed } from 'vue'
@@ -14,6 +14,10 @@ const forwarded = useForwardPropsEmits(
   }),
   emit,
 )
+</script>
+
+<script lang="ts">
+export interface UiTab extends UiOption {}
 </script>
 
 <template>

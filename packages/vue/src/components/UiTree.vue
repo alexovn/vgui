@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { TreeRootEmits, TreeRootProps } from 'reka-ui'
-import type { UiTreeNode } from '../types'
 import { TreeItem, TreeRoot, useForwardPropsEmits } from 'reka-ui'
 
 import { computed } from 'vue'
@@ -19,6 +18,14 @@ const forwarded = useForwardPropsEmits(
   }),
   emit,
 )
+</script>
+
+<script lang="ts">
+export interface UiTreeNode {
+  id: string
+  label: string
+  children?: UiTreeNode[]
+}
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 import type { ComputedRef, InjectionKey } from 'vue'
-import type { UiTheme } from './types'
 import { computed, inject, onMounted, onUnmounted, ref } from 'vue'
+
+export type UiTheme = 'olive' | 'slate'
 
 export const themeKey: InjectionKey<ComputedRef<UiTheme>> = Symbol('vgui-theme')
 export function useTheme() {

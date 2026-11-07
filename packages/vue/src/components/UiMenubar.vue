@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UiMenu, UiMenuItem } from '../types'
+import type { UiMenu, UiMenuItem } from '../menu'
 
 import { MenubarContent, MenubarMenu, MenubarPortal, MenubarRoot, MenubarTrigger } from 'reka-ui'
 import { useTheme } from '../theme'

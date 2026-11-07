@@ -17,12 +17,17 @@ export { default as UiSelect } from './components/UiSelect.vue'
 export { default as UiSeparator } from './components/UiSeparator.vue'
 export { default as UiSlider } from './components/UiSlider.vue'
 export { default as UiTable } from './components/UiTable.vue'
+export type { UiTableColumn, UiTableRow } from './components/UiTable.vue'
 export { default as UiTabs } from './components/UiTabs.vue'
+export type { UiTab } from './components/UiTabs.vue'
 export { default as UiTextarea } from './components/UiTextarea.vue'
 export { default as UiThemeProvider } from './components/UiThemeProvider.vue'
 export { default as UiTooltip } from './components/UiTooltip.vue'
 export { default as UiTree } from './components/UiTree.vue'
-export type * from './types'
+export type { UiTreeNode } from './components/UiTree.vue'
+export type { UiMenu, UiMenuItem } from './menu'
+export type { UiOption } from './option'
+export type { UiTheme } from './theme'
 
 // Public wrapper prop types, including their standard DOM attributes.
 export type UiButtonProps = InstanceType<

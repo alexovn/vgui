@@ -1,6 +1,13 @@
-<script setup lang="ts">
-import type { UiTableColumn, UiTableRow } from '../types'
+<script lang="ts">
+export interface UiTableColumn {
+  key: string
+  label: string
+}
 
+export type UiTableRow = Record<string, unknown>
+</script>
+
+<script setup lang="ts">
 defineProps<{
   columns: UiTableColumn[]
   rows: UiTableRow[]
