@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { TreeRoot, TreeItem, useForwardPropsEmits } from 'reka-ui'
-import type { TreeRootProps, TreeRootEmits } from 'reka-ui'
+import type { TreeRootEmits, TreeRootProps } from 'reka-ui'
+import type { UiTreeNode } from '../types'
+import { TreeItem, TreeRoot, useForwardPropsEmits } from 'reka-ui'
+
 import { computed } from 'vue'
 
-import type { UiTreeNode } from '../types'
 const props = defineProps<
   Omit<TreeRootProps<UiTreeNode>, 'items' | 'getKey' | 'getChildren'> & {
     nodes: UiTreeNode[]
@@ -19,23 +20,24 @@ const forwarded = useForwardPropsEmits(
   emit,
 )
 </script>
+
 <template>
   <TreeRoot
+    v-slot="{ flattenItems }"
     v-bind="forwarded"
     :items="nodes"
     :get-key="(node) => node.id"
     :get-children="(node) => node.children"
     :aria-label="label"
     class="vgui-tree"
-    v-slot="{ flattenItems }"
   >
     <TreeItem
       v-for="item in flattenItems"
       :key="item._id"
       v-bind="item.bind"
+      v-slot="{ isExpanded, handleToggle }"
       :style="{ '--vgui-level': item.level }"
       class="vgui-tree-item"
-      v-slot="{ isExpanded, handleToggle }"
     >
       <button
         v-if="item.hasChildren"
@@ -47,8 +49,16 @@ const forwarded = useForwardPropsEmits(
       >
         {{ isExpanded ? '−' : '+' }}
       </button>
-      <span v-else aria-hidden="true" style="width: 18px" />
-      <slot name="node" :node="item.value" :expanded="isExpanded">
+      <span
+        v-else
+        aria-hidden="true"
+        style="width: 18px"
+      />
+      <slot
+        name="node"
+        :node="item.value"
+        :expanded="isExpanded"
+      >
         {{ item.value.label }}
       </slot>
     </TreeItem>

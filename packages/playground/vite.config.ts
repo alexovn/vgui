@@ -7,7 +7,9 @@ const here = (path: string) => fileURLToPath(new URL(path, import.meta.url))
 
 export default defineConfig({
   root: here('./src'),
-  plugins: [vue()],
+  plugins: [
+    vue(),
+  ],
   resolve: {
     alias: {
       '@vgui/vue': here('../vue/src/index.ts'),
@@ -17,7 +19,10 @@ export default defineConfig({
     outDir: here('./dist'),
     emptyOutDir: true,
     rolldownOptions: {
-      input: [here('./src/index.html'), here('./src/css-only.html')],
+      input: [
+        here('./src/index.html'),
+        here('./src/css-only.html'),
+      ],
     },
   },
 })

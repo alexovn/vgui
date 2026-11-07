@@ -1,4 +1,5 @@
 import 'vue'
+
 // Reka primitives forward standard DOM attributes to their rendered element.
 declare module 'vue' {
   interface HTMLAttributes {

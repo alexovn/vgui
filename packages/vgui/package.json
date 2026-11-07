@@ -1,12 +1,7 @@
 {
   "name": "@vgui/css",
-  "version": "0.1.0",
-  "files": [
-    "src",
-    "README.md",
-    "LICENSE.vgui-css"
-  ],
   "type": "module",
+  "version": "0.1.0",
   "sideEffects": [
     "**/*.css"
   ],
@@ -38,5 +33,10 @@
     "./components/scroll-area.css": "./src/components/scroll-area.css",
     "./components/table.css": "./src/components/table.css",
     "./components/tree.css": "./src/components/tree.css"
-  }
+  },
+  "files": [
+    "LICENSE.vgui-css",
+    "README.md",
+    "src"
+  ]
 }

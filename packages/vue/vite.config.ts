@@ -2,15 +2,20 @@ import { fileURLToPath } from 'node:url'
 
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
+
 const here = (path: string) => fileURLToPath(new URL(path, import.meta.url))
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+  ],
   build: {
     lib: {
       entry: here('./src/index.ts'),
       formats: ['es'],
       fileName: () => 'vgui.js',
     },
-    rolldownOptions: { external: ['vue', 'reka-ui'] },
+    rolldownOptions: {
+      external: ['vue', 'reka-ui'],
+    },
   },
 })

@@ -9,8 +9,8 @@ lerna-debug.log*
 
 node_modules
 dist
-dist-ssr
 *.local
+.pnpm-store
 
 # Editor directories and files
 .vscode/*
@@ -24,5 +24,3 @@ dist-ssr
 *.sw?
 
 temp
-# Built playground (legacy location)
-packages/vue/dist-playground/

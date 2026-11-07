@@ -13,25 +13,24 @@ Keep styling in the CSS package and component behavior in the Vue package. Compl
 
 ## Build, Test, and Development Commands
 
-Use Node 22.12+ and pnpm 10.32.1. Run commands from the repository root:
+Use Node 22.13+ and pnpm 10.32.1. Run commands from the repository root:
 
 - `pnpm install`: install workspace dependencies.
 - `pnpm dev`: start the playground with live component updates.
-- `pnpm lint` / `pnpm lint:fix`: check code or apply Oxlint fixes.
-- `pnpm fmt` / `pnpm fmt:check`: format files or check formatting with Oxfmt.
+- `pnpm lint` / `pnpm lint:fix`: check code and formatting or apply ESLint fixes.
 - `pnpm -r typecheck`: typecheck the Vue library and playground.
 - `pnpm -r build`: build the Vue library, declarations, and playground.
 - `pnpm --filter playground preview`: serve the built playground locally.
 
 ## Coding Style & Naming Conventions
 
-Use two-space indentation, LF endings, single quotes, no JavaScript/TypeScript semicolons, trailing commas, and a 100-column formatting width. Oxfmt sorts imports; Oxlint requires braces around control-flow bodies.
+Use two-space indentation, LF endings, single quotes, no JavaScript/TypeScript semicolons, and trailing commas. The root ESLint config uses `@antfu/eslint-config` for import sorting, formatting, and Vue/TypeScript rules, with braces required around control-flow bodies. External formatters use a 100-column width. Add blank lines after imports, before function declarations, and between Vue SFC blocks.
 
 Write Vue components using `<script setup lang="ts">` and strict TypeScript. Name public components `Ui*.vue`, such as `UiButton.vue`. Use kebab-case CSS filenames, `vgui-` class names, and `--vgui-*` custom properties. Export new public components and types through `packages/vue/src/index.ts`.
 
 ## Testing Guidelines
 
-No automated test suite or coverage threshold is configured. Run lint, formatting checks, typechecks, and builds before submitting changes. Follow `docs/manual-review.md` for browser validation: review both themes, keyboard navigation, focus management, disabled states, forms, and teleported overlays. Add playground examples for new behavior and report which manual checks you completed.
+No automated test suite or coverage threshold is configured. Run lint (including formatting), typechecks, and builds before submitting changes. Follow `docs/manual-review.md` for browser validation: review both themes, keyboard navigation, focus management, disabled states, forms, and teleported overlays. Add playground examples for new behavior and report which manual checks you completed.
 
 ## Commit & Pull Request Guidelines
 

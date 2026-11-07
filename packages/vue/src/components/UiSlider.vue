@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { SliderRoot, SliderTrack, SliderRange, SliderThumb, useForwardProps } from 'reka-ui'
 import type { SliderRootProps } from 'reka-ui'
+import { SliderRange, SliderRoot, SliderThumb, SliderTrack, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
+
 const props = defineProps<SliderRootProps & { label: string }>()
 const emit = defineEmits<{
   'update:modelValue': [value: number[]]
-  valueCommit: [value: number[]]
+  'valueCommit': [value: number[]]
 }>()
 const forwarded = useForwardProps(
   computed(() => {
@@ -14,12 +15,13 @@ const forwarded = useForwardProps(
   }),
 )
 </script>
+
 <template>
   <SliderRoot
     v-bind="forwarded"
+    class="vgui-slider"
     @update:model-value="emit('update:modelValue', $event ?? [])"
     @value-commit="emit('valueCommit', $event)"
-    class="vgui-slider"
   >
     <SliderTrack class="vgui-slider-track">
       <SliderRange class="vgui-slider-range" />

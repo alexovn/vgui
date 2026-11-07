@@ -1,10 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "types": ["vite/client", "node"],
     "paths": {
       "@vgui/vue": ["../vue/src/index.ts"]
-    }
+    },
+    "types": ["vite/client", "node"]
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "vite.config.ts"]
 }

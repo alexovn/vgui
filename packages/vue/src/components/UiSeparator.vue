@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Separator } from 'reka-ui'
+
 withDefaults(
   defineProps<{
     orientation?: 'horizontal' | 'vertical'
@@ -8,6 +9,11 @@ withDefaults(
   { orientation: 'horizontal', decorative: true },
 )
 </script>
+
 <template>
-  <Separator class="vgui-separator" :orientation="orientation" :decorative="decorative" />
+  <Separator
+    class="vgui-separator"
+    :orientation="orientation"
+    :decorative="decorative"
+  />
 </template>

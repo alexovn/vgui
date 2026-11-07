@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { TabsRoot, TabsList, TabsTrigger, TabsContent, useForwardPropsEmits } from 'reka-ui'
-import type { TabsRootProps, TabsRootEmits } from 'reka-ui'
+import type { TabsRootEmits, TabsRootProps } from 'reka-ui'
+import type { UiTab } from '../types'
+import { TabsContent, TabsList, TabsRoot, TabsTrigger, useForwardPropsEmits } from 'reka-ui'
+
 import { computed } from 'vue'
 
-import type { UiTab } from '../types'
-const props = defineProps<TabsRootProps & { items: UiTab[]; label: string }>()
+const props = defineProps<TabsRootProps & { items: UiTab[], label: string }>()
 const emit = defineEmits<TabsRootEmits>()
 const forwarded = useForwardPropsEmits(
   computed(() => {
@@ -14,9 +15,16 @@ const forwarded = useForwardPropsEmits(
   emit,
 )
 </script>
+
 <template>
-  <TabsRoot v-bind="forwarded" :default-value="defaultValue ?? items[0]?.value">
-    <TabsList class="vgui-tabs-list" :aria-label="label">
+  <TabsRoot
+    v-bind="forwarded"
+    :default-value="defaultValue ?? items[0]?.value"
+  >
+    <TabsList
+      class="vgui-tabs-list"
+      :aria-label="label"
+    >
       <TabsTrigger
         v-for="item in items"
         :key="item.value"
@@ -24,7 +32,12 @@ const forwarded = useForwardPropsEmits(
         :disabled="item.disabled"
         class="vgui-tab"
       >
-        <slot name="tab" :item="item">{{ item.label }}</slot>
+        <slot
+          name="tab"
+          :item="item"
+        >
+          {{ item.label }}
+        </slot>
       </TabsTrigger>
     </TabsList>
     <TabsContent
@@ -33,7 +46,12 @@ const forwarded = useForwardPropsEmits(
       :value="item.value"
       class="vgui-tab-content"
     >
-      <slot :name="item.value" :item="item"><slot :item="item" /></slot>
+      <slot
+        :name="item.value"
+        :item="item"
+      >
+        <slot :item="item" />
+      </slot>
     </TabsContent>
   </TabsRoot>
 </template>

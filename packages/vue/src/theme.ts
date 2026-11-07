@@ -1,14 +1,7 @@
-import {
-  computed,
-  inject,
-  onMounted,
-  onUnmounted,
-  ref,
-  type ComputedRef,
-  type InjectionKey,
-} from 'vue'
-
+import type { ComputedRef, InjectionKey } from 'vue'
 import type { UiTheme } from './types'
+import { computed, inject, onMounted, onUnmounted, ref } from 'vue'
+
 export const themeKey: InjectionKey<ComputedRef<UiTheme>> = Symbol('vgui-theme')
 export function useTheme() {
   const inherited = inject(themeKey, undefined)
@@ -19,8 +12,10 @@ export function useTheme() {
       return
     }
     const update = () => {
-      documentTheme.value =
-        document.documentElement.dataset.vguiTheme === 'slate' ? 'slate' : 'olive'
+      documentTheme.value
+        = document.documentElement.dataset.vguiTheme === 'slate'
+          ? 'slate'
+          : 'olive'
     }
     update()
     observer = new MutationObserver(update)

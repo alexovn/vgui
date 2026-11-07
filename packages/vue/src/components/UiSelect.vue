@@ -1,27 +1,29 @@
 <script setup lang="ts">
+import type { SelectRootProps } from 'reka-ui'
+import type { UiOption } from '../types'
 import {
+  SelectContent,
+  SelectIcon,
+  SelectItem,
+  SelectItemIndicator,
+  SelectItemText,
+  SelectPortal,
   SelectRoot,
   SelectTrigger,
   SelectValue,
-  SelectIcon,
-  SelectPortal,
-  SelectContent,
   SelectViewport,
-  SelectItem,
-  SelectItemText,
-  SelectItemIndicator,
   useForwardProps,
 } from 'reka-ui'
-import type { SelectRootProps } from 'reka-ui'
-import { computed, useAttrs } from 'vue'
 
+import { computed, useAttrs } from 'vue'
 import { useTheme } from '../theme'
-import type { UiOption } from '../types'
+
+defineOptions({ inheritAttrs: false })
 const props = defineProps<
   Omit<SelectRootProps, 'modelValue' | 'defaultValue' | 'multiple'> & {
     modelValue?: string
     defaultValue?: string
-  } & { options: UiOption[]; placeholder?: string; label?: string }
+  } & { options: UiOption[], placeholder?: string, label?: string }
 >()
 const emit = defineEmits<{
   'update:modelValue': [value: string]
@@ -33,18 +35,22 @@ const rootProps = useForwardProps(
     return root
   }),
 )
-defineOptions({ inheritAttrs: false })
 const attrs = useAttrs()
 const theme = useTheme()
 </script>
+
 <template>
   <SelectRoot
-    v-bind="rootProps"
     v-slot="{ modelValue: currentValue }"
+    v-bind="rootProps"
     @update:open="emit('update:open', $event)"
     @update:model-value="(value) => emit('update:modelValue', String(value ?? ''))"
   >
-    <SelectTrigger v-bind="attrs" class="vgui-select-trigger" :aria-label="label">
+    <SelectTrigger
+      v-bind="attrs"
+      class="vgui-select-trigger"
+      :aria-label="label"
+    >
       <SelectValue :placeholder="placeholder">
         <slot
           name="value"
@@ -54,7 +60,9 @@ const theme = useTheme()
           {{ options.find((option) => option.value === currentValue)?.label }}
         </slot>
       </SelectValue>
-      <SelectIcon aria-hidden="true">▾</SelectIcon>
+      <SelectIcon aria-hidden="true">
+        ▾
+      </SelectIcon>
     </SelectTrigger>
     <SelectPortal>
       <SelectContent
@@ -72,9 +80,16 @@ const theme = useTheme()
             class="vgui-select-item"
           >
             <SelectItemText>
-              <slot name="option" :option="option">{{ option.label }}</slot>
+              <slot
+                name="option"
+                :option="option"
+              >
+                {{ option.label }}
+              </slot>
             </SelectItemText>
-            <SelectItemIndicator aria-hidden="true">✓</SelectItemIndicator>
+            <SelectItemIndicator aria-hidden="true">
+              ✓
+            </SelectItemIndicator>
           </SelectItem>
         </SelectViewport>
       </SelectContent>
