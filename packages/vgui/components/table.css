@@ -4,8 +4,7 @@
     background: var(--vgui-input);
     color: var(--vgui-text);
     border: 1px solid;
-    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
-      var(--vgui-dark);
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
     padding: 4px 6px;
     border-radius: 0;
   }

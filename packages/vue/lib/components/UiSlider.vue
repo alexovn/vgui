@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  SliderRoot,
-  SliderTrack,
-  SliderRange,
-  SliderThumb,
-  useForwardProps,
-} from 'reka-ui'
+import { SliderRoot, SliderTrack, SliderRange, SliderThumb, useForwardProps } from 'reka-ui'
 import type { SliderRootProps } from 'reka-ui'
 import { computed } from 'vue'
 const props = defineProps<SliderRootProps & { label: string }>()

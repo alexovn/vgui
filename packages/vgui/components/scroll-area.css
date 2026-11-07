@@ -4,8 +4,7 @@
     display: block;
     background: var(--vgui-bg);
     border: 1px solid;
-    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
-      var(--vgui-light);
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
   }
   .vgui-scroll-area {
     overflow: hidden;

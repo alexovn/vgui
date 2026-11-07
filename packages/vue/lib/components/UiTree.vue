@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { TreeRoot, TreeItem, useForwardPropsEmits } from 'reka-ui'
 import type { TreeRootProps, TreeRootEmits } from 'reka-ui'
-import type { UiTreeNode } from '../types'
 import { computed } from 'vue'
+
+import type { UiTreeNode } from '../types'
 const props = defineProps<
   Omit<TreeRootProps<UiTreeNode>, 'items' | 'getKey' | 'getChildren'> & {
     nodes: UiTreeNode[]

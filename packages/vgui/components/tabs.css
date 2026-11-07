@@ -5,8 +5,7 @@
     color: var(--vgui-text);
     background: var(--vgui-bg);
     border: 1px solid;
-    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
-      var(--vgui-light);
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
     border-radius: 0;
     padding: 3px 12px;
     min-height: 24px;
@@ -34,8 +33,7 @@
   .vgui-tab-content {
     padding: 12px;
     border: 1px solid;
-    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
-      var(--vgui-light);
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
     margin-top: -1px;
   }
 }

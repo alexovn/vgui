@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import {
-  RadioGroupRoot,
-  RadioGroupItem,
-  RadioGroupIndicator,
-  useForwardPropsEmits,
-} from 'reka-ui'
+import { RadioGroupRoot, RadioGroupItem, RadioGroupIndicator, useForwardPropsEmits } from 'reka-ui'
 import type { RadioGroupRootProps, RadioGroupRootEmits } from 'reka-ui'
-import type { UiOption } from '../types'
 import { computed } from 'vue'
+
+import type { UiOption } from '../types'
 const props = defineProps<RadioGroupRootProps & { options: UiOption[] }>()
 const emit = defineEmits<RadioGroupRootEmits>()
 const forwarded = useForwardPropsEmits(
@@ -20,16 +16,8 @@ const forwarded = useForwardPropsEmits(
 </script>
 <template>
   <RadioGroupRoot v-bind="forwarded" class="vgui-radio-group">
-    <label
-      v-for="option in options"
-      :key="option.value"
-      class="vgui-radio-option"
-    >
-      <RadioGroupItem
-        :value="option.value"
-        :disabled="option.disabled"
-        class="vgui-radio"
-      >
+    <label v-for="option in options" :key="option.value" class="vgui-radio-option">
+      <RadioGroupItem :value="option.value" :disabled="option.disabled" class="vgui-radio">
         <RadioGroupIndicator class="vgui-radio-dot" />
       </RadioGroupItem>
       <slot name="option" :option="option">{{ option.label }}</slot>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import * as Ui from '@vgui/vue'
 import type { UiTheme, UiMenuItem } from '@vgui/vue'
+import { ref } from 'vue'
 const theme = ref<UiTheme>('olive')
 const name = ref('Gordon Freeman')
 const enabled = ref<boolean | 'indeterminate'>(true)
@@ -147,12 +147,7 @@ function action(item: UiMenuItem) {
             />
             <Ui.UiLabel for="sound">Volume</Ui.UiLabel>
             <div>
-              <Ui.UiSlider
-                id="sound"
-                v-model="volume"
-                label="Volume"
-                :max="100"
-              />
+              <Ui.UiSlider id="sound" v-model="volume" label="Volume" :max="100" />
               <small>{{ volume[0] }}%</small>
             </div>
             <span>Preferences</span>
@@ -171,9 +166,7 @@ function action(item: UiMenuItem) {
               <Ui.UiButton type="submit">Apply</Ui.UiButton>
               <Ui.UiButton type="reset">Reset</Ui.UiButton>
               <Ui.UiTooltip text="Restore the default configuration">
-                <Ui.UiButton @click="message = 'Defaults restored'">
-                  Use defaults
-                </Ui.UiButton>
+                <Ui.UiButton @click="message = 'Defaults restored'">Use defaults</Ui.UiButton>
               </Ui.UiTooltip>
             </div>
           </form>
@@ -184,10 +177,7 @@ function action(item: UiMenuItem) {
               <p>{{ item.label }} servers</p>
               <Ui.UiContextMenu :items="actions" @select="action">
                 <template #trigger>
-                  <div
-                    tabindex="0"
-                    aria-label="Server list; right-click for actions"
-                  >
+                  <div tabindex="0" aria-label="Server list; right-click for actions">
                     <Ui.UiTable
                       caption="Available game servers"
                       :columns="columns"
@@ -215,11 +205,7 @@ function action(item: UiMenuItem) {
                 <Ui.UiLabel for="dialog-name">Player name</Ui.UiLabel>
                 <Ui.UiInput id="dialog-name" v-model="name" />
                 <p>
-                  <Ui.UiSelect
-                    :options="options"
-                    v-model="selection"
-                    label="Connection"
-                  />
+                  <Ui.UiSelect :options="options" v-model="selection" label="Connection" />
                 </p>
               </Ui.UiGroupBox>
               <template #footer>
@@ -231,11 +217,7 @@ function action(item: UiMenuItem) {
         <Ui.UiPanel title="Containers & feedback" id="containers">
           <div class="columns">
             <Ui.UiGroupBox legend="Library">
-              <Ui.UiTree
-                :nodes="nodes"
-                label="Game library"
-                :default-expanded="['games']"
-              />
+              <Ui.UiTree :nodes="nodes" label="Game library" :default-expanded="['games']" />
             </Ui.UiGroupBox>
             <Ui.UiGroupBox legend="Download">
               <Ui.UiProgress :model-value="65" label="Download progress" />
@@ -252,21 +234,13 @@ function action(item: UiMenuItem) {
             <Ui.UiButton>Normal</Ui.UiButton>
             <Ui.UiButton disabled>Disabled</Ui.UiButton>
             <Ui.UiButton data-state="on">Pressed</Ui.UiButton>
-            <Ui.UiInput
-              aria-label="Read-only example"
-              model-value="Read only"
-              readonly
-            />
+            <Ui.UiInput aria-label="Read-only example" model-value="Read only" readonly />
             <Ui.UiInput
               aria-label="Invalid example"
               aria-invalid="true"
               model-value="Invalid value"
             />
-            <Ui.UiInput
-              aria-label="Disabled example"
-              disabled
-              model-value="Disabled"
-            />
+            <Ui.UiInput aria-label="Disabled example" disabled model-value="Disabled" />
             <label class="vgui-choice">
               <Ui.UiCheckbox default-value="indeterminate" />
               Mixed
@@ -282,13 +256,8 @@ function action(item: UiMenuItem) {
               placeholder="Disabled"
             />
           </div>
-          <p>
-            Use Tab to inspect focus. Switch the theme to compare every control.
-          </p>
-          <Ui.UiThemeProvider
-            :theme="theme === 'olive' ? 'slate' : 'olive'"
-            class="nested"
-          >
+          <p>Use Tab to inspect focus. Switch the theme to compare every control.</p>
+          <Ui.UiThemeProvider :theme="theme === 'olive' ? 'slate' : 'olive'" class="nested">
             <Ui.UiDropdownMenu :items="actions" @select="action">
               <template #trigger>
                 <Ui.UiButton>Nested opposite-theme menu ▾</Ui.UiButton>
@@ -300,14 +269,8 @@ function action(item: UiMenuItem) {
           <h2 class="vgui-panel-title">Framework-independent HTML</h2>
           <p>These elements use only shared CSS classes.</p>
           <button class="vgui-button" type="button">Native button</button>
-          <input
-            class="vgui-input"
-            aria-label="CSS-only input"
-            placeholder="Native input"
-          />
-          <progress aria-label="Native progress" value="65" max="100">
-            65%
-          </progress>
+          <input class="vgui-input" aria-label="CSS-only input" placeholder="Native input" />
+          <progress aria-label="Native progress" value="65" max="100">65%</progress>
         </section>
         <footer role="status">{{ message }}</footer>
       </main>

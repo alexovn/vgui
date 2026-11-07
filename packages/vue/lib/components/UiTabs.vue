@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import {
-  TabsRoot,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-  useForwardPropsEmits,
-} from 'reka-ui'
+import { TabsRoot, TabsList, TabsTrigger, TabsContent, useForwardPropsEmits } from 'reka-ui'
 import type { TabsRootProps, TabsRootEmits } from 'reka-ui'
-import type { UiTab } from '../types'
 import { computed } from 'vue'
+
+import type { UiTab } from '../types'
 const props = defineProps<TabsRootProps & { items: UiTab[]; label: string }>()
 const emit = defineEmits<TabsRootEmits>()
 const forwarded = useForwardPropsEmits(

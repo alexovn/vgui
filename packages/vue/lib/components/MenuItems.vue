@@ -20,8 +20,9 @@ import {
   MenubarSubContent,
 } from 'reka-ui'
 import { computed } from 'vue'
-import type { UiMenuItem } from '../types'
+
 import { useTheme } from '../theme'
+import type { UiMenuItem } from '../types'
 const props = defineProps<{
   kind: 'DropdownMenu' | 'ContextMenu' | 'Menubar'
   items: UiMenuItem[]
@@ -58,17 +59,9 @@ const theme = useTheme()
 </script>
 <template>
   <template v-for="item in items" :key="item.id">
-    <component
-      :is="parts.Separator"
-      v-if="item.separator"
-      class="vgui-separator"
-    />
+    <component :is="parts.Separator" v-if="item.separator" class="vgui-separator" />
     <component :is="parts.Sub" v-else-if="item.children">
-      <component
-        :is="parts.SubTrigger"
-        class="vgui-menu-item"
-        :disabled="item.disabled"
-      >
+      <component :is="parts.SubTrigger" class="vgui-menu-item" :disabled="item.disabled">
         {{ item.label }}
         <span class="vgui-menu-shortcut">▸</span>
       </component>
@@ -79,11 +72,7 @@ const theme = useTheme()
           v-bind="{ 'data-vgui-theme': theme }"
           :side-offset="2"
         >
-          <MenuItems
-            :kind="kind"
-            :items="item.children"
-            @select="emit('select', $event)"
-          />
+          <MenuItems :kind="kind" :items="item.children" @select="emit('select', $event)" />
         </component>
       </component>
     </component>

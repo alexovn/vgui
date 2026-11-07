@@ -9,11 +9,7 @@
   }
   .vgui-progress-indicator {
     height: 100%;
-    background: repeating-linear-gradient(
-      90deg,
-      var(--vgui-accent) 0 7px,
-      transparent 7px 9px
-    );
+    background: repeating-linear-gradient(90deg, var(--vgui-accent) 0 7px, transparent 7px 9px);
   }
   .vgui-progress[data-state='indeterminate'] .vgui-progress-indicator {
     width: 100%;

@@ -6,14 +6,7 @@
     <title>VGUI · CSS only</title>
     <link rel="stylesheet" href="@vgui/css" />
   </head>
-  <body
-    style="
-      background: var(--vgui-input);
-      padding: 24px;
-      max-width: 640px;
-      margin: auto;
-    "
-  >
+  <body style="background: var(--vgui-input); padding: 24px; max-width: 640px; margin: auto">
     <section class="vgui-panel">
       <h1 class="vgui-panel-title">VGUI · Plain HTML</h1>
       <p>This page uses the CSS package without Vue or JavaScript.</p>
@@ -21,13 +14,7 @@
         <fieldset class="vgui-group">
           <legend>Player</legend>
           <label class="vgui-label" for="player">Name</label>
-          <input
-            class="vgui-input"
-            id="player"
-            name="player"
-            required
-            value="Gordon Freeman"
-          />
+          <input class="vgui-input" id="player" name="player" required value="Gordon Freeman" />
           <p>
             <button class="vgui-button" type="submit">Apply</button>
             <button class="vgui-button" type="reset">Reset</button>
@@ -36,11 +23,7 @@
         </fieldset>
       </form>
     </section>
-    <section
-      data-vgui-theme="slate"
-      class="vgui-panel"
-      style="margin-top: 16px"
-    >
+    <section data-vgui-theme="slate" class="vgui-panel" style="margin-top: 16px">
       <h2 class="vgui-panel-title">Slate gray</h2>
       <label class="vgui-label" for="slate">Read only</label>
       <input class="vgui-input" id="slate" value="Source engine" readonly />

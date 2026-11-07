@@ -11,11 +11,10 @@ import {
   useForwardPropsEmits,
 } from 'reka-ui'
 import type { DialogRootProps, DialogRootEmits } from 'reka-ui'
-import { useTheme } from '../theme'
 import { computed } from 'vue'
-const props = defineProps<
-  DialogRootProps & { title: string; description: string }
->()
+
+import { useTheme } from '../theme'
+const props = defineProps<DialogRootProps & { title: string; description: string }>()
 const emit = defineEmits<DialogRootEmits>()
 const forwarded = useForwardPropsEmits(
   computed(() => {
@@ -38,12 +37,7 @@ const theme = useTheme()
         <DialogDescription class="vgui-dialog-description">
           {{ description }}
         </DialogDescription>
-        <DialogClose
-          class="vgui-button vgui-dialog-close"
-          aria-label="Close dialog"
-        >
-          ×
-        </DialogClose>
+        <DialogClose class="vgui-button vgui-dialog-close" aria-label="Close dialog">×</DialogClose>
         <slot />
         <div v-if="$slots.footer" class="vgui-dialog-footer">
           <slot name="footer" />

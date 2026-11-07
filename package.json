@@ -1,17 +1,19 @@
 {
   "name": "vgui-workspace",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.32.1",
   "scripts": {
-    "dev": "pnpm --filter playground dev",
-    "build": "pnpm --filter @vgui/vue build && pnpm --filter playground build",
-    "typecheck": "pnpm --filter @vgui/vue --filter playground typecheck",
-    "preview": "pnpm --filter playground preview"
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "dev": "pnpm --filter playground dev"
   },
   "devDependencies": {
-    "prettier": "3.9.10",
+    "oxfmt": "0.77.0",
+    "oxlint": "1.92.0",
     "typescript": "6.0.3"
-  }
+  },
+  "packageManager": "pnpm@10.32.1"
 }

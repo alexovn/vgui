@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import {
-  MenubarRoot,
-  MenubarMenu,
-  MenubarTrigger,
-  MenubarPortal,
-  MenubarContent,
-} from 'reka-ui'
-import MenuItems from './MenuItems.vue'
-import type { UiMenu, UiMenuItem } from '../types'
+import { MenubarRoot, MenubarMenu, MenubarTrigger, MenubarPortal, MenubarContent } from 'reka-ui'
+
 import { useTheme } from '../theme'
+import type { UiMenu, UiMenuItem } from '../types'
+import MenuItems from './MenuItems.vue'
 defineProps<{ items: UiMenu[]; label?: string }>()
 const emit = defineEmits<{ select: [item: UiMenuItem] }>()
 const theme = useTheme()
@@ -20,15 +15,8 @@ const theme = useTheme()
         {{ menu.label }}
       </MenubarTrigger>
       <MenubarPortal>
-        <MenubarContent
-          class="vgui-popup"
-          v-bind="{ 'data-vgui-theme': theme }"
-        >
-          <MenuItems
-            kind="Menubar"
-            :items="menu.items"
-            @select="emit('select', $event)"
-          />
+        <MenubarContent class="vgui-popup" v-bind="{ 'data-vgui-theme': theme }">
+          <MenuItems kind="Menubar" :items="menu.items" @select="emit('select', $event)" />
         </MenubarContent>
       </MenubarPortal>
     </MenubarMenu>

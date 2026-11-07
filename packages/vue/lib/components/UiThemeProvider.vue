@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, provide } from 'vue'
+
 import { themeKey } from '../theme'
 import type { UiTheme } from '../types'
 const props = withDefaults(defineProps<{ theme?: UiTheme }>(), {

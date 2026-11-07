@@ -13,9 +13,10 @@ import {
   useForwardProps,
 } from 'reka-ui'
 import type { SelectRootProps } from 'reka-ui'
-import type { UiOption } from '../types'
-import { useTheme } from '../theme'
 import { computed, useAttrs } from 'vue'
+
+import { useTheme } from '../theme'
+import type { UiOption } from '../types'
 const props = defineProps<
   Omit<SelectRootProps, 'modelValue' | 'defaultValue' | 'multiple'> & {
     modelValue?: string
@@ -41,15 +42,9 @@ const theme = useTheme()
     v-bind="rootProps"
     v-slot="{ modelValue: currentValue }"
     @update:open="emit('update:open', $event)"
-    @update:model-value="
-      (value) => emit('update:modelValue', String(value ?? ''))
-    "
+    @update:model-value="(value) => emit('update:modelValue', String(value ?? ''))"
   >
-    <SelectTrigger
-      v-bind="attrs"
-      class="vgui-select-trigger"
-      :aria-label="label"
-    >
+    <SelectTrigger v-bind="attrs" class="vgui-select-trigger" :aria-label="label">
       <SelectValue :placeholder="placeholder">
         <slot
           name="value"

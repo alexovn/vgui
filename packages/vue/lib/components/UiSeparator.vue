@@ -9,9 +9,5 @@ withDefaults(
 )
 </script>
 <template>
-  <Separator
-    class="vgui-separator"
-    :orientation="orientation"
-    :decorative="decorative"
-  />
+  <Separator class="vgui-separator" :orientation="orientation" :decorative="decorative" />
 </template>

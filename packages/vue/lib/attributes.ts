@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'vue'
+import 'vue'
 // Reka primitives forward standard DOM attributes to their rendered element.
 declare module 'vue' {
   interface HTMLAttributes {
@@ -15,4 +15,3 @@ declare module 'vue' {
     dataState?: string
   }
 }
-export {}

@@ -5,8 +5,7 @@
     color: var(--vgui-text);
     background: var(--vgui-bg);
     border: 1px solid;
-    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark)
-      var(--vgui-light);
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
     border-radius: 0;
     padding: 3px 12px;
     min-height: 24px;
@@ -17,8 +16,7 @@
   }
   .vgui-button:active,
   .vgui-button[data-state='on'] {
-    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
-      var(--vgui-dark);
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
   }
   /* Preserve the shared disabled color and cursor after the base rules. */
   .vgui-button:where(:disabled, [data-disabled]) {

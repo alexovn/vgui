@@ -10,8 +10,7 @@
     color: var(--vgui-text);
     background: var(--vgui-input);
     border: 1px solid;
-    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light)
-      var(--vgui-dark);
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
   }
   .vgui-checkmark {
     width: 13px;

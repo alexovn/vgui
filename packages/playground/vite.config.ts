@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import { fileURLToPath } from 'node:url'
+
+import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
 
 const here = (path: string) => fileURLToPath(new URL(path, import.meta.url))
 
