@@ -44,7 +44,7 @@ const volume = ref([65])
     />
     <UiSeparator />
     <form
-      class="form-grid"
+      class="grid grid-cols-[130px_minmax(0,1fr)] items-start gap-3 py-2.5 narrow:grid-cols-1"
       @submit.prevent="emit('message', `Saved profile: ${name}`)"
       @reset="emit('message', 'Form reset')"
     >
@@ -102,7 +102,7 @@ const volume = ref([65])
         name="connection"
         aria-label="Connection type"
       />
-      <div class="actions">
+      <div class="col-span-full mt-3 flex flex-wrap gap-1.5">
         <UiButton type="submit">
           Apply
         </UiButton>

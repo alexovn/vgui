@@ -62,7 +62,9 @@ const rows = [
       :items="options.slice(0, 3)"
     >
       <template #default="{ item }">
-        <p>{{ item.label }} servers</p>
+        <p class="my-2">
+          {{ item.label }} servers
+        </p>
         <UiContextMenu
           :items="actions"
           @select="emit('message', $event.label)"
@@ -73,6 +75,7 @@ const rows = [
               aria-label="Server list; right-click for actions"
             >
               <UiTable
+                class="[&_caption]:py-1 [&_caption]:text-left [&_caption]:text-vgui-muted"
                 caption="Available game servers"
                 :columns="columns"
                 :rows="rows"
@@ -83,7 +86,7 @@ const rows = [
         </UiContextMenu>
       </template>
     </UiTabs>
-    <div class="actions">
+    <div class="col-span-full mt-3 flex flex-wrap gap-1.5">
       <UiDropdownMenu
         :items="actions"
         @select="emit('message', $event.label)"
@@ -100,7 +103,10 @@ const rows = [
         <template #trigger>
           <UiButton>Settings…</UiButton>
         </template>
-        <UiGroupBox legend="Player">
+        <UiGroupBox
+          class="min-w-0"
+          legend="Player"
+        >
           <UiLabel for="dialog-name">
             Player name
           </UiLabel>
@@ -108,7 +114,7 @@ const rows = [
             id="dialog-name"
             v-model="name"
           />
-          <p>
+          <p class="my-2">
             <UiSelect
               v-model="selection"
               :options="options"

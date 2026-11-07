@@ -22,7 +22,7 @@ const emit = defineEmits<{
     id="states"
     title="Control states"
   >
-    <div class="state-grid">
+    <div class="grid grid-cols-3 items-center gap-3 narrow:grid-cols-1">
       <UiButton>Normal</UiButton>
       <UiButton disabled>
         Disabled
@@ -63,10 +63,12 @@ const emit = defineEmits<{
         placeholder="Disabled"
       />
     </div>
-    <p>Use Tab to inspect focus. Switch the theme to compare every control.</p>
+    <p class="my-2">
+      Use Tab to inspect focus. Switch the theme to compare every control.
+    </p>
     <UiThemeProvider
       :theme="theme === 'olive' ? 'slate' : 'olive'"
-      class="nested"
+      class="mt-3 bg-vgui-bg p-2"
     >
       <UiDropdownMenu
         :items="actions"

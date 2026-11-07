@@ -18,12 +18,12 @@ const message = ref('Ready.')
 <template>
   <UiThemeProvider
     :theme="theme"
-    class="desktop"
+    class="min-h-screen bg-vgui-input px-[max(20px,calc((100vw-1160px)/2))] py-9"
   >
     <PlaygroundHeader v-model="theme" />
-    <div class="workspace">
+    <div class="grid grid-cols-[170px_minmax(0,1fr)] gap-6 narrow:grid-cols-1">
       <PlaygroundSidebar />
-      <main>
+      <main class="grid min-w-0 gap-[18px]">
         <ControlsSection
           v-model:name="name"
           v-model:selection="selection"
@@ -39,7 +39,10 @@ const message = ref('Ready.')
           :theme="theme"
           @message="message = $event"
         />
-        <footer role="status">
+        <footer
+          role="status"
+          class="border-t border-solid border-x-0 border-b-0 border-vgui-light p-2 text-vgui-muted"
+        >
           {{ message }}
         </footer>
       </main>

@@ -16,15 +16,19 @@ function setTheme(value: string) {
 </script>
 
 <template>
-  <header>
+  <header class="flex items-center justify-between gap-6 pb-6 narrow:items-start">
     <div>
-      <p class="eyebrow">
+      <p class="my-2 text-[10px] tracking-[2px] text-vgui-accent">
         VALVE GRAPHICAL USER INTERFACE / 02
       </p>
-      <h1>Control Gallery</h1>
-      <p>A familiar interface. Built for the web.</p>
+      <h1 class="my-1.5 text-[28px] font-normal tracking-[-1px]">
+        Control Gallery
+      </h1>
+      <p class="my-2">
+        A familiar interface. Built for the web.
+      </p>
     </div>
-    <div class="theme-switch">
+    <div class="grid gap-1">
       <UiLabel for="theme">
         Appearance
       </UiLabel>
