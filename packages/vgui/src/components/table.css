@@ -14,7 +14,9 @@
   }
   .vgui-table {
     width: 100%;
+    border-collapse: separate;
     border-spacing: 0;
+    text-indent: 0;
     text-align: left;
   }
   .vgui-table th {

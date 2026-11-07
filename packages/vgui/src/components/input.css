@@ -11,6 +11,10 @@
     padding: 4px 6px;
     border-radius: 0;
   }
+  .vgui-input::placeholder {
+    color: var(--vgui-muted);
+    opacity: 1;
+  }
   .vgui-input[readonly] {
     color: var(--vgui-muted);
   }

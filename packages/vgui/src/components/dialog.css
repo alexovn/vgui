@@ -47,6 +47,7 @@
     min-height: 18px;
   }
   .vgui-dialog-description {
+    margin: 8px 0;
     color: var(--vgui-muted);
   }
   .vgui-dialog-footer {

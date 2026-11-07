@@ -41,7 +41,7 @@ const message = ref('Ready.')
         />
         <footer
           role="status"
-          class="border-t border-solid border-x-0 border-b-0 border-vgui-light p-2 text-vgui-muted"
+          class="border-t border-vgui-light p-2 text-vgui-muted"
         >
           {{ message }}
         </footer>

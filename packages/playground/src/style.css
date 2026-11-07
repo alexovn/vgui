@@ -1,8 +1,8 @@
 /* Keep VGUI layers before utilities so playground classes can override layout. */
 @layer theme, base, vgui, components, utilities;
 @import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
 @import '@vgui/css';
-/* Preflight is intentionally omitted to preserve the controls' native styling. */
 @import 'tailwindcss/utilities.css' layer(utilities) source('./');
 
 @theme inline {

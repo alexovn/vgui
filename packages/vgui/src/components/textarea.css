@@ -10,6 +10,11 @@
     border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
     padding: 4px 6px;
     border-radius: 0;
+    resize: both;
+  }
+  .vgui-textarea::placeholder {
+    color: var(--vgui-muted);
+    opacity: 1;
   }
   .vgui-textarea[readonly] {
     color: var(--vgui-muted);

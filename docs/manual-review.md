@@ -7,6 +7,7 @@ Browser interaction and visual checks below require a human browser session and 
 Run `pnpm dev` and review both themes in current Chrome, Firefox, and Safari:
 
 - Compare surfaces, typography, bevels, control spacing, and checked indicators to upstream reference screenshots.
+- With playground Preflight enabled, check group-box legends, separate table borders, placeholder colors, Settings description spacing, and textarea resizing in both directions. Also verify these controls without a reset using the CSS consumer example.
 - Exercise normal, hover, pressed, disabled, invalid, read-only, checked, and mixed states. Verify disabled controls cannot be activated.
 - Use only the keyboard: Tab through controls; navigate select, tabs, radios, tree, and menus with arrows; activate with Enter/Space; dismiss with Escape.
 - Open Settings; verify initial focus, trapped focus, Escape dismissal, and restored trigger focus. Open its select and inspect focus and layering.

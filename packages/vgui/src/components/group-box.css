@@ -1,9 +1,14 @@
 /* Requires tokens.css and common.css; load a theme separately as needed. */
 @layer vgui.components {
   .vgui-group {
+    min-width: 0;
+    margin: 0 2px;
     background: var(--vgui-bg);
     border: 1px solid;
     border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
     padding: 12px;
+  }
+  .vgui-group > legend {
+    padding: 0 2px;
   }
 }

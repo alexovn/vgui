@@ -41,6 +41,18 @@ Import styles separately for controls supplied through slots, such as a dropdown
 
 Override `--vgui-bg`, `--vgui-input`, `--vgui-text`, `--vgui-muted`, `--vgui-light`, `--vgui-dark`, `--vgui-accent`, `--vgui-selection`, `--vgui-error`, `--vgui-font`, and `--vgui-font-size` on a theme scope. Layers are ordered `vgui.base`, `vgui.themes`, `vgui.components`; unlayered consumer rules can override them.
 
+A CSS reset is optional. When using Tailwind Preflight, declare the layer order before importing styles so the VGUI controls override the reset and Tailwind utilities can override the controls:
+
+```css
+@layer theme, base, vgui, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import '@vgui/css';
+@import 'tailwindcss/utilities.css' layer(utilities);
+```
+
+The control styles explicitly define group-box spacing, separate table borders, placeholder colors, dialog-description spacing, and textarea resizing in both directions. These defaults apply with or without Preflight. Tailwind is not required by this package.
+
 Native `:hover`, `:active`, `:focus-visible`, `:disabled`, `[readonly]`, and `[aria-invalid="true"]` states are supported. Custom markup can use `[data-disabled]`, `[data-state="on"]` on buttons, `[data-state="active"]` on tabs, `[data-highlighted]` on menu/select items, and `[data-selected]` on tree items. Checkbox indicators use `.vgui-checkmark` inside a `.vgui-checkbox` marked `data-state="checked"` or `indeterminate`. CSS defines appearance; consumers supply semantics and interaction behavior for custom markup.
 
 System fonts start with Tahoma and fall back to Arial/sans-serif. Font rasterization varies by OS. Historical palettes retain some low-contrast disabled text; visible focus and forced-color overrides supplement them.
