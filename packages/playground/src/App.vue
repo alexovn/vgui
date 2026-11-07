@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { UiTheme } from '@vgui/vue'
 import { UiThemeProvider } from '@vgui/vue'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import ContainersSection from './components/ContainersSection.vue'
 import ControlsSection from './components/ControlsSection.vue'
 import ControlStatesSection from './components/ControlStatesSection.vue'
@@ -13,6 +13,11 @@ const theme = ref<UiTheme>('olive')
 const name = ref('Gordon Freeman')
 const selection = ref('internet')
 const message = ref('Ready.')
+
+// The document scrollbar needs the same tokens as the component theme provider.
+watch(theme, (value) => {
+  document.documentElement.dataset.vguiTheme = value
+}, { immediate: true })
 </script>
 
 <template>
