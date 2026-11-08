@@ -16,9 +16,6 @@ import {
 import { ref } from 'vue'
 import { actions, options } from '../gallery-data'
 
-const emit = defineEmits<{
-  message: [value: string]
-}>()
 const name = defineModel<string>('name', { required: true })
 const selection = defineModel<string>('selection', { required: true })
 const enabled = ref<boolean | 'indeterminate'>(true)
@@ -40,34 +37,36 @@ const volume = ref([65])
           items: [{ id: 'settings', label: 'Settings' }],
         },
       ]"
-      @select="emit('message', $event.label)"
     />
+
     <UiSeparator />
-    <form
-      class="grid grid-cols-[130px_minmax(0,1fr)] items-start gap-3 py-2.5 narrow:grid-cols-1"
-      @submit.prevent="emit('message', `Saved profile: ${name}`)"
-      @reset="emit('message', 'Form reset')"
-    >
+
+    <form class="grid grid-cols-[130px_minmax(0,1fr)] items-start gap-3 py-2.5 narrow:grid-cols-1">
       <UiLabel for="player">
         Player name
       </UiLabel>
+
       <UiInput
         id="player"
         v-model="name"
         name="player"
       />
+
       <UiLabel for="notes">
         Description
       </UiLabel>
+
       <UiTextarea
         id="notes"
         name="notes"
         placeholder="Tell us about your server…"
         rows="3"
       />
+
       <UiLabel for="source">
         Server source
       </UiLabel>
+
       <UiSelect
         id="source"
         v-model="selection"
@@ -75,9 +74,11 @@ const volume = ref([65])
         name="source"
         label="Server source"
       />
+
       <UiLabel for="sound">
         Volume
       </UiLabel>
+
       <div>
         <UiSlider
           id="sound"
@@ -85,9 +86,11 @@ const volume = ref([65])
           label="Volume"
           :max="100"
         />
-        <small>{{ volume[0] }}%</small>
+        <small class="text-xs text-vgui-muted">{{ volume[0] }}%</small>
       </div>
-      <span>Preferences</span>
+
+      <span class="text-sm font-semibold">Preferences</span>
+
       <label class="vgui-choice">
         <UiCheckbox
           v-model="enabled"
@@ -95,7 +98,9 @@ const volume = ref([65])
         />
         Enable game sounds
       </label>
-      <span>Connection</span>
+
+      <span class="text-sm font-semibold">Connection</span>
+
       <UiRadioGroup
         :options="options.slice(0, 3)"
         default-value="internet"
@@ -106,11 +111,13 @@ const volume = ref([65])
         <UiButton type="submit">
           Apply
         </UiButton>
+
         <UiButton type="reset">
           Reset
         </UiButton>
+
         <UiTooltip text="Restore the default configuration">
-          <UiButton @click="emit('message', 'Defaults restored')">
+          <UiButton>
             Use defaults
           </UiButton>
         </UiTooltip>

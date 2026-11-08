@@ -16,22 +16,26 @@ function setTheme(value: string) {
 </script>
 
 <template>
-  <header class="flex items-center justify-between gap-6 pb-6 narrow:items-start">
-    <div>
-      <p class="my-2 text-[10px] tracking-[2px] text-vgui-accent">
-        VALVE GRAPHICAL USER INTERFACE / 02
+  <header class="flex items-center justify-between gap-6 narrow:items-start">
+    <div class="flex flex-col gap-2">
+      <p class="text-xs tracking-[0.15em] text-vgui-accent">
+        VALVE GRAPHICAL USER INTERFACE
       </p>
-      <h1 class="my-1.5 text-[28px] font-normal tracking-[-1px]">
+
+      <h1 class="text-4xl font-normal tracking-tight narrow:text-3xl">
         Control Gallery
       </h1>
-      <p class="my-2">
+
+      <p class="text-lg text-vgui-muted">
         A familiar interface. Built for the web.
       </p>
     </div>
+
     <div class="grid gap-1">
       <UiLabel for="theme">
         Appearance
       </UiLabel>
+
       <UiSelect
         id="theme"
         :model-value="theme"

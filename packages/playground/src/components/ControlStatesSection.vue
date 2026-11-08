@@ -1,20 +1,12 @@
 <script setup lang="ts">
-import type { UiTheme } from '@vgui/vue'
 import {
   UiButton,
   UiCheckbox,
-  UiDropdownMenu,
   UiInput,
   UiPanel,
   UiSelect,
-  UiThemeProvider,
 } from '@vgui/vue'
-import { actions, options } from '../gallery-data'
-
-defineProps<{ theme: UiTheme }>()
-const emit = defineEmits<{
-  message: [value: string]
-}>()
+import { options } from '../gallery-data'
 </script>
 
 <template>
@@ -24,31 +16,38 @@ const emit = defineEmits<{
   >
     <div class="grid grid-cols-3 items-center gap-3 narrow:grid-cols-1">
       <UiButton>Normal</UiButton>
+
       <UiButton disabled>
         Disabled
       </UiButton>
+
       <UiButton data-state="on">
         Pressed
       </UiButton>
+
       <UiInput
         aria-label="Read-only example"
         model-value="Read only"
         readonly
       />
+
       <UiInput
         aria-label="Invalid example"
         aria-invalid="true"
         model-value="Invalid value"
       />
+
       <UiInput
         aria-label="Disabled example"
         disabled
         model-value="Disabled"
       />
+
       <label class="vgui-choice">
         <UiCheckbox default-value="indeterminate" />
         Mixed
       </label>
+
       <label class="vgui-choice">
         <UiCheckbox
           disabled
@@ -56,6 +55,7 @@ const emit = defineEmits<{
         />
         Disabled checked
       </label>
+
       <UiSelect
         :options="options"
         disabled
@@ -63,21 +63,5 @@ const emit = defineEmits<{
         placeholder="Disabled"
       />
     </div>
-    <p class="my-2">
-      Use Tab to inspect focus. Switch the theme to compare every control.
-    </p>
-    <UiThemeProvider
-      :theme="theme === 'olive' ? 'slate' : 'olive'"
-      class="mt-3 bg-vgui-bg p-2"
-    >
-      <UiDropdownMenu
-        :items="actions"
-        @select="emit('message', $event.label)"
-      >
-        <template #trigger>
-          <UiButton>Nested opposite-theme menu ▾</UiButton>
-        </template>
-      </UiDropdownMenu>
-    </UiThemeProvider>
   </UiPanel>
 </template>

@@ -50,18 +50,18 @@ const nodes = [
           :model-value="65"
           label="Download progress"
         />
-        <p class="my-2">
+        <p class="my-2 text-sm text-vgui-muted">
           65% · Updating game files
         </p>
         <UiProgress label="Connecting" />
         <UiScrollArea
-          class="h-[100px]"
+          class="h-25"
           aria-label="Activity"
         >
           <p
             v-for="n in 12"
             :key="n"
-            class="my-2"
+            class="my-2 text-xs text-vgui-muted"
           >
             [{{ n }}] Verifying game files…
           </p>

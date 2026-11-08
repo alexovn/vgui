@@ -49,6 +49,7 @@
 
 @layer base {
   body {
+    background-color: var(--vgui-input);
     font-family: Tahoma, Arial, sans-serif;
   }
 }

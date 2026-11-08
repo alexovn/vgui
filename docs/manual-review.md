@@ -6,7 +6,7 @@ Browser interaction and visual checks below require a human browser session and 
 
 Run `pnpm dev` and review both themes in current Chrome, Firefox, and Safari:
 
-- Compare surfaces, typography, bevels, control spacing, and checked indicators to upstream reference screenshots.
+- Compare surfaces, typography, bevels, control spacing, and checked indicators to upstream reference screenshots. In the playground, verify the type hierarchy: responsive page title, section/dialog headings, group legends and labels, body controls, smaller captions/help text, and activity logs. Check both themes, narrow viewports, and teleported Settings content.
 - With playground Preflight enabled, check group-box legends, separate table borders, placeholder colors, Settings description spacing, and textarea resizing in both directions. Also verify these controls without a reset using the CSS consumer example.
 - Verify the playground uses Tahoma with the default application font size and line height while the document root retains its browser font size. In a consumer, set a different font family, size, and line height on `body`; check inputs, buttons, panel headings, selects, tooltips, dialogs (including programmatic opening without a trigger), menus, and nested submenus. Verify local container fonts affect inline controls while portaled overlays continue inheriting from `body`.
 - Exercise normal, hover, pressed, disabled, invalid, read-only, checked, and mixed states. Verify disabled controls cannot be activated.
