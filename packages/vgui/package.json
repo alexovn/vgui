@@ -16,6 +16,7 @@
     "./components/panel.css": "./src/components/panel.css",
     "./components/group-box.css": "./src/components/group-box.css",
     "./components/label.css": "./src/components/label.css",
+    "./components/form-field.css": "./src/components/form-field.css",
     "./components/button.css": "./src/components/button.css",
     "./components/input.css": "./src/components/input.css",
     "./components/textarea.css": "./src/components/textarea.css",

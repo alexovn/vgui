@@ -9,6 +9,7 @@ Vue 3 SFC wrappers around native elements and Reka UI. Import the shared stylesh
 | `UiThemeProvider`                 | `theme: 'olive' \| 'slate'` (olive default)                                                                                       | default                                                                          |
 | `UiButton`                        | `type` (button default), `disabled`; native attributes                                                                            | default; native click                                                            |
 | `UiLabel`                         | `for`                                                                                                                             | default                                                                          |
+| `UiFormField`                     | required `label`, `for?` (control ID)                                                                                               | default `({ id })`                                                                |
 | `UiPanel`                         | `title?`                                                                                                                          | default                                                                          |
 | `UiGroupBox`                      | `legend?`                                                                                                                         | default                                                                          |
 | `UiSeparator`                     | `orientation`, `decorative`                                                                                                       | —                                                                                |
@@ -35,6 +36,16 @@ Vue 3 SFC wrappers around native elements and Reka UI. Import the shared stylesh
 `UiTableColumn`: `{ key: string; label: string }`; rows are `Record<string, unknown>`. Keys must be unique. The table does not own sorting or pagination.
 
 Trigger slots for dialogs and menus and the tooltip's default slot require one focusable element, normally `UiButton`. Put labels on inputs using `UiLabel` and matching IDs, or `aria-label`. Custom option/value slots must preserve meaningful text; do not insert interactive elements into options.
+
+`UiFormField` stacks a label above any slotted control. Bind the slot's `id` to the control to associate it with the label:
+
+```vue
+<UiFormField v-slot="{ id }" label="Player name">
+  <UiInput :id="id" v-model="name" />
+</UiFormField>
+```
+
+For a control with an existing ID, use `<UiFormField label="Player name" for="player">` and set `id="player"` on the control. The wrapper does not add validation or change the control's behavior.
 
 Controls inherit host typography through normal CSS inheritance; theme selection does not change it. Set application-wide typography on `body` so teleported dialogs, menus, selects, and tooltips inherit it too. Fonts set only on a local container or `UiThemeProvider` do not cross portals. To customize overlay typography separately, style `.vgui-dialog`, `.vgui-popup`, and `.vgui-tooltip`.
 

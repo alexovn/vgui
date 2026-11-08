@@ -14,6 +14,9 @@ export type UiDialogProps = InstanceType<
 export type UiDropdownMenuProps = InstanceType<
   (typeof import('../components/UiDropdownMenu.vue'))['default']
 >['$props']
+export type UiFormFieldProps = InstanceType<
+  (typeof import('../components/UiFormField.vue'))['default']
+>['$props']
 export type UiGroupBoxProps = InstanceType<
   (typeof import('../components/UiGroupBox.vue'))['default']
 >['$props']
