@@ -41,7 +41,9 @@ Component dependencies are imported automatically:
 
 Import styles separately for controls supplied through slots, such as a dropdown trigger button or dialog footer controls. Shared border and surface declarations are intentionally repeated where that keeps component ownership clear. Some components repeat disabled text or cursor declarations to preserve the original cascade when common styles load first. `components.css` remains the aggregate for all controls, and `@vgui/css` remains the complete entry point. Splitting files only reduces bundled CSS when you use selective imports; importing either aggregate still includes every component.
 
-Override `--vgui-bg`, `--vgui-input`, `--vgui-text`, `--vgui-muted`, `--vgui-light`, `--vgui-dark`, `--vgui-accent`, `--vgui-selection`, and `--vgui-error` on a theme scope. Layers are ordered `vgui.base`, `vgui.themes`, `vgui.components`; unlayered consumer rules can override them.
+Add `.vgui-native-scrollbar` to a native scroll container (including `html` for page scrolling). Set its height and `overflow: auto` as needed. These styles are included in `scroll-area.css` and use `--vgui-scrollbar-track` for the track color. Browsers supporting scrollbar pseudo-elements display beveled thumbs and vertical arrow buttons; other browsers use the theme's thumb and track colors. For keyboard access to an overflowing content region, add `tabindex="0"` and an accessible name.
+
+Override `--vgui-bg`, `--vgui-input`, `--vgui-text`, `--vgui-muted`, `--vgui-light`, `--vgui-dark`, `--vgui-accent`, `--vgui-selection`, `--vgui-scrollbar-track`, and `--vgui-error` on a theme scope. Layers are ordered `vgui.base`, `vgui.themes`, `vgui.components`; unlayered consumer rules can override them.
 
 A CSS reset is optional. When using Tailwind Preflight, declare the layer order before importing styles so the VGUI controls override the reset and Tailwind utilities can override the controls:
 

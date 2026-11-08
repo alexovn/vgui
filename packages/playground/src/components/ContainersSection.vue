@@ -3,7 +3,6 @@ import {
   UiGroupBox,
   UiPanel,
   UiProgress,
-  UiScrollArea,
   UiTree,
 } from '@vgui/vue'
 
@@ -54,9 +53,11 @@ const nodes = [
           65% · Updating game files
         </p>
         <UiProgress label="Connecting" />
-        <UiScrollArea
-          class="h-25"
+        <div
+          class="vgui-native-scrollbar h-25 overflow-auto"
+          role="region"
           aria-label="Activity"
+          tabindex="0"
         >
           <p
             v-for="n in 12"
@@ -65,7 +66,7 @@ const nodes = [
           >
             [{{ n }}] Verifying game files…
           </p>
-        </UiScrollArea>
+        </div>
       </UiGroupBox>
     </div>
   </UiPanel>

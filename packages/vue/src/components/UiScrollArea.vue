@@ -31,6 +31,6 @@ import {
     >
       <ScrollAreaThumb class="vgui-scroll-thumb" />
     </ScrollAreaScrollbar>
-    <ScrollAreaCorner />
+    <ScrollAreaCorner class="vgui-scroll-corner" />
   </ScrollAreaRoot>
 </template>

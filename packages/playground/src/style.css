@@ -16,37 +16,6 @@
 
 @custom-variant narrow (@media (max-width: 700px));
 
-/* Native fallback; use beveled thumbs where scrollbar pseudo-elements are supported. */
-@utility vgui-native-scrollbar {
-  scrollbar-color: var(--vgui-bg) var(--vgui-input);
-
-  @supports selector(::-webkit-scrollbar) {
-    scrollbar-color: auto;
-
-    &::-webkit-scrollbar {
-      width: 14px;
-      height: 14px;
-    }
-
-    &::-webkit-scrollbar-track,
-    &::-webkit-scrollbar-corner {
-      background: var(--vgui-input);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      min-width: 20px;
-      min-height: 20px;
-      background: var(--vgui-bg);
-      border: 1px solid;
-      border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
-    }
-  }
-
-  @media (forced-colors: active) {
-    scrollbar-color: auto;
-  }
-}
-
 @layer base {
   body {
     background-color: var(--vgui-input);

@@ -16,6 +16,7 @@ Run `pnpm dev` and review both themes in current Chrome, Firefox, and Safari:
 - Submit and reset the form; inspect visible state and form data. Check controlled and uncontrolled controls and required validation.
 - Inspect the accessibility tree for names, roles, labels, states, dialog title/description, and progress values.
 - At 200% zoom and narrow viewports, ensure text remains readable, dialogs fit the viewport, and content can scroll.
+- Check native page and Activity scrollbars in both themes: track color, beveled thumb, arrow buttons and pressed states where supported, mouse wheel, and keyboard scrolling after focusing Activity. Also check `UiScrollArea` with vertical and horizontal overflow for matching tracks, thumbs, and the corner.
 - Enable forced colors and verify focus, selected states, checkbox/radio indicators, and borders remain distinguishable.
 - Check custom option/cell/node slots and menu action feedback.
 

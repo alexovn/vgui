@@ -1,5 +1,91 @@
 /* Requires tokens.css and common.css; load a theme separately as needed. */
 @layer vgui.components {
+  .vgui-native-scrollbar {
+    scrollbar-color: var(--vgui-bg) var(--vgui-scrollbar-track);
+  }
+  @supports selector(::-webkit-scrollbar) {
+    .vgui-native-scrollbar {
+      scrollbar-color: auto;
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar {
+      width: 18px;
+      height: 18px;
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-track,
+    .vgui-native-scrollbar::-webkit-scrollbar-corner {
+      background: var(--vgui-scrollbar-track);
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-track {
+      width: 18px;
+      border: 1px solid var(--vgui-dark);
+      border-left: 0;
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-track:horizontal {
+      border-left: 1px solid var(--vgui-dark);
+      border-top: 0;
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-thumb {
+      min-width: 20px;
+      min-height: 20px;
+      background: var(--vgui-bg);
+      border: 1px solid;
+      border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button {
+      background-color: var(--vgui-bg);
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start:decrement,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:increment {
+      display: block;
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start:increment,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start:decrement,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:increment,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:decrement {
+      background-repeat: no-repeat;
+      height: 17px;
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='16' viewBox='0 0 15 16'%3E%3Cpath d='M5,9 6,9 6,10 5,10 M6,9 7,9 7,10 6,10 M6,8 7,8 7,9 6,9 M7,9 8,9 8,10 7,10 M7,8 8,8 8,9 7,9 M7,7 8,7 8,8 7,8 M8,9 9,9 9,10 8,10 M8,8 9,8 9,9 8,9 M8,7 9,7 9,8 8,8 M8,6 9,6 9,7 8,7 M9,9 10,9 10,10 9,10 M9,8 10,8 10,9 9,9 M9,7 10,7 10,8 9,8 M10,9 11,9 11,10 10,10 M10,8 11,8 11,9 10,9 M11,9 12,9 12,10 11,10 ' fill='%23a0aa95'/%3E%3C/svg%3E");
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end {
+      border: 1px solid;
+      border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start:active,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:active {
+      border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start:active,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start:hover {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='16' viewBox='0 0 15 16'%3E%3Cpath d='M5,9 6,9 6,10 5,10 M6,9 7,9 7,10 6,10 M7,9 8,9 8,10 7,10 M8,9 9,9 9,10 8,10 M9,9 10,9 10,10 9,10 M10,9 11,9 11,10 10,10 M11,9 12,9 12,10 11,10 M6,8 7,8 7,9 6,9 M7,8 8,8 8,9 7,9 M8,8 9,8 9,9 8,9 M9,8 10,8 10,9 9,9 M10,8 11,8 11,9 10,9 M7,7 8,7 8,8 7,8 M8,7 9,7 9,8 8,8 M9,7 10,7 10,8 9,8 M8,6 9,6 9,7 8,7 ' fill='%23ffffff'/%3E%3C/svg%3E");
+    }
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='16' viewBox='0 0 15 16'%3E%3Cpath d='M5,6 6,6 6,7 5,7 M6,6 7,6 7,7 6,7 M6,7 7,7 7,8 6,8 M7,7 8,7 8,8 7,8 M7,8 8,8 8,9 7,9 M8,9 9,9 9,10 8,10 M8,8 9,8 9,9 8,9 M8,7 9,7 9,8 8,8 M7,6 8,6 8,7 7,7 M8,6 9,6 9,7 8,7 M11,6 12,6 12,7 11,7 M10,6 11,6 11,7 10,7 M9,6 10,6 10,7 9,7 M9,8 10,8 10,9 9,9 M9,7 10,7 10,8 9,8 M10,7 11,7 11,8 10,8 ' fill='%23a0aa95'/%3E%3C/svg%3E");
+    }
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:active {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='16' viewBox='0 0 15 16'%3E%3Cpath d='M5,6 6,6 6,7 5,7 M11,6 12,6 12,7 11,7 M10,6 11,6 11,7 10,7 M9,6 10,6 10,7 9,7 M8,6 9,6 9,7 8,7 M7,6 8,6 8,7 7,7 M6,6 7,6 7,7 6,7 M6,7 7,7 7,8 6,8 M10,7 11,7 11,8 10,8 M9,7 10,7 10,8 9,8 M8,7 9,7 9,8 8,8 M7,7 8,7 8,8 7,8 M7,8 8,8 8,9 7,9 M9,8 10,8 10,9 9,9 M8,9 9,9 9,10 8,10 M8,8 9,8 9,9 8,9 ' fill='%23ffffff'/%3E%3C/svg%3E");
+    }
+  }
+
+  @media (forced-colors: active) {
+    .vgui-native-scrollbar {
+      scrollbar-color: auto;
+    }
+  }
   .vgui-scroll-thumb {
     display: block;
     background: var(--vgui-bg);
@@ -16,20 +102,31 @@
   }
   .vgui-scrollbar {
     display: flex;
-    padding: 1px;
-    background: var(--vgui-input);
+    box-sizing: border-box;
+    background: var(--vgui-scrollbar-track);
+    border: 1px solid var(--vgui-dark);
     user-select: none;
     touch-action: none;
   }
   .vgui-scrollbar[data-orientation='vertical'] {
-    width: 14px;
+    width: 18px;
+    border-left: 0;
   }
   .vgui-scrollbar[data-orientation='horizontal'] {
-    height: 14px;
+    height: 18px;
+    border-top: 0;
     flex-direction: column;
   }
   .vgui-scroll-thumb {
     flex: 1;
+  }
+  .vgui-scrollbar[data-orientation='vertical'] .vgui-scroll-thumb {
     min-height: 20px;
+  }
+  .vgui-scrollbar[data-orientation='horizontal'] .vgui-scroll-thumb {
+    min-width: 20px;
+  }
+  .vgui-scroll-corner {
+    background: var(--vgui-scrollbar-track);
   }
 }
