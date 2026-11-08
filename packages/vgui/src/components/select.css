@@ -31,6 +31,14 @@
     gap: 20px;
     min-width: 140px;
   }
+  .vgui-select-arrow {
+    display: block;
+    flex-shrink: 0;
+    width: 15px;
+    height: 16px;
+    background-color: currentColor;
+    mask: url('../assets/arrow-down.svg') center / contain no-repeat;
+  }
   .vgui-select-item {
     position: relative;
     display: flex;

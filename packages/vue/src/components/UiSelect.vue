@@ -60,8 +60,11 @@ const theme = useTheme()
           {{ options.find((option) => option.value === currentValue)?.label }}
         </slot>
       </SelectValue>
-      <SelectIcon aria-hidden="true">
-        ▾
+      <SelectIcon
+        as-child
+        aria-hidden="true"
+      >
+        <span class="vgui-select-arrow" />
       </SelectIcon>
     </SelectTrigger>
     <SelectPortal>
