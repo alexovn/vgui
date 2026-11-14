@@ -42,7 +42,9 @@
     }
 
     .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start:decrement,
-    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:increment {
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:increment,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:start:decrement,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:end:increment {
       display: block;
     }
 
@@ -55,6 +57,15 @@
       height: 17px;
     }
 
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:start:increment,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:start:decrement,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:end:increment,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:end:decrement {
+      background-repeat: no-repeat;
+      background-position: 0 1px;
+      width: 17px;
+    }
+
     .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start {
       background-image: url('../assets/arrow-up.svg');
     }
@@ -63,14 +74,26 @@
       background-image: url('../assets/arrow-down.svg');
     }
 
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:start {
+      background-image: url('../assets/arrow-left.svg');
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:end {
+      background-image: url('../assets/arrow-right.svg');
+    }
+
     .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start,
-    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end {
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:start,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:end {
       border: 1px solid;
       border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
     }
 
     .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:start:active,
-    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:active {
+    .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:active,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:start:active,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:end:active {
       border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
     }
 
@@ -82,6 +105,16 @@
     .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:active,
     .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:hover {
       background-image: url('../assets/arrow-down.svg#highlight');
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:start:active,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:start:hover {
+      background-image: url('../assets/arrow-left.svg#highlight');
+    }
+
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:end:active,
+    .vgui-native-scrollbar::-webkit-scrollbar-button:horizontal:end:hover {
+      background-image: url('../assets/arrow-right.svg#highlight');
     }
   }
 

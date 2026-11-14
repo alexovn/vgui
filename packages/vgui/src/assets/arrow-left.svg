@@ -1,0 +1,7 @@
+<svg id='highlight' xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'>
+  <style>
+    :root { color: #a0aa95; }
+    :root:target { color: #fff; }
+  </style>
+  <path d='M9.5 4h-1v1h-1v1h-1v1h-1v1h1v1h1v1h1v1h1z' fill='currentColor'/>
+</svg>
