@@ -51,6 +51,7 @@
     .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:increment,
     .vgui-native-scrollbar::-webkit-scrollbar-button:vertical:end:decrement {
       background-repeat: no-repeat;
+      background-position: 1px 0;
       height: 17px;
     }
 
