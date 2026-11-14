@@ -79,7 +79,10 @@ const theme = useTheme()
         :disabled="item.disabled"
       >
         {{ item.label }}
-        <span class="vgui-menu-shortcut">▸</span>
+        <span
+          class="vgui-menu-shortcut vgui-menu-submenu-arrow"
+          aria-hidden="true"
+        />
       </component>
       <component :is="parts.Portal">
         <component

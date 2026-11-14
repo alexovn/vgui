@@ -40,6 +40,14 @@
     padding-left: 24px;
     color: var(--vgui-muted);
   }
+  .vgui-menu-submenu-arrow::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: currentColor;
+    mask: url('../assets/arrow-right.svg') center / contain no-repeat;
+  }
   .vgui-menu-label {
     padding: 4px 8px;
     color: var(--vgui-accent);
