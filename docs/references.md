@@ -35,6 +35,13 @@ Disabled buttons preserve the raised bevel and opaque face, with dark text over 
 
 ## Asset provenance
 
+The radio uses `packages/vgui/src/assets/radio-dot.svg` as a centered 6×6 CSS mask.
+Its geometry matches the checked radio indicator in
+[cs16.css at the pinned revision](https://github.com/ekmas/cs16.css/blob/bc0cb3d93e24aa2786a2d93938807f0264743b9d/src/cs16.css),
+with the individual pixel paths merged into one outline. The mask inherits the radio's text
+color in both themes and uses `CanvasText` in forced colors. The upstream MIT license,
+copyright Samuel Breznjak (2025), is included in the CSS package as `LICENSE.cs16-css`.
+
 The checkbox uses `packages/vgui/src/assets/checkmark.svg` as a centered 13×13 CSS mask for checked state, replacing the fork's original theme-specific PNGs. The `--vgui-checkmark-color` token preserves the gold olive tick (`#c4b550`), matching [OG-Steam's chkSelStd.tga](https://github.com/ungstein/OG-Steam/blob/411aa955e76759bf24cee9dc38fa459cb9040823/OG-Steam/graphics/chkSelStd.tga), and the white slate tick. Mixed state uses a CSS bar, and forced colors use a system-color CSS indicator without the mask. The fork's MIT license, copyright Jeffrey Ellison (2021), remains included in the CSS package as `LICENSE.vgui-css`.
 
 ## Browser feature review

@@ -22,7 +22,7 @@
     width: 6px;
     height: 6px;
     background: currentColor;
-    border-radius: 50%;
+    mask: url('../assets/radio-dot.svg') center / 6px 6px no-repeat;
   }
   .vgui-radio-option {
     display: flex;
