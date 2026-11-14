@@ -35,7 +35,7 @@
     display: block;
     flex-shrink: 0;
     width: 15px;
-    height: 16px;
+    height: 15px;
     background-color: currentColor;
     mask: url('../assets/arrow-down.svg') center / contain no-repeat;
   }
