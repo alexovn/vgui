@@ -13,7 +13,7 @@
     min-height: 24px;
     cursor: default;
   }
-  .vgui-select-trigger:hover {
+  .vgui-select-trigger:where(:not(:disabled, [data-disabled])):hover {
     color: var(--vgui-accent);
   }
   .vgui-select-trigger {
