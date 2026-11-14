@@ -16,18 +16,14 @@ function setTheme(value: string) {
 </script>
 
 <template>
-  <header class="flex items-center justify-between gap-6 narrow:items-start">
+  <header class="flex items-start justify-between gap-6 md:items-center">
     <div class="flex flex-col gap-2">
-      <p class="text-xs tracking-[0.15em] text-vgui-accent">
-        VALVE GRAPHICAL USER INTERFACE
-      </p>
-
-      <h1 class="text-4xl font-normal tracking-tight narrow:text-3xl">
-        Control Gallery
+      <h1 class="text-3xl font-normal tracking-tight md:text-4xl">
+        VGUI Library
       </h1>
 
       <p class="text-lg text-vgui-muted">
-        A familiar interface. Built for the web.
+        "Can't repeat the past? Why of course you can!" - The Great Gatsby
       </p>
     </div>
 

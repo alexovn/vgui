@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { UiSeparator } from '@vgui/vue'
+import { UiButton, UiSeparator } from '@vgui/vue'
+import GithubIcon from './GithubIcon.vue'
 
 const menu = [
   {
@@ -22,13 +23,13 @@ const menu = [
 </script>
 
 <template>
-  <aside class="pt-3 flex flex-col gap-4 text-sm text-vgui-muted">
-    <span class="text-base font-bold text-vgui-text">
-      VGUI Library
-    </span>
+  <aside class="pt-3 md:sticky top-0 flex flex-col gap-4 self-start text-sm text-vgui-muted">
+    <h3 class="text-base font-bold text-vgui-text">
+      Menu
+    </h3>
 
     <div>
-      <nav class="flex flex-col gap-3 narrow:flex narrow:flex-row narrow:flex-wrap">
+      <nav class="flex flex-row flex-wrap gap-3 md:flex-col md:flex-nowrap">
         <a
           v-for="item in menu"
           :key="item.value"
@@ -41,11 +42,22 @@ const menu = [
 
       <UiSeparator />
 
-      <p class="text-xs leading-relaxed">
-        Vue 3 + Reka UI
-        <br>
-        CSS / framework independent
-      </p>
+      <div>
+        <p class="text-xs leading-relaxed">
+          Playground made with separate CSS and component libraries
+        </p>
+
+        <div class="mt-2 justify-self-start">
+          <UiButton
+            href="https://github.com/alexovn/vgui"
+            target="_blank"
+            square
+            aria-label="Github link"
+          >
+            <GithubIcon />
+          </UiButton>
+        </div>
+      </div>
     </div>
   </aside>
 </template>

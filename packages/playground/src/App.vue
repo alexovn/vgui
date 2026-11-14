@@ -20,7 +20,7 @@ watch(theme, (value) => {
 </script>
 
 <template>
-  <div class="mx-auto container px-5 py-9 min-h-screen grid grid-cols-[170px_minmax(0,1fr)] gap-6 narrow:grid-cols-1">
+  <div class="mx-auto container px-5 py-9 min-h-screen grid grid-cols-1 gap-6 md:grid-cols-[170px_minmax(0,1fr)]">
     <PlaygroundHeader
       v-model="theme"
       class="col-span-full"
@@ -44,6 +44,6 @@ watch(theme, (value) => {
       <ControlStatesSection />
     </main>
 
-    <PlaygroundFooter class="col-start-2 narrow:col-start-1" />
+    <PlaygroundFooter class="col-start-1 md:col-start-2" />
   </div>
 </template>

@@ -14,7 +14,7 @@ import { options } from '../gallery-data'
     id="states"
     title="Control states"
   >
-    <div class="grid grid-cols-3 items-center gap-3 narrow:grid-cols-1">
+    <div class="grid grid-cols-1 items-center gap-3 md:grid-cols-3">
       <UiButton>Normal</UiButton>
 
       <UiButton disabled>

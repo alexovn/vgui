@@ -14,8 +14,6 @@
   --color-vgui-accent: var(--vgui-accent);
 }
 
-@custom-variant narrow (@media (max-width: 700px));
-
 @layer base {
   body {
     background-color: var(--vgui-input);

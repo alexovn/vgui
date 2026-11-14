@@ -30,7 +30,7 @@ const nodes = [
     id="containers"
     title="Containers & feedback"
   >
-    <div class="grid grid-cols-2 gap-3 narrow:grid-cols-1">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
       <UiGroupBox
         class="min-w-0"
         legend="Library"

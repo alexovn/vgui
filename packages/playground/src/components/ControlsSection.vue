@@ -154,20 +154,21 @@ const volume = ref([65])
 
 .form-field {
   @apply
-    flex-row
-    items-baseline
-    gap-3
-    narrow:flex-col
-    narrow:items-stretch
-    narrow:gap-1
-    [&>.vgui-label]:w-32.5
-    [&>.vgui-label]:shrink-0 narrow:[&>.vgui-label]:w-auto;
+    flex-col
+    items-stretch
+    gap-1
+    md:flex-row
+    md:items-baseline
+    md:gap-3
+    [&>.vgui-label]:w-auto
+    [&>.vgui-label]:shrink-0
+    md:[&>.vgui-label]:w-32.5;
 }
 
 .field {
   @apply
     min-w-0
-    flex-1
-    narrow:flex-none;
+    flex-none
+    md:flex-1;
 }
 </style>
