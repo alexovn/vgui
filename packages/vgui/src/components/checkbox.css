@@ -1,9 +1,9 @@
 /* Requires tokens.css and common.css; load a theme separately as needed. */
 @layer vgui.components {
   .vgui-checkbox {
-    display: inline-grid;
-    place-items: center;
-    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 14px;
     height: 14px;
     padding: 0;
@@ -15,12 +15,14 @@
   .vgui-checkmark {
     width: 13px;
     height: 13px;
-    background: var(--vgui-checkmark) center / 13px 13px no-repeat;
+    background: var(--vgui-checkmark-color);
+    mask: var(--vgui-checkmark) center / 13px 13px no-repeat;
   }
   [data-state='indeterminate'] > .vgui-checkmark {
     width: 8px;
     height: 2px;
     background: currentColor;
+    mask: none;
   }
   .vgui-choice {
     display: flex;
@@ -30,6 +32,7 @@
   @media (forced-colors: active) {
     .vgui-checkmark {
       background: none;
+      mask: none;
       width: 8px;
       height: 5px;
       border-left: 2px solid CanvasText;

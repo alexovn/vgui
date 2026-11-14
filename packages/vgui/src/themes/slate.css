@@ -9,6 +9,6 @@
     --vgui-dark: rgb(40 40 40 / 75%);
     --vgui-accent: #e3b651;
     --vgui-selection: #887544;
-    --vgui-checkmark: url('../assets/checkmark-slate.png');
+    --vgui-checkmark-color: #fff;
   }
 }

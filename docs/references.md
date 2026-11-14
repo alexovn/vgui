@@ -31,7 +31,7 @@ The grey CSS reference uses translucent surfaces over a game screenshot; the web
 
 ## Asset provenance
 
-`packages/vgui/src/assets/checkmark-olive.png` and `checkmark-slate.png` derive from the fork's `styles/greensteam/checkmark.png` and `styles/greysteam/checkmark.png` at revision `0c74bb765fa32219a26aa9a4db506a38dc857b16`. The olive checkmark is recolored gold (`#c4b550`), matching the tick in [OG-Steam's chkSelStd.tga](https://github.com/ungstein/OG-Steam/blob/411aa955e76759bf24cee9dc38fa459cb9040823/OG-Steam/graphics/chkSelStd.tga); slate retains the white original. Both preserve the fork's 13×13 shape and transparency. The repository's MIT license, copyright Jeffrey Ellison (2021), is included in the CSS package as `LICENSE.vgui-css`. The checkbox uses that bitmap for checked state, a CSS bar for mixed state, and a system-color CSS indicator in forced colors.
+The checkbox uses `packages/vgui/src/assets/checkmark.svg` as a centered 13×13 CSS mask for checked state, replacing the fork's original theme-specific PNGs. The `--vgui-checkmark-color` token preserves the gold olive tick (`#c4b550`), matching [OG-Steam's chkSelStd.tga](https://github.com/ungstein/OG-Steam/blob/411aa955e76759bf24cee9dc38fa459cb9040823/OG-Steam/graphics/chkSelStd.tga), and the white slate tick. Mixed state uses a CSS bar, and forced colors use a system-color CSS indicator without the mask. The fork's MIT license, copyright Jeffrey Ellison (2021), remains included in the CSS package as `LICENSE.vgui-css`.
 
 ## Browser feature review
 

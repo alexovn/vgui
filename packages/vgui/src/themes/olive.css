@@ -9,6 +9,6 @@
     --vgui-dark: #292d23;
     --vgui-accent: #c4b550;
     --vgui-selection: #958831;
-    --vgui-checkmark: url('../assets/checkmark-olive.png');
+    --vgui-checkmark-color: #c4b550;
   }
 }
