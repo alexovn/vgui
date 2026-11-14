@@ -1,0 +1,8 @@
+/* Unmodified WineTahomaBit from Steamed; see LICENSE.WineTahomaBit. */
+@font-face {
+  font-family: WineTahomaBit;
+  src: url('./assets/WineTahomaBit.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}

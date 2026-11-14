@@ -59,4 +59,12 @@ The control styles explicitly define group-box spacing, separate table borders, 
 
 Native `:hover`, `:active`, `:focus-visible`, `:disabled`, `[readonly]`, and `[aria-invalid="true"]` states are supported. Custom markup can use `[data-disabled]`, `[data-state="on"]` on buttons, `[data-state="active"]` on tabs, `[data-highlighted]` on menu/select items, and `[data-selected]` on tree items. Checkbox indicators use `.vgui-checkmark` inside a `.vgui-checkbox` marked `data-state="checked"` or `indeterminate`. CSS defines appearance; consumers supply semantics and interaction behavior for custom markup.
 
-Controls inherit host fonts; the playground explicitly uses Tahoma with Arial/sans-serif fallbacks. Font rasterization varies by OS. Historical palettes retain some low-contrast disabled text; visible focus and forced-color overrides supplement them.
+Controls inherit host fonts; the playground uses the bundled WineTahomaBit with Tahoma/Arial/sans-serif fallbacks. Font rasterization varies by OS. Historical palettes retain some low-contrast disabled text; visible focus and forced-color overrides supplement them.
+
+The complete entry point registers WineTahomaBit without applying it globally. To use the same font
+with selective imports, add `@import '@vgui/css/fonts.css'`, then set
+`font-family: WineTahomaBit, Tahoma, Arial, sans-serif` on your application container (or `body`
+for teleported overlays). Only the regular face is supplied; browsers may synthesize bold text.
+The unmodified TTF comes from [Steamed](https://github.com/gaspar-of-time/Steamed/tree/5dfeb485a43fab22d140ae54a82c1b7471f64cb4/fonts),
+which converted Xenthio's WineTahomaBit. Its LGPL 2.1 license is included as
+`LICENSE.WineTahomaBit`. Rendering at different sizes, zoom levels, and pixel densities still varies.

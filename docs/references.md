@@ -1,6 +1,6 @@
 # Reference inventory
 
-Source revisions are pinned in [source-revisions.json](source-revisions.json), captured on 2026-11-01. This is a web interpretation of VGUI 2; historical applications and platforms have different schemes.
+Source revisions are pinned in [source-revisions.json](source-revisions.json), initially captured on 2026-11-01; the Steamed font was added on 2026-11-14. This is a web interpretation of VGUI 2; historical applications and platforms have different schemes.
 
 | Reference                                                                                                                                                | Use                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -24,7 +24,7 @@ Source revisions are pinned in [source-revisions.json](source-revisions.json), c
 | Shadow border    | `#292d23` from steam_shared                                         | `rgb(40 40 40 / 75%)` from greysteam       |
 | Accent           | `#c4b550`                                                           | `#e3b651`, web selection/focus accent      |
 | Density          | Host font size, 24px minimum buttons, 1px bevels | Same metrics                               |
-| Fonts            | Tahoma, Arial, sans-serif                                           | Same system fallback stack                 |
+| Fonts            | WineTahomaBit, Tahoma, Arial, sans-serif                                           | Same bundled font and fallback stack                 |
 | States           | Armed → hover; depressed → active/pressed; selected → data state    | Same semantic mapping                      |
 
 The grey CSS reference uses translucent surfaces over a game screenshot; the web theme resolves these to opaque surfaces for predictable composition. Rounded game window corners, background screenshots, Steam logos, and proprietary fonts are not redistributed. Semantic error/focus states supplement original schemes. These adaptations require visual sign-off before claiming pixel fidelity.
@@ -48,3 +48,16 @@ All styling features below predate 2026. Target current stable Chrome, Firefox, 
 | Dynamic viewport height | [height](https://developer.mozilla.org/en-US/docs/Web/CSS/height)                 | [Support](https://caniuse.com/viewport-unit-variants) | Chrome 108+, Firefox 101+, Safari 15.4+ |
 
 Custom properties, flexbox, grid, `min()`, `calc()`, logical spacing, and `:where()`/`:is()` are established features in this target. The desktop playground is responsive; browser zoom remains available. Manual browser verification is tracked separately in [manual-review.md](manual-review.md).
+
+## WineTahomaBit font
+
+`packages/vgui/src/assets/WineTahomaBit.ttf` is copied unmodified from
+[Steamed at 5dfeb485a43fab22d140ae54a82c1b7471f64cb4](https://github.com/gaspar-of-time/Steamed/tree/5dfeb485a43fab22d140ae54a82c1b7471f64cb4/fonts).
+Steamed credits Xenthio's WineTahomaBit as the source of its TTF conversion. OG-Steam credits
+Wine Tahoma Regular version 0.001, copyright 2004 Larry Snyder, based on Bitstream Vera Sans,
+copyright 2003 Bitstream Inc., as confirmed by the TTF's embedded copyright notice.
+The upstream `fonts/LICENSE` is preserved verbatim as
+`packages/vgui/LICENSE.WineTahomaBit` and specifies GNU LGPL 2.1 (the upstream README calls it
+“GPLv2.1”). The CSS package includes both the font and license when published.
+`fonts.css` registers the regular face; the playground selects it on `body` for both themes and
+teleported overlays. Library controls continue inheriting their host typography.

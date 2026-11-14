@@ -8,6 +8,7 @@
   "exports": {
     ".": "./src/index.css",
     "./tokens.css": "./src/tokens.css",
+    "./fonts.css": "./src/fonts.css",
     "./components.css": "./src/components.css",
     "./themes/olive.css": "./src/themes/olive.css",
     "./themes/slate.css": "./src/themes/slate.css",
@@ -36,6 +37,7 @@
     "./components/tree.css": "./src/components/tree.css"
   },
   "files": [
+    "LICENSE.WineTahomaBit",
     "LICENSE.vgui-css",
     "README.md",
     "src"
