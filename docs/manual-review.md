@@ -11,6 +11,7 @@ Run `pnpm dev` and review both themes in current Chrome, Firefox, and Safari:
 - Verify the playground uses Tahoma with the default application font size and line height while the document root retains its browser font size. In a consumer, set a different font family, size, and line height on `body`; check inputs, buttons, panel headings, selects, tooltips, dialogs (including programmatic opening without a trigger), menus, and nested submenus. Verify local container fonts affect inline controls while portaled overlays continue inheriting from `body`.
 - Exercise normal, hover, pressed, disabled, invalid, read-only, checked, and mixed states. Verify disabled controls cannot be activated.
 - Use only the keyboard: Tab through controls; navigate select, tabs, radios, tree, and menus with arrows; activate with Enter/Space; dismiss with Escape.
+- In both themes, choose a select option and verify its label appears in the closed field. Reopen the list and verify options have no checkmarks, hover/keyboard navigation highlights the active row, Escape preserves the current value, and committing another option updates the field.
 - Open Settings; verify initial focus, trapped focus, Escape dismissal, and restored trigger focus. Open its select and inspect focus and layering.
 - Open nested opposite-theme menu and submenu, then change the outer theme. Verify the portal keeps its provider theme.
 - Submit and reset the form; inspect visible state and form data. Check controlled and uncontrolled controls and required validation.

@@ -5,7 +5,6 @@ import {
   SelectContent,
   SelectIcon,
   SelectItem,
-  SelectItemIndicator,
   SelectItemText,
   SelectPortal,
   SelectRoot,
@@ -90,9 +89,6 @@ const theme = useTheme()
                 {{ option.label }}
               </slot>
             </SelectItemText>
-            <SelectItemIndicator aria-hidden="true">
-              ✓
-            </SelectItemIndicator>
           </SelectItem>
         </SelectViewport>
       </SelectContent>
