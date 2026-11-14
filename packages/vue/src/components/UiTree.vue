@@ -54,7 +54,7 @@ export interface UiTreeNode {
         :aria-label="isExpanded ? 'Collapse' : 'Expand'"
         @click.stop="handleToggle"
       >
-        {{ isExpanded ? '−' : '+' }}
+        {{ isExpanded ? '-' : '+' }}
       </button>
       <span
         v-else
