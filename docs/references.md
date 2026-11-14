@@ -29,6 +29,10 @@ Source revisions are pinned in [source-revisions.json](source-revisions.json), c
 
 The grey CSS reference uses translucent surfaces over a game screenshot; the web theme resolves these to opaque surfaces for predictable composition. Rounded game window corners, background screenshots, Steam logos, and proprietary fonts are not redistributed. Semantic error/focus states supplement original schemes. These adaptations require visual sign-off before claiming pixel fidelity.
 
+## Disabled buttons
+
+Disabled buttons preserve the raised bevel and opaque face, with dark text over a lighter copy offset by 1px right and down. [Valve's label renderer](https://github.com/ValveSoftware/source-sdk-2013/blob/be57e3d01ac7d7aa6a2cacbfef187c0b46616db0/src/vgui2/vgui_controls/Label.cpp) draws the two layers; the pinned OG-Steam `steam.styles` also explicitly pairs `DisabledText2` with `DisabledText1` for disabled buttons. Olive uses `#282e22` for the foreground and `#75806f` for the highlight. Slate uses neutral `#323232` and `#6e6e6e`, adapted from the pinned SourceScheme disabled label colors; this is not a claim of an exact historical grey Steam palette. Separate button tokens keep informational muted text unchanged. Forced colors use `GrayText` without the text shadow.
+
 ## Asset provenance
 
 The checkbox uses `packages/vgui/src/assets/checkmark.svg` as a centered 13×13 CSS mask for checked state, replacing the fork's original theme-specific PNGs. The `--vgui-checkmark-color` token preserves the gold olive tick (`#c4b550`), matching [OG-Steam's chkSelStd.tga](https://github.com/ungstein/OG-Steam/blob/411aa955e76759bf24cee9dc38fa459cb9040823/OG-Steam/graphics/chkSelStd.tga), and the white slate tick. Mixed state uses a CSS bar, and forced colors use a system-color CSS indicator without the mask. The fork's MIT license, copyright Jeffrey Ellison (2021), remains included in the CSS package as `LICENSE.vgui-css`.

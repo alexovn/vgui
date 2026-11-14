@@ -11,16 +11,24 @@
     min-height: 24px;
     cursor: default;
   }
-  .vgui-button:hover {
+  .vgui-button:where(:not(:disabled, [data-disabled])):hover {
     color: var(--vgui-accent);
   }
-  .vgui-button:active,
-  .vgui-button[data-state='on'] {
+  .vgui-button:where(:not(:disabled, [data-disabled])):active,
+  .vgui-button:where(:not(:disabled, [data-disabled]))[data-state='on'] {
     border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
   }
-  /* Preserve the shared disabled color and cursor after the base rules. */
+  /* VGUI draws dark disabled lettering over a highlight offset by one pixel. */
   .vgui-button:where(:disabled, [data-disabled]) {
-    color: var(--vgui-muted);
+    color: var(--vgui-button-disabled-text);
+    text-shadow: 1px 1px 0 var(--vgui-button-disabled-highlight);
     cursor: not-allowed;
+    opacity: 1;
+  }
+  @media (forced-colors: active) {
+    .vgui-button:where(:disabled, [data-disabled]) {
+      color: GrayText;
+      text-shadow: none;
+    }
   }
 }

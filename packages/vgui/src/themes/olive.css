@@ -4,6 +4,8 @@
     --vgui-input: #3e4637;
     --vgui-text: #d8ded3;
     --vgui-muted: #a0aa95;
+    --vgui-button-disabled-text: #282e22;
+    --vgui-button-disabled-highlight: #75806f;
     --vgui-light: #899281;
     --vgui-scrollbar-track: #5a6a50;
     --vgui-dark: #292d23;
