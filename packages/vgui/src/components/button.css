@@ -1,6 +1,7 @@
 /* Requires tokens.css and common.css; load a theme separately as needed. */
 @layer vgui.components {
   .vgui-button {
+    display: block;
     font: inherit;
     color: var(--vgui-text);
     background: var(--vgui-bg);
@@ -9,7 +10,10 @@
     border-radius: 0;
     padding: 3px 12px;
     min-height: 24px;
-    cursor: default;
+    cursor: pointer;
+  }
+  .vgui-button--square {
+    padding: 3px;
   }
   .vgui-button:where(:not(:disabled, [data-disabled])):hover {
     color: var(--vgui-accent);
