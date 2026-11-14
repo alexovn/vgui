@@ -56,7 +56,10 @@ const rows = [
   >
     <UiTabs
       label="Server categories"
-      :items="options.slice(0, 3)"
+      :items="[
+        ...options.slice(0, 3),
+        { value: 'friends', label: 'Friends', disabled: true },
+      ]"
     >
       <template #default="{ item }">
         <p class="my-2 text-sm text-vgui-muted">
@@ -80,12 +83,14 @@ const rows = [
         </UiContextMenu>
       </template>
     </UiTabs>
+
     <div class="col-span-full mt-3 flex flex-wrap gap-1.5">
       <UiDropdownMenu :items="actions">
         <template #trigger>
-          <UiButton>Server actions ▾</UiButton>
+          <UiButton>Server actions</UiButton>
         </template>
       </UiDropdownMenu>
+
       <UiDialog
         v-model:open="open"
         title="Settings"
@@ -94,6 +99,7 @@ const rows = [
         <template #trigger>
           <UiButton>Settings…</UiButton>
         </template>
+
         <UiGroupBox
           class="min-w-0"
           legend="Player"
@@ -113,6 +119,7 @@ const rows = [
             />
           </p>
         </UiGroupBox>
+
         <template #footer>
           <UiButton @click="open = false">
             OK

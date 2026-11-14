@@ -41,6 +41,7 @@ const nodes = [
           :default-expanded="['games']"
         />
       </UiGroupBox>
+
       <UiGroupBox
         class="min-w-0"
         legend="Download"
@@ -49,10 +50,11 @@ const nodes = [
           :model-value="65"
           label="Download progress"
         />
+
         <p class="my-2 text-sm text-vgui-muted">
           65% · Updating game files
         </p>
-        <UiProgress label="Connecting" />
+
         <div
           class="vgui-native-scrollbar h-25 overflow-auto"
           role="region"
