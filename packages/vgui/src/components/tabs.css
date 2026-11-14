@@ -5,35 +5,59 @@
     color: var(--vgui-text);
     background: var(--vgui-bg);
     border: 1px solid;
-    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
+    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-light) var(--vgui-light);
+    border-bottom: 0;
     border-radius: 0;
-    padding: 3px 12px;
+    padding: 3px 5px;
     min-height: 24px;
     cursor: default;
   }
-  /* Preserve the shared disabled color and cursor after the base rules. */
-  .vgui-tab:where(:disabled, [data-disabled]) {
-    color: var(--vgui-muted);
-    cursor: not-allowed;
-  }
   .vgui-tabs-list {
     display: flex;
-    gap: 2px;
-    padding-left: 6px;
-  }
-  .vgui-tab {
-    color: var(--vgui-muted);
+    align-items: center;
+    gap: 1px;
   }
   .vgui-tab[data-state='active'] {
-    color: var(--vgui-text);
-    border-bottom-color: var(--vgui-bg);
+    color: var(--vgui-accent);
+    min-height: 26px;
+    padding-block: 4px;
     position: relative;
     z-index: 1;
   }
+  /* Mask the panel line while keeping both side borders at the join. */
+  .vgui-tab[data-state='active']::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--vgui-bg);
+    pointer-events: none;
+  }
+  .vgui-tab:focus-visible {
+    outline-offset: -4px;
+  }
+  /* Disabled tabs retain their label color even when selected. */
+  .vgui-tab:is(:disabled, [data-disabled]) {
+    color: var(--vgui-muted);
+    cursor: not-allowed;
+  }
   .vgui-tab-content {
+    background: var(--vgui-bg);
     padding: 12px;
     border: 1px solid;
     border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
     margin-top: -1px;
+  }
+  @media (forced-colors: active) {
+    .vgui-tab[data-state='active'] {
+      color: Highlight;
+    }
+    .vgui-tab[data-state='active']::after {
+      background: Canvas;
+    }
+    .vgui-tab:is(:disabled, [data-disabled]) {
+      color: GrayText;
+    }
   }
 }
