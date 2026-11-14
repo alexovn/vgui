@@ -56,7 +56,7 @@ const theme = useTheme()
           :value="currentValue"
           :option="options.find((option) => option.value === currentValue)"
         >
-          {{ options.find((option) => option.value === currentValue)?.label }}
+          {{ options.find((option) => option.value === currentValue)?.label ?? placeholder }}
         </slot>
       </SelectValue>
       <SelectIcon
