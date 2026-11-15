@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { UiTheme } from '@vgui/vue'
-import { UiLabel, UiSelect } from '@vgui/vue'
+import { UiFormField, UiPanel, UiSelect } from '@vgui/vue'
 
 const theme = defineModel<UiTheme>({ required: true })
 const themes = [
@@ -28,17 +28,45 @@ function setTheme(value: string) {
     </div>
 
     <div class="grid gap-1">
-      <UiLabel for="theme">
-        Appearance
-      </UiLabel>
-
-      <UiSelect
-        id="theme"
-        :model-value="theme"
-        :options="themes"
-        label="Appearance"
-        @update:model-value="setTheme"
-      />
+      <UiPanel>
+        <UiFormField
+          v-slot="{ id }"
+          label="Theme"
+          class="form-field"
+        >
+          <UiSelect
+            :id="id"
+            :model-value="theme"
+            :options="themes"
+            label="Theme"
+            @update:model-value="setTheme"
+          />
+        </UiFormField>
+      </UiPanel>
     </div>
   </header>
 </template>
+
+<style scoped>
+@import '../style.css';
+
+:deep(.form-field) {
+  @apply
+    flex-col
+    items-stretch
+    gap-1
+    md:flex-row
+    md:items-baseline
+    md:gap-3
+    [&>.vgui-label]:w-auto
+    [&>.vgui-label]:shrink-0
+    md:[&>.vgui-label]:w-18;
+}
+
+:deep(.field) {
+  @apply
+    min-w-0
+    flex-none
+    md:flex-1;
+}
+</style>

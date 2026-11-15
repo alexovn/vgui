@@ -153,10 +153,10 @@ const volume = ref([65])
   </UiPanel>
 </template>
 
-<style>
+<style scoped>
 @import '../style.css';
 
-.form-field {
+:deep(.form-field) {
   @apply
     flex-col
     items-stretch
@@ -169,7 +169,7 @@ const volume = ref([65])
     md:[&>.vgui-label]:w-32.5;
 }
 
-.field {
+:deep(.field) {
   @apply
     min-w-0
     flex-none
