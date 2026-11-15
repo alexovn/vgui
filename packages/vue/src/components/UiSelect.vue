@@ -68,10 +68,10 @@ const theme = useTheme()
     </SelectTrigger>
     <SelectPortal>
       <SelectContent
-        class="vgui-popup"
+        class="vgui-popup vgui-select-popup"
         v-bind="{ 'data-vgui-theme': theme }"
         position="popper"
-        :side-offset="3"
+        :side-offset="1"
       >
         <SelectViewport>
           <SelectItem

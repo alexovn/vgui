@@ -3,53 +3,69 @@
 /* Requires tokens.css and common.css; load a theme separately as needed. */
 @layer vgui.components {
   .vgui-select-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     font: inherit;
     color: var(--vgui-text);
-    background: var(--vgui-bg);
+    background: var(--vgui-input);
     border: 1px solid;
-    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
     border-radius: 0;
-    padding: 3px 12px;
+    padding: 3px;
     min-height: 24px;
+    min-width: 140px;
+    text-align: start;
     cursor: default;
-  }
-  .vgui-select-trigger:where(:not(:disabled, [data-disabled])):hover {
-    color: var(--vgui-accent);
-  }
-  .vgui-select-trigger {
-    font: inherit;
   }
   /* Preserve the shared disabled color and cursor after the base rules. */
   .vgui-select-trigger:where(:disabled, [data-disabled]) {
     color: var(--vgui-muted);
     cursor: not-allowed;
   }
-  .vgui-select-trigger {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    min-width: 140px;
-  }
   .vgui-select-arrow {
     display: block;
     flex-shrink: 0;
     width: 15px;
     height: 15px;
+    color: var(--vgui-muted);
     background-color: currentColor;
     mask: url('../assets/arrow-down.svg') center / contain no-repeat;
+  }
+  .vgui-select-trigger:where(:not(:disabled, [data-disabled])):is(:hover, [data-state='open']) .vgui-select-arrow {
+    color: #fff;
+  }
+  .vgui-popup.vgui-select-popup {
+    width: var(--reka-select-trigger-width);
+    padding: 1px;
   }
   .vgui-select-item {
     position: relative;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 3px 8px;
+    padding: 3px 6px;
+    overflow-wrap: anywhere;
     outline-offset: -2px;
     user-select: none;
   }
-  .vgui-select-item[data-highlighted] {
+  .vgui-select-item[data-highlighted]:not([data-disabled]) {
     background: var(--vgui-selection);
     color: #fff;
+  }
+  @media (forced-colors: active) {
+    .vgui-select-arrow,
+    .vgui-select-trigger:where(:not(:disabled, [data-disabled])):is(:hover, [data-state='open']) .vgui-select-arrow {
+      background-color: ButtonText;
+    }
+    .vgui-select-trigger:where(:disabled, [data-disabled]) .vgui-select-arrow {
+      background-color: GrayText;
+    }
+    .vgui-select-item[data-highlighted]:not([data-disabled]) {
+      forced-color-adjust: none;
+      background: Highlight;
+      color: HighlightText;
+    }
   }
 }

@@ -7,7 +7,6 @@
     padding: 3px;
     border: 1px solid;
     border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
-    box-shadow: 2px 2px 0 #0006;
     max-height: var(--reka-select-content-available-height, 70vh);
     overflow: auto;
     font: inherit;
