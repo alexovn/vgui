@@ -16,7 +16,7 @@ function setTheme(value: string) {
 </script>
 
 <template>
-  <header class="flex items-start justify-between gap-6 md:items-center">
+  <header class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
     <div class="flex flex-col gap-2">
       <h1 class="text-3xl font-normal tracking-tight md:text-4xl">
         Half-Life 2 Launcher
@@ -27,7 +27,7 @@ function setTheme(value: string) {
       </p>
     </div>
 
-    <div class="grid gap-1">
+    <div class="grid gap-1 w-full md:w-[unset]">
       <UiPanel>
         <UiFormField
           v-slot="{ id }"
