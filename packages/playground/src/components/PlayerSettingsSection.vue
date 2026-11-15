@@ -14,7 +14,7 @@ import {
   UiTooltip,
 } from '@vgui/vue'
 import { ref } from 'vue'
-import { actions, options } from '../gallery-data'
+import { actions, connectionOptions, options } from '../gallery-data'
 
 const name = defineModel<string>('name', { required: true })
 const selection = defineModel<string>('selection', { required: true })
@@ -25,16 +25,20 @@ const volume = ref([65])
 <template>
   <UiPanel
     id="controls"
-    title="Controls"
+    title="Player settings"
   >
+    <p class="my-2 text-sm text-vgui-muted">
+      Set up your player profile and audio before joining a Half-Life 2: Deathmatch server.
+    </p>
+
     <UiMenubar
-      label="Application"
+      label="Half-Life 2 launcher"
       :items="[
-        { id: 'file', label: 'File', items: actions },
+        { id: 'servers', label: 'Servers', items: actions },
         {
           id: 'view',
-          label: 'View',
-          items: [{ id: 'settings', label: 'Settings' }],
+          label: 'Player',
+          items: [{ id: 'settings', label: 'Player settings' }],
         },
       ]"
     />
@@ -56,14 +60,14 @@ const volume = ref([65])
       </UiFormField>
 
       <UiFormField
-        label="Description"
+        label="Player bio"
         for="notes"
         class="form-field"
       >
         <UiTextarea
           id="notes"
           name="notes"
-          placeholder="Tell us about your server…"
+          placeholder="Former Black Mesa researcher. Currently passing through City 17."
           rows="3"
           class="field"
         />
@@ -71,7 +75,7 @@ const volume = ref([65])
 
       <UiFormField
         v-slot="{ id }"
-        label="Server source"
+        label="Server browser source"
         class="form-field"
       >
         <UiSelect
@@ -79,21 +83,21 @@ const volume = ref([65])
           v-model="selection"
           :options="options"
           name="source"
-          label="Server source"
+          label="Server browser source"
           class="field"
         />
       </UiFormField>
 
       <UiFormField
         v-slot="{ id }"
-        label="Volume"
+        label="Game volume"
         class="form-field"
       >
         <div class="field">
           <UiSlider
             :id="id"
             v-model="volume"
-            label="Volume"
+            label="Game volume"
             :max="100"
           />
           <small class="text-xs text-vgui-muted">{{ volume[0] }}%</small>
@@ -102,7 +106,7 @@ const volume = ref([65])
 
       <UiFormField
         v-slot="{ id }"
-        label="Preferences"
+        label="Audio"
         class="form-field"
       >
         <label class="vgui-choice field">
@@ -122,8 +126,8 @@ const volume = ref([65])
       >
         <UiRadioGroup
           :id="id"
-          :options="options.slice(0, 3)"
-          default-value="internet"
+          :options="connectionOptions"
+          default-value="broadband"
           name="connection"
           aria-label="Connection type"
           class="field"
@@ -132,14 +136,14 @@ const volume = ref([65])
 
       <div class="mt-3 flex flex-wrap gap-1.5">
         <UiButton type="submit">
-          Apply
+          Apply settings
         </UiButton>
 
         <UiButton type="reset">
           Reset
         </UiButton>
 
-        <UiTooltip text="Restore the default configuration">
+        <UiTooltip text="Restore the default player and audio settings">
           <UiButton>
             Use defaults
           </UiButton>

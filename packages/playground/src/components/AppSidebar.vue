@@ -4,19 +4,19 @@ import GithubIcon from './GithubIcon.vue'
 
 const menu = [
   {
-    label: 'Controls',
+    label: 'Player settings',
     value: '#controls',
   },
   {
-    label: 'Server browser',
+    label: 'Deathmatch servers',
     value: '#servers',
   },
   {
-    label: 'Containers',
+    label: 'Game files',
     value: '#containers',
   },
   {
-    label: 'Control states',
+    label: 'Connection status',
     value: '#states',
   },
 ]
@@ -44,7 +44,7 @@ const menu = [
 
       <div>
         <p class="text-xs leading-relaxed">
-          Playground made with separate CSS and component libraries
+          Built with the VGUI CSS and Vue component libraries
         </p>
 
         <div class="mt-2 justify-self-start">

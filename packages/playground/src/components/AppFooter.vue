@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <footer class="text-center text-sm text-vgui-muted">
     <p>

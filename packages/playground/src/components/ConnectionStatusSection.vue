@@ -12,40 +12,44 @@ import { options } from '../gallery-data'
 <template>
   <UiPanel
     id="states"
-    title="Control states"
+    title="Connection status"
   >
+    <p class="my-2 text-sm text-vgui-muted">
+      Sample launcher states: an active favorites filter, no server selected, and an invalid address.
+    </p>
+
     <div class="grid grid-cols-1 items-center gap-3 md:grid-cols-3">
-      <UiButton>Normal</UiButton>
+      <UiButton>Refresh servers</UiButton>
 
       <UiButton disabled>
-        Disabled
+        Connect to server
       </UiButton>
 
       <UiButton data-state="on">
-        Pressed
+        Show favorites
       </UiButton>
 
       <UiInput
-        aria-label="Read-only example"
-        model-value="Read only"
+        aria-label="Game title (read only)"
+        model-value="Half-Life 2: Deathmatch"
         readonly
       />
 
       <UiInput
-        aria-label="Invalid example"
+        aria-label="Server address (invalid port)"
         aria-invalid="true"
-        model-value="Invalid value"
+        model-value="city17:abc"
       />
 
       <UiInput
-        aria-label="Disabled example"
+        aria-label="Selected server (unavailable)"
         disabled
-        model-value="Disabled"
+        model-value="No server selected"
       />
 
       <label class="vgui-choice">
         <UiCheckbox default-value="indeterminate" />
-        Mixed
+        Some content packs selected
       </label>
 
       <label class="vgui-choice">
@@ -53,14 +57,14 @@ import { options } from '../gallery-data'
           disabled
           :default-value="true"
         />
-        Disabled checked
+        Base game required
       </label>
 
       <UiSelect
         :options="options"
         disabled
-        label="Disabled select"
-        placeholder="Disabled"
+        label="Server source unavailable"
+        placeholder="Server source unavailable"
       />
     </div>
   </UiPanel>

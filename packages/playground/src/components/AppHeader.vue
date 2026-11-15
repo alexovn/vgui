@@ -19,11 +19,11 @@ function setTheme(value: string) {
   <header class="flex items-start justify-between gap-6 md:items-center">
     <div class="flex flex-col gap-2">
       <h1 class="text-3xl font-normal tracking-tight md:text-4xl">
-        VGUI Library
+        Half-Life 2 Launcher
       </h1>
 
       <p class="text-lg text-vgui-muted">
-        "Can't repeat the past? Why of course you can!" - The Great Gatsby
+        A playground for VGUI-inspired controls
       </p>
     </div>
 

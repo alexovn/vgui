@@ -27,22 +27,22 @@ const columns = [
 const rows = [
   {
     id: 1,
-    name: 'Black Mesa Research',
-    map: 'crossfire',
+    name: 'City 17 · Lockdown',
+    map: 'dm_lockdown',
     players: '12 / 24',
     ping: 32,
   },
   {
     id: 2,
-    name: 'City 17 · Deathmatch',
-    map: 'dm_lockdown',
+    name: 'Overwatch Arena',
+    map: 'dm_overwatch',
     players: '8 / 16',
     ping: 48,
   },
   {
     id: 3,
-    name: 'The Orange Box',
-    map: 'dm_overwatch',
+    name: 'Black Mesa East · Steam Lab',
+    map: 'dm_steamlab',
     players: '4 / 12',
     ping: 67,
   },
@@ -52,8 +52,12 @@ const rows = [
 <template>
   <UiPanel
     id="servers"
-    title="Servers"
+    title="Deathmatch servers"
   >
+    <p class="my-2 text-sm text-vgui-muted">
+      Browse sample Half-Life 2: Deathmatch servers with your player profile.
+    </p>
+
     <UiTabs
       label="Server categories"
       :items="[
@@ -69,11 +73,11 @@ const rows = [
           <template #trigger>
             <div
               tabindex="0"
-              aria-label="Server list; right-click for actions"
+              aria-label="Sample Deathmatch server list; right-click for server actions"
             >
               <UiTable
                 class="[&_caption]:py-1 [&_caption]:text-left [&_caption]:text-sm [&_caption]:text-vgui-muted"
-                caption="Available game servers"
+                caption="Sample Half-Life 2: Deathmatch servers"
                 :columns="columns"
                 :rows="rows"
                 row-key="id"
@@ -93,11 +97,11 @@ const rows = [
 
       <UiDialog
         v-model:open="open"
-        title="Settings"
-        description="Configure your player profile and connection."
+        title="Player settings"
+        description="Your player name and server browser source are shared with the Player settings panel."
       >
         <template #trigger>
-          <UiButton>Settings…</UiButton>
+          <UiButton>Player settings…</UiButton>
         </template>
 
         <UiGroupBox
@@ -111,13 +115,17 @@ const rows = [
             id="dialog-name"
             v-model="name"
           />
-          <p class="my-2">
+          <div class="my-2">
+            <UiLabel for="dialog-source">
+              Server browser source
+            </UiLabel>
             <UiSelect
+              id="dialog-source"
               v-model="selection"
               :options="options"
-              label="Connection"
+              label="Server browser source"
             />
-          </p>
+          </div>
         </UiGroupBox>
 
         <template #footer>
