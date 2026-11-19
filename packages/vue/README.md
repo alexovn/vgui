@@ -18,7 +18,7 @@ Vue 3 SFC wrappers around native elements and Reka UI. Import the shared stylesh
 | `UiCheckbox`                      | Reka checkbox props; `v-model` boolean or `indeterminate`, `defaultValue`, `name`, `required`, `disabled`                         | —                                                                                |
 | `UiRadioGroup`                    | `options: UiOption[]`; Reka group props and `v-model`                                                                             | `option({ option })`                                                             |
 | `UiSelect`                        | `options: UiOption[]`; string `v-model`, `defaultValue`, `placeholder`, `label`, `name`, `required`, `disabled`; single selection | `option({ option })`, `value({ value, option })`                                 |
-| `UiSlider`                        | Reka slider props; array `v-model`, `defaultValue`, `min`, `max`, `step`; required `label`                                        | `valueCommit(number[])`                                                          |
+| `UiSlider`                        | Reka slider props; array `v-model`, required `label`, optional `minCaption` and `maxCaption`                                       | `valueCommit(number[])`                                                          |
 | `UiDialog`                        | `v-model:open`, `defaultOpen`, `modal`; required `title`, `description`                                                           | `trigger`, default, `footer`                                                     |
 | `UiTabs`                          | `items: UiTab[]`, required `label`; `v-model`, `defaultValue`, Reka tabs props                                                    | `tab({ item })`; named content slot matching item value, or default `({ item })` |
 | `UiScrollArea`                    | native root attributes; constrain height with class/style                                                                         | default                                                                          |
@@ -46,6 +46,12 @@ Trigger slots for dialogs and menus and the tooltip's default slot require one f
 ```
 
 For a control with an existing ID, use `<UiFormField label="Player name" for="player">` and set `id="player"` on the control. The wrapper does not add validation or change the control's behavior.
+
+Pass either slider caption as a string or bind it to a value in the parent. Captions follow their minimum and maximum endpoints when the slider is inverted, vertical, or right-to-left.
+
+```vue
+<UiSlider v-model="volume" label="Game volume" :min-caption="quietLabel" max-caption="High" />
+```
 
 Controls inherit host typography through normal CSS inheritance; theme selection does not change it. Set application-wide typography on `body` so teleported dialogs, menus, selects, and tooltips inherit it too. Fonts set only on a local container or `UiThemeProvider` do not cross portals. To customize overlay typography separately, style `.vgui-dialog`, `.vgui-popup`, and `.vgui-tooltip`.
 

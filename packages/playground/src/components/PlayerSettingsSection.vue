@@ -18,7 +18,7 @@ import { actions, connectionOptions, options } from '../gallery-data'
 
 const name = defineModel<string>('name', { required: true })
 const selection = defineModel<string>('selection', { required: true })
-const enabled = ref<boolean | 'indeterminate'>(true)
+const soundEnabled = ref<boolean | 'indeterminate'>(true)
 const volume = ref([65])
 </script>
 
@@ -87,13 +87,18 @@ const volume = ref([65])
         label="Game volume"
         class="form-field"
       >
-        <div class="field">
+        <div class="field flex items-start gap-2">
           <UiSlider
             v-model="volume"
+            class="min-w-0 w-full md:w-40"
             label="Game volume"
-            :max="100"
+            min-caption="Low"
+            max-caption="High"
+            :disabled="!soundEnabled"
           />
-          <small class="text-xs text-vgui-muted">{{ volume[0] }}%</small>
+          <small class="w-[4ch] shrink-0 text-right text-xs text-vgui-muted">
+            {{ volume[0] }}%
+          </small>
         </div>
       </UiFormField>
 
@@ -104,7 +109,7 @@ const volume = ref([65])
       >
         <label class="vgui-choice field">
           <UiCheckbox
-            v-model="enabled"
+            v-model="soundEnabled"
             name="sound"
           />
           Enable game sounds
@@ -152,15 +157,12 @@ const volume = ref([65])
     flex-col
     items-stretch
     gap-1
-    /* md:flex-row */
-    /* md:items-baseline */
     md:grid
     md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]
     md:gap-3
     [&>.vgui-label]:w-auto
     [&>.vgui-label]:shrink-0
     md:[&>.vgui-label]:self-center;
-    /* md:[&>.vgui-label]:w-32.5; */
 }
 
 :deep(.field) {

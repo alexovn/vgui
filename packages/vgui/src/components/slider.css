@@ -1,50 +1,170 @@
 /* Requires tokens.css and common.css; load a theme separately as needed. */
 @layer vgui.components {
   .vgui-slider {
+    --vgui-slider-tick-color: var(--vgui-muted);
     position: relative;
     display: flex;
     align-items: center;
     width: 160px;
+    max-width: 100%;
     height: 24px;
+    padding-block-end: 4px;
     touch-action: none;
   }
+  /* Eleven 1px ticks span the default contained thumb's travel. */
+  .vgui-slider::before {
+    content: '';
+    position: absolute;
+    inset: calc(50% + 4px) 3px auto 4px;
+    height: 5px;
+    background: repeating-linear-gradient(
+      var(--vgui-slider-tick-direction, to right),
+      var(--vgui-slider-tick-color) 0 1px,
+      transparent 1px calc((100% - 1px) / 10)
+    );
+    pointer-events: none;
+  }
   .vgui-slider-track {
-    height: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
     width: 100%;
+    height: 4px;
     background: var(--vgui-input);
-    border-top: 1px solid var(--vgui-dark);
-    border-bottom: 1px solid var(--vgui-light);
+    border: 1px solid;
+    border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
   }
   .vgui-slider-range {
     position: absolute;
-    height: 4px;
+    display: none;
+    height: 2px;
     background: var(--vgui-selection);
+  }
+  .vgui-slider:has(> .vgui-slider-thumb ~ .vgui-slider-thumb) .vgui-slider-range {
+    display: block;
   }
   .vgui-slider-thumb {
     display: block;
+    width: 8px;
+    height: 16px;
     background: var(--vgui-bg);
     border: 1px solid;
     border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
   }
-  .vgui-slider-thumb {
-    width: 10px;
-    height: 20px;
+  .vgui-slider[data-disabled],
+  .vgui-slider [data-disabled] {
+    opacity: 1;
+  }
+  .vgui-slider[data-disabled]::before {
+    --vgui-slider-tick-color: var(--vgui-button-disabled-text);
+    filter: drop-shadow(1px 1px 0 var(--vgui-button-disabled-highlight));
   }
   .vgui-slider[data-orientation='vertical'] {
+    --vgui-slider-tick-direction: to bottom;
     flex-direction: column;
     width: 24px;
     height: 160px;
+    padding-block-end: 0;
+    padding-right: 4px;
+  }
+  .vgui-slider[data-orientation='vertical']::before {
+    inset: 4px auto 3px calc(50% + 4px);
+    width: 5px;
+    height: auto;
   }
   .vgui-slider[data-orientation='vertical'] .vgui-slider-track {
+    flex-direction: column;
     width: 4px;
     height: 100%;
   }
   .vgui-slider[data-orientation='vertical'] .vgui-slider-range {
-    width: 4px;
+    width: 2px;
     height: auto;
   }
   .vgui-slider[data-orientation='vertical'] .vgui-slider-thumb {
-    width: 20px;
-    height: 10px;
+    width: 16px;
+    height: 8px;
+  }
+  .vgui-slider-captions {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    color: var(--vgui-slider-tick-color);
+    font-size: 0.75em;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+  }
+  .vgui-slider-captions--inverted {
+    flex-direction: row-reverse;
+  }
+  .vgui-slider:not([data-orientation='vertical']):has(> .vgui-slider-captions) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 24px auto;
+    align-items: start;
+    height: auto;
+    padding-block-end: 0;
+  }
+  .vgui-slider:not([data-orientation='vertical']):has(> .vgui-slider-captions)::before {
+    top: 16px;
+  }
+  .vgui-slider:not([data-orientation='vertical']):has(> .vgui-slider-captions) > .vgui-slider-track {
+    margin-top: 8px;
+  }
+  .vgui-slider:not([data-orientation='vertical']):has(> .vgui-slider-captions) > .vgui-slider-thumb {
+    top: 2px;
+  }
+  .vgui-slider[data-orientation='vertical']:has(> .vgui-slider-captions) {
+    display: grid;
+    grid-template-columns: 24px minmax(0, auto);
+    grid-template-rows: minmax(0, 1fr);
+    align-items: stretch;
+    width: max-content;
+    padding-right: 0;
+    direction: ltr;
+  }
+  .vgui-slider[data-orientation='vertical']:has(> .vgui-slider-captions)::before {
+    left: 16px;
+  }
+  .vgui-slider[data-orientation='vertical']:has(> .vgui-slider-captions) > .vgui-slider-track {
+    margin-left: 8px;
+  }
+  .vgui-slider[data-orientation='vertical']:has(> .vgui-slider-captions) > .vgui-slider-thumb {
+    left: 2px;
+  }
+  .vgui-slider[data-orientation='vertical'] > .vgui-slider-captions {
+    flex-direction: column-reverse;
+    padding-left: 1px;
+  }
+  .vgui-slider[data-orientation='vertical'] > .vgui-slider-captions--inverted {
+    flex-direction: column;
+  }
+  @media (forced-colors: active) {
+    .vgui-slider::before {
+      --vgui-slider-tick-color: CanvasText;
+      forced-color-adjust: none;
+    }
+    .vgui-slider[data-disabled]::before {
+      --vgui-slider-tick-color: GrayText;
+      filter: none;
+    }
+    .vgui-slider-track {
+      border-color: CanvasText;
+    }
+    .vgui-slider-thumb {
+      background: ButtonFace;
+      border-color: ButtonText;
+    }
+    .vgui-slider [data-disabled] {
+      border-color: GrayText;
+    }
+    .vgui-slider-range {
+      forced-color-adjust: none;
+      background: Highlight;
+    }
+    .vgui-slider[data-disabled] > .vgui-slider-captions {
+      color: GrayText;
+    }
   }
 }
