@@ -6,5 +6,7 @@ const props = defineProps<{ for?: string }>()
   <label
     class="vgui-label"
     :for="props.for"
-  ><slot /></label>
+  >
+    <slot />
+  </label>
 </template>

@@ -30,12 +30,10 @@ function setTheme(value: string) {
     <div class="grid gap-1 w-full md:w-[unset]">
       <UiPanel>
         <UiFormField
-          v-slot="{ id }"
           label="Theme"
           class="form-field"
         >
           <UiSelect
-            :id="id"
             :model-value="theme"
             :options="themes"
             label="Theme"

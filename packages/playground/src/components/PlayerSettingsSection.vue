@@ -47,12 +47,10 @@ const volume = ref([65])
 
     <form class="flex flex-col gap-3 py-2.5">
       <UiFormField
-        v-slot="{ id }"
         label="Player name"
         class="form-field"
       >
         <UiInput
-          :id="id"
           v-model="name"
           name="player"
           class="field"
@@ -61,11 +59,9 @@ const volume = ref([65])
 
       <UiFormField
         label="Player bio"
-        for="notes"
         class="form-field"
       >
         <UiTextarea
-          id="notes"
           name="notes"
           placeholder="Former Black Mesa researcher. Currently passing through City 17."
           rows="3"
@@ -74,12 +70,11 @@ const volume = ref([65])
       </UiFormField>
 
       <UiFormField
-        v-slot="{ id }"
         label="Server browser source"
         class="form-field"
+        group
       >
         <UiSelect
-          :id="id"
           v-model="selection"
           :options="options"
           name="source"
@@ -89,13 +84,11 @@ const volume = ref([65])
       </UiFormField>
 
       <UiFormField
-        v-slot="{ id }"
         label="Game volume"
         class="form-field"
       >
         <div class="field">
           <UiSlider
-            :id="id"
             v-model="volume"
             label="Game volume"
             :max="100"
@@ -105,13 +98,12 @@ const volume = ref([65])
       </UiFormField>
 
       <UiFormField
-        v-slot="{ id }"
         label="Audio"
         class="form-field"
+        group
       >
         <label class="vgui-choice field">
           <UiCheckbox
-            :id="id"
             v-model="enabled"
             name="sound"
           />
@@ -120,12 +112,11 @@ const volume = ref([65])
       </UiFormField>
 
       <UiFormField
-        v-slot="{ id }"
         label="Connection"
         class="form-field"
+        group
       >
         <UiRadioGroup
-          :id="id"
           :options="connectionOptions"
           default-value="broadband"
           name="connection"
@@ -161,12 +152,15 @@ const volume = ref([65])
     flex-col
     items-stretch
     gap-1
-    md:flex-row
-    md:items-baseline
+    /* md:flex-row */
+    /* md:items-baseline */
+    md:grid
+    md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]
     md:gap-3
     [&>.vgui-label]:w-auto
     [&>.vgui-label]:shrink-0
-    md:[&>.vgui-label]:w-32.5;
+    md:[&>.vgui-label]:self-center;
+    /* md:[&>.vgui-label]:w-32.5; */
 }
 
 :deep(.field) {

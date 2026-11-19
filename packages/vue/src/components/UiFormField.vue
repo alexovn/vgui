@@ -1,16 +1,30 @@
 <script setup lang="ts">
-import { useId } from 'vue'
-import UiLabel from './UiLabel.vue'
-
-const props = defineProps<{ label: string, for?: string }>()
-const generatedId = useId()
+defineProps<{
+  label: string
+  group?: boolean
+}>()
 </script>
 
 <template>
-  <div class="vgui-form-field">
-    <UiLabel :for="props.for ?? generatedId">
+  <div
+    v-if="group"
+    class="vgui-form-field"
+  >
+    <span class="vgui-label">
       {{ label }}
-    </UiLabel>
-    <slot :id="props.for ?? generatedId" />
+    </span>
+
+    <slot />
   </div>
+
+  <label
+    v-else
+    class="vgui-form-field"
+  >
+    <span class="vgui-label">
+      {{ label }}
+    </span>
+
+    <slot />
+  </label>
 </template>
