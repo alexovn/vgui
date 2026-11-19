@@ -17,7 +17,7 @@
     min-height: 24px;
     min-width: 140px;
     text-align: start;
-    cursor: default;
+    cursor: pointer;
   }
   /* Preserve the shared disabled color and cursor after the base rules. */
   .vgui-select-trigger:where(:disabled, [data-disabled]) {
@@ -49,6 +49,7 @@
     overflow-wrap: anywhere;
     outline-offset: -2px;
     user-select: none;
+    cursor: pointer;
   }
   .vgui-select-item[data-highlighted]:not([data-disabled]) {
     background: var(--vgui-selection);
