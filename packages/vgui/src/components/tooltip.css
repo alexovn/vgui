@@ -2,17 +2,14 @@
 @layer vgui.components {
   .vgui-tooltip {
     z-index: 1100;
-    background: var(--vgui-bg);
-    color: var(--vgui-text);
-    padding: 3px;
-    border: 1px solid;
-    border-color: var(--vgui-light) var(--vgui-dark) var(--vgui-dark) var(--vgui-light);
+    background: var(--vgui-tooltip-bg);
+    color: var(--vgui-tooltip-text);
+    padding: 3px 6px;
+    border: 1px solid var(--vgui-tooltip-border);
+    max-width: min(320px, 90vw);
     max-height: var(--reka-select-content-available-height, 70vh);
     overflow: auto;
     font: inherit;
-  }
-  .vgui-tooltip {
-    padding: 3px 6px;
-    max-width: min(320px, 90vw);
+    font-size: 0.75em;
   }
 }

@@ -17,6 +17,7 @@ Run `pnpm dev` and review both themes in current Chrome, Firefox, and Safari:
 - In both themes, choose a select option and verify its label appears in the closed field. Reopen the list and verify options have no checkmarks, hover/keyboard navigation highlights the active row, Escape preserves the current value, and committing another option updates the field.
 - Open Settings; verify initial focus, trapped focus, Escape dismissal, and restored trigger focus. Open its select and inspect focus and layering.
 - Open nested opposite-theme menu and submenu, then change the outer theme. Verify the portal keeps its provider theme.
+- In Player Settings, hover or focus **Use defaults** in both themes. Check the muted gold olive fill, amber slate fill, and black text with a uniform 1px outline. Press Escape to dismiss the tooltip and verify focus stays on the button. Repeat in forced colors.
 - Submit and reset the form; inspect visible state and form data. Check controlled and uncontrolled controls and required validation.
 - Inspect the accessibility tree for names, roles, labels, states, dialog title/description, and progress values.
 - At 200% zoom and narrow viewports, ensure text remains readable, dialogs fit the viewport, and content can scroll.
