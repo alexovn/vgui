@@ -23,7 +23,6 @@
   [data-state='indeterminate'] > .vgui-checkmark {
     width: 8px;
     height: 2px;
-    background: currentColor;
     mask: none;
   }
   .vgui-choice {
