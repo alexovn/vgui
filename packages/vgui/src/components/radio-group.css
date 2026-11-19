@@ -21,7 +21,7 @@
     display: block;
     width: 6px;
     height: 6px;
-    background: currentColor;
+    background: var(--vgui-radio-dot-color);
     mask: url('../assets/radio-dot.svg') center / 6px 6px no-repeat;
   }
   .vgui-radio-option {

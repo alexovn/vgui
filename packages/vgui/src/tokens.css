@@ -17,6 +17,7 @@
     --vgui-tooltip-border: #282e22;
     --vgui-checkmark: url('./assets/checkmark.svg');
     --vgui-checkmark-color: #c4b550;
+    --vgui-radio-dot-color: #c4b550;
     --vgui-error: #ffb4a8;
     color: var(--vgui-text);
     color-scheme: dark;
