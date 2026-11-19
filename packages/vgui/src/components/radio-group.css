@@ -28,6 +28,10 @@
     display: flex;
     align-items: center;
     gap: 7px;
+    cursor: pointer;
+  }
+  .vgui-radio-option:has(.vgui-radio[data-state="checked"]) {
+    color: var(--vgui-accent);
   }
   .vgui-radio-group {
     display: grid;
