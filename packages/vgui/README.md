@@ -1,51 +1,62 @@
 # @vgui/css
 
-Import `@vgui/css` for tokens, both themes, and control styles. No JavaScript or Vue is required.
+VGUI-inspired styles for HTML controls in olive and slate. Import the stylesheet through your app's CSS or build tool. The package works with plain HTML and inherits your app's typography.
 
-```html
-<div class="vgui-theme" data-vgui-theme="olive">
-  <section class="vgui-panel">
-    <h2 class="vgui-panel-title">Player settings</h2>
-    <label class="vgui-label" for="name">Name</label>
-    <input class="vgui-input" id="name" value="Gordon" />
-    <button class="vgui-button" type="button">Apply</button>
-  </section>
-</div>
+## API
+
+| Import | Includes |
+| --- | --- |
+| `@vgui/css` | Tokens, both themes, the WineTahomaBit font face, and all controls |
+| `@vgui/css/tokens.css` | Base tokens and default olive palette |
+| `@vgui/css/themes/olive.css`, `@vgui/css/themes/slate.css` | Theme overrides |
+| `@vgui/css/components.css` | All controls and shared states |
+| `@vgui/css/common.css` | Shared focus, disabled, and invalid styles for individual imports |
+| `@vgui/css/components/<name>.css` | Individual control styles and their stylesheet dependencies |
+| `@vgui/css/fonts.css`, `@vgui/css/assets/*` | Font-face registration and direct asset imports |
+
+Set `data-vgui-theme="olive"` or `data-vgui-theme="slate"` on a container. Theme scopes can nest. A container with only `class="vgui-theme"` uses olive. Override `--vgui-bg`, `--vgui-input`, `--vgui-text`, `--vgui-accent`, and other tokens on the theme scope. VGUI layers are ordered `vgui.base`, `vgui.themes`, then `vgui.components`.
+
+Use `disabled`, `readonly`, and `aria-invalid="true"` for native controls. Custom controls can style states with `data-disabled`, `data-state="on"` for pressed buttons, `data-state="active"` for tabs, or `data-highlighted` for menu and select items. For a custom checkbox indicator, place `.vgui-checkmark` inside `.vgui-checkbox` and set `data-state` to `checked` or `indeterminate` on the checkbox. Supply keyboard behavior and accessible semantics in the markup or application.
+
+Add `.vgui-native-scrollbar` to an overflow container for themed native scrollbars. The class is included in `scroll-area.css`. Use `tabindex="0"` and an accessible name for a keyboard-scrollable region.
+
+## Examples
+
+### Plain HTML controls
+
+```css
+@import '@vgui/css';
 ```
 
-Controls inherit the host application’s font family, size, and line height. Theme selectors only apply palette tokens, text color, and color scheme; they do not set typography. Set fonts on your application container. Panel and dialog titles inherit that font with bold weight.
+```html
+<section class="vgui-panel" data-vgui-theme="olive">
+  <h2 class="vgui-panel-title">Player settings</h2>
+  <label class="vgui-label" for="player">Player name</label>
+  <input class="vgui-input" id="player" value="Gordon" />
+  <button class="vgui-button" type="button">Apply</button>
+</section>
+```
 
-Switch `data-vgui-theme` to `slate`. Themes can nest. A `.vgui-theme` without an explicit theme uses olive. For selective imports use `@vgui/css/tokens.css`, `@vgui/css/themes/olive.css`, `@vgui/css/themes/slate.css`, and `@vgui/css/components.css` in that order.
-
-For individual controls, replace `components.css` with `common.css` followed by the component stylesheets you use:
+### Import one control and customize its theme
 
 ```css
 @import '@vgui/css/tokens.css';
-@import '@vgui/css/themes/olive.css';
+@import '@vgui/css/themes/slate.css';
 @import '@vgui/css/common.css';
 @import '@vgui/css/components/button.css';
-@import '@vgui/css/components/select.css';
+
+[data-vgui-theme='slate'] {
+  --vgui-accent: #f2ca72;
+}
 ```
 
-Load `common.css` once, before the component stylesheets. It provides shared focus, disabled, and invalid states, including forced-colors focus styles. Component stylesheets own their base appearance, component-specific states, and accessibility overrides. They require tokens and common styles; they do not select a theme. Tokens supply the default olive palette, and theme imports provide explicit palette selection.
+```html
+<div data-vgui-theme="slate">
+  <button class="vgui-button" type="button">Refresh</button>
+</div>
+```
 
-Available component stylesheets under `@vgui/css/components/` are `button.css`, `checkbox.css`, `dialog.css`, `group-box.css`, `input.css`, `label.css`, `menu.css`, `panel.css`, `popup.css`, `progress.css`, `radio-group.css`, `scroll-area.css`, `select.css`, `separator.css`, `slider.css`, `table.css`, `tabs.css`, `textarea.css`, `tooltip.css`, and `tree.css`.
-
-Component dependencies are imported automatically:
-
-| Stylesheet   | Imports                      | Coverage                                              |
-| ------------ | ---------------------------- | ----------------------------------------------------- |
-| `select.css` | `popup.css`                  | Select trigger, popup, and options                    |
-| `menu.css`   | `popup.css`, `separator.css` | Dropdown menus, context menus, submenus, and menubars |
-| `dialog.css` | `button.css`                 | Dialog, overlay, and close button                     |
-
-Import styles separately for controls supplied through slots, such as a dropdown trigger button or dialog footer controls. Shared border and surface declarations are intentionally repeated where that keeps component ownership clear. Some components repeat disabled text or cursor declarations to preserve the original cascade when common styles load first. `components.css` remains the aggregate for all controls, and `@vgui/css` remains the complete entry point. Splitting files only reduces bundled CSS when you use selective imports; importing either aggregate still includes every component.
-
-Add `.vgui-native-scrollbar` to a native scroll container (including `html` for page scrolling). Set its height and `overflow: auto` as needed. These styles are included in `scroll-area.css` and use `--vgui-scrollbar-track` for the track color. Browsers supporting scrollbar pseudo-elements display beveled thumbs and vertical arrow buttons; other browsers use the theme's thumb and track colors. For keyboard access to an overflowing content region, add `tabindex="0"` and an accessible name.
-
-Override `--vgui-bg`, `--vgui-input`, `--vgui-text`, `--vgui-muted`, `--vgui-light`, `--vgui-dark`, `--vgui-accent`, `--vgui-selection`, `--vgui-scrollbar-track`, and `--vgui-error` on a theme scope. Layers are ordered `vgui.base`, `vgui.themes`, `vgui.components`; unlayered consumer rules can override them.
-
-A CSS reset is optional. When using Tailwind Preflight, declare the layer order before importing styles so the VGUI controls override the reset and Tailwind utilities can override the controls:
+### Use Tailwind Preflight and the bundled font
 
 ```css
 @layer theme, base, vgui, components, utilities;
@@ -53,18 +64,10 @@ A CSS reset is optional. When using Tailwind Preflight, declare the layer order 
 @import 'tailwindcss/preflight.css' layer(base);
 @import '@vgui/css';
 @import 'tailwindcss/utilities.css' layer(utilities);
+
+body {
+  font-family: WineTahomaBit, Tahoma, Arial, sans-serif;
+}
 ```
 
-The control styles explicitly define group-box spacing, separate table borders, placeholder colors, dialog-description spacing, and textarea resizing in both directions. These defaults apply with or without Preflight. Tailwind is not required by this package.
-
-Native `:hover`, `:active`, `:focus-visible`, `:disabled`, `[readonly]`, and `[aria-invalid="true"]` states are supported. Custom markup can use `[data-disabled]`, `[data-state="on"]` on buttons, `[data-state="active"]` on tabs, `[data-highlighted]` on menu/select items, and `[data-selected]` on tree items. Checkbox indicators use `.vgui-checkmark` inside a `.vgui-checkbox` marked `data-state="checked"` or `indeterminate`. CSS defines appearance; consumers supply semantics and interaction behavior for custom markup.
-
-Controls inherit host fonts; the playground uses the bundled WineTahomaBit with Tahoma/Arial/sans-serif fallbacks. Font rasterization varies by OS. Historical palettes retain some low-contrast disabled text; visible focus and forced-color overrides supplement them.
-
-The complete entry point registers WineTahomaBit without applying it globally. To use the same font
-with selective imports, add `@import '@vgui/css/fonts.css'`, then set
-`font-family: WineTahomaBit, Tahoma, Arial, sans-serif` on your application container (or `body`
-for teleported overlays). Only the regular face is supplied; browsers may synthesize bold text.
-The unmodified TTF comes from [Steamed](https://github.com/gaspar-of-time/Steamed/tree/5dfeb485a43fab22d140ae54a82c1b7471f64cb4/fonts),
-which converted Xenthio's WineTahomaBit. Its LGPL 2.1 license is included as
-`LICENSE.WineTahomaBit`. Rendering at different sizes, zoom levels, and pixel densities still varies.
+For individual imports, add `@vgui/css/fonts.css` to register WineTahomaBit. The regular face ships with its [LGPL 2.1 license](LICENSE.WineTahomaBit).

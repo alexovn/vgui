@@ -20,7 +20,7 @@ The Vue 3 playground is the private `playground` workspace package in `packages/
 - [CSS usage](packages/vgui/README.md)
 - [Vue API](packages/vue/README.md)
 - [Sources and browser support](docs/references.md)
-- [Manual review checklist](docs/manual-review.md)
+- [Repository guidelines and browser checks](AGENTS.md#validation)
 
 ## Consumer example
 
