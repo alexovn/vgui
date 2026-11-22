@@ -15,7 +15,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@vgui/vue': here('../vue/src/index.ts'),
+      '@alexovn/vgui-vue': here('../vue/src/index.ts'),
     },
   },
   build: {

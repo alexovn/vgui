@@ -2,15 +2,13 @@
 @layer vgui.components {
   .vgui-textarea {
     font: inherit;
-  }
-  .vgui-textarea {
     background: var(--vgui-input);
     color: var(--vgui-text);
     border: 1px solid;
     border-color: var(--vgui-dark) var(--vgui-light) var(--vgui-light) var(--vgui-dark);
     padding: 1px 3px;
     border-radius: 0;
-    resize: both;
+    resize: vertical;
   }
   .vgui-textarea::placeholder {
     color: var(--vgui-muted);

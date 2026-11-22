@@ -1,4 +1,4 @@
-import type { UiMenuItem } from '@vgui/vue'
+import type { UiMenuItem } from '@alexovn/vgui-vue'
 
 export const options = [
   { label: 'Internet', value: 'internet' },

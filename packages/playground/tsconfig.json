@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "@vgui/vue": ["../vue/src/index.ts"]
+      "@alexovn/vgui-vue": ["../vue/src/index.ts"]
     },
     "types": ["vite/client", "node"]
   },

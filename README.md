@@ -1,34 +1,34 @@
 # VGUI
 
-VGUI 2 inspired CSS and Vue 3 controls, with olive green and slate gray themes.
+This repo was created to show respect to classic Valve Graphic User Interface (VGUI) which was used for many years in projects such as Steam, Half-Life 1-2 and CS 1.6. Rather than a detailed reconstruction, it is an attempt to recreate the nostalgic look. I have tried my best to analyze many sources and gather all the information in one place.
+
+I have divided this repo into several packages that can be used together or separately to create your own retro-styled interfaces.
+
+- `vgui` — styles, colors, fonts etc. without any framework binding.
+- `vue` — ready-to-use components based on `vgui` package and [Reka UI](https://reka-ui.com/) library, powered by [Vue](https://vuejs.org/) framework.
+- `playground` — a demo for showing all controls and its states based on `vgui` and `vue` packages, powered by [Tailwind CSS](https://tailwindcss.com/).
+
+## Installation
+
+VGUI styles without any framework binding
 
 ```sh
-pnpm install
-pnpm dev
-pnpm lint
-pnpm -r typecheck
-pnpm -r build
-pnpm --filter playground preview
+npm install @alexovn/vgui
 ```
 
-Requires Node 22.13+ (Node 24 recommended) and pnpm 10.32.1. The recursive build creates the Vue ESM library, TypeScript declarations, and a standalone playground in `packages/playground/dist`.
+Ready-to-use components based on `vgui` package and [Reka UI](https://reka-ui.com/) library, powered by [Vue](https://vuejs.org/) framework
 
-ESLint is configured at the workspace root with `@antfu/eslint-config`. Run `pnpm lint` to check code and formatting, or `pnpm lint:fix` to apply fixes. The config covers Vue, TypeScript, JSON, YAML, and Markdown, with external formatters for CSS and HTML. It uses single quotes, no semicolons, trailing commas, and blank lines after imports, before function declarations, and between Vue SFC blocks. Build output, temporary reference files, the pnpm store, and the generated lockfile are excluded.
+```sh
+npm install @alexovn/vgui-vue @alexovn/vgui
+```
 
-The Vue 3 playground is the private `playground` workspace package in `packages/playground`. Run it directly with `pnpm --filter playground dev`, `pnpm --filter playground build`, or `pnpm --filter playground preview`. It loads the Vue library source directly for live component updates. Playground layouts use Tailwind CSS through its Vite plugin. `packages/playground/src/style.css` loads Preflight before the VGUI layers, maps color utilities to the VGUI theme variables, and defines the `narrow:` variant at 700px. Tailwind is a playground development dependency; the CSS and Vue libraries remain independent of it.
-
-- [CSS usage](packages/vgui/README.md)
-- [Vue API](packages/vue/README.md)
-- [Sources and browser support](docs/references.md)
-- [Repository guidelines and browser checks](AGENTS.md#validation)
-
-## Consumer example
+## Usage Example
 
 ```vue
 <script setup lang="ts">
-import { UiSelect, UiThemeProvider } from '@vgui/vue'
+import { UiSelect, UiThemeProvider } from '@alexovn/vgui-vue'
 import { ref } from 'vue'
-import '@vgui/css'
+import '@alexovn/vgui'
 
 const value = ref('internet')
 const options = [
@@ -48,4 +48,23 @@ const options = [
 </template>
 ```
 
-CSS is an explicit import. All complex controls expose one wrapper; Reka parts are internal. The packages are ready for local packing with `pnpm --filter @vgui/css pack` and `pnpm --filter @vgui/vue pack` after building. No publishing is configured.
+## Development
+
+Use Node `^22.22.2 || >=24.15.0` and pnpm `12.21.0`. Run `pnpm install` and `pnpm dev` to open the playground.
+
+## Sources
+
+This repo wouldn't have been possible without different sources that I used during development. So I want to say BIG THANKS to their authors.
+
+- [ValveSoftware/source-sdk-2013](https://github.com/ValveSoftware/source-sdk-2013/)
+- [ungstein/OG-Steam](https://github.com/ungstein/OG-Steam/)
+- [AlpyneDreams/vgui.css](https://github.com/AlpyneDreams/vgui.css/)
+- [leonill007/vgui.css](https://github.com/leonill007/vgui.css/)
+- [ekmas/cs16.css](https://github.com/ekmas/cs16.css/)
+- [gaspar-of-time/Steamed](https://github.com/gaspar-of-time/Steamed/)
+
+## License
+
+Made with ❤️
+
+Published under the [MIT license](LICENSE).

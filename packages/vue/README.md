@@ -1,6 +1,14 @@
-# @vgui/vue
+# @alexovn/vgui-vue
 
-Vue 3 controls for the olive and slate VGUI themes. Import components by name from `@vgui/vue` and load `@vgui/css` in your app entry point. Reka UI primitives are internal to the wrappers.
+Vue 3 controls for the olive and slate VGUI themes. Import components by name from `@alexovn/vgui-vue` and load `@alexovn/vgui` in your app entry point. Reka UI primitives are internal to the wrappers.
+
+## Installation
+
+In a Vue 3.5.44 or later Vue 3 project, install both packages.
+
+```sh
+npm install @alexovn/vgui-vue @alexovn/vgui
+```
 
 ## API
 
@@ -44,9 +52,9 @@ Use `UiFormField` with one labelable control. For composite controls, pass `grou
 
 ```vue
 <script setup lang="ts">
-import { UiFormField, UiInput, UiSelect, UiThemeProvider } from '@vgui/vue'
+import { UiFormField, UiInput, UiSelect, UiThemeProvider } from '@alexovn/vgui-vue'
 import { ref } from 'vue'
-import '@vgui/css'
+import '@alexovn/vgui'
 
 const name = ref('')
 const source = ref('internet')
@@ -82,7 +90,7 @@ const sources = [
 
 ```vue
 <script setup lang="ts">
-import { UiSlider } from '@vgui/vue'
+import { UiSlider } from '@alexovn/vgui-vue'
 </script>
 
 <template>
@@ -101,7 +109,7 @@ import { UiSlider } from '@vgui/vue'
 
 ```vue
 <script setup lang="ts">
-import { UiButton, UiDialog } from '@vgui/vue'
+import { UiButton, UiDialog } from '@alexovn/vgui-vue'
 import { ref } from 'vue'
 
 const open = ref(false)

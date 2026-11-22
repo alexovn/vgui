@@ -1,1 +1,1 @@
-declare module '@vgui/css' {}
+declare module '@alexovn/vgui' {}

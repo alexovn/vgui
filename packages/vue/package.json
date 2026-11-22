@@ -1,32 +1,69 @@
 {
-  "name": "@vgui/vue",
+  "name": "@alexovn/vgui-vue",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A Vue component library built on VGUI and Reka UI",
+  "author": "Nikita Aleksov (https://github.com/alexovn/)",
+  "license": "MIT",
+  "homepage": "https://github.com/alexovn/vgui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexovn/vgui.git",
+    "directory": "packages/vue"
+  },
+  "bugs": {
+    "url": "https://github.com/alexovn/vgui/issues"
+  },
+  "keywords": [
+    "vgui",
+    "steam",
+    "valve",
+    "nuxt",
+    "vue3",
+    "vue",
+    "vuejs",
+    "vue.js",
+    "typescript",
+    "vue-components",
+    "component library",
+    "ui"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/vgui.js"
+      "import": "./dist/vgui.js",
+      "default": "./dist/vgui.js"
     }
   },
+  "main": "./dist/vgui.js",
+  "module": "./dist/vgui.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "README.md",
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "vite build && vue-tsc -p tsconfig.build.json",
-    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+    "build": "vite build",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "prepack": "pnpm --workspace-root lint packages/vue && pnpm typecheck && pnpm build",
+    "prepublishOnly": "pnpm --workspace-root lint packages/vue && pnpm typecheck"
   },
   "peerDependencies": {
     "vue": "^3.5.44"
   },
   "dependencies": {
-    "@vgui/css": "workspace:*",
+    "@alexovn/vgui": "workspace:*",
     "reka-ui": "2.11.0"
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.60.1",
     "@types/node": "^24.0.0",
     "@vitejs/plugin-vue": "6.0.10",
+    "unplugin-dts": "^1.1.2",
     "vite": "8.3.5",
     "vue": "3.5.44",
     "vue-tsc": "3.3.14"

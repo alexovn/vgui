@@ -36,7 +36,7 @@ The olive surface, recessed surface, text, bevels, and accent follow the fork's 
 
 ## Runtime and browser support
 
-- `@vgui/css` works with plain markup. `@vgui/vue` uses Vue 3 and pins Reka UI 2.11.0 for primitives such as select, slider, dialog, tooltip, and menus. Tailwind Preflight is loaded by the playground. [CSS package][css-package] · [Vue package][vue-package] · [Reka UI 2.11.0][reka-release] · [Playground styles][playground]
+- `@alexovn/vgui` works with plain markup. `@alexovn/vgui-vue` uses Vue 3 and pins Reka UI 2.11.0 for primitives such as select, slider, dialog, tooltip, and menus. Tailwind Preflight is loaded by the playground. [CSS package][css-package] · [Vue package][vue-package] · [Reka UI 2.11.0][reka-release] · [Playground styles][playground]
 - The browser review targets current Chrome, Firefox, and Safari. Core styles use cascade layers, `:focus-visible`, `:has()` for checked labels and slider variants, SVG masks for indicators, and `dvh` for the dialog height limit. [CSS Cascade][cascade] · [Selectors][selectors] · [CSS Masking][masking] · [Viewport units][viewport]
 - Native scroll containers use `scrollbar-color` or, where the browser supports `::-webkit-scrollbar`, bevels and arrow-button styling. The visible native scrollbar depends on the browser and platform settings. `UiScrollArea` uses custom tracks, thumbs, and a corner. The stylesheet also has overrides for browsers that expose forced colors. [Scrollbar CSS][scroll] · [CSS Scrollbars][scrollbars-spec] · [WebKit scrollbar styling][webkit] · [CSS Color Adjustment][forced-colors]
 
@@ -65,10 +65,10 @@ The olive surface, recessed surface, text, bevels, and accent follow the fork's 
 [vue-tooltip]: ../packages/vue/src/components/UiTooltip.vue
 [checkbox]: ../packages/vgui/src/components/checkbox.css
 [og-tick]: https://github.com/ungstein/OG-Steam/blob/411aa955e76759bf24cee9dc38fa459cb9040823/OG-Steam/graphics/chkSelStd.tga
-[vgui-license]: ../packages/vgui/LICENSE.vgui-css
+[vgui-license]: https://github.com/leonill007/vgui.css/blob/0c74bb765fa32219a26aa9a4db506a38dc857b16/LICENSE
 [radio]: ../packages/vgui/src/components/radio-group.css
 [cs16-radio]: https://github.com/ekmas/cs16.css/blob/bc0cb3d93e24aa2786a2d93938807f0264743b9d/src/cs16.css
-[cs16-license]: ../packages/vgui/LICENSE.cs16-css
+[cs16-license]: https://github.com/ekmas/cs16.css/blob/bc0cb3d93e24aa2786a2d93938807f0264743b9d/LICENSE
 [scroll]: ../packages/vgui/src/components/scroll-area.css
 [select]: ../packages/vgui/src/components/select.css
 [menu]: ../packages/vgui/src/components/menu.css

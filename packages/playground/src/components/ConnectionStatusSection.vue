@@ -5,7 +5,7 @@ import {
   UiInput,
   UiPanel,
   UiSelect,
-} from '@vgui/vue'
+} from '@alexovn/vgui-vue'
 import { options } from '../gallery-data'
 </script>
 

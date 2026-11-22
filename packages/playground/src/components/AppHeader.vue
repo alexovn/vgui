@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { UiTheme } from '@vgui/vue'
-import { UiFormField, UiPanel, UiSelect } from '@vgui/vue'
+import type { UiTheme } from '@alexovn/vgui-vue'
+import { UiFormField, UiPanel, UiSelect } from '@alexovn/vgui-vue'
 
 const theme = defineModel<UiTheme>({ required: true })
 const themes = [
@@ -19,11 +19,11 @@ function setTheme(value: string) {
   <header class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
     <div class="flex flex-col gap-2">
       <h1 class="text-3xl font-normal tracking-tight md:text-4xl">
-        Half-Life 2 Launcher
+        VGUI Playground
       </h1>
 
       <p class="text-lg text-vgui-muted">
-        A playground for VGUI-inspired controls
+        Back to Memories. Classic UI 2003 — 2010
       </p>
     </div>
 

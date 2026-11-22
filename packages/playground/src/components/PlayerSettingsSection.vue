@@ -12,7 +12,7 @@ import {
   UiSlider,
   UiTextarea,
   UiTooltip,
-} from '@vgui/vue'
+} from '@alexovn/vgui-vue'
 import { ref } from 'vue'
 import { actions, connectionOptions, options } from '../gallery-data'
 

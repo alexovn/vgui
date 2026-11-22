@@ -4,7 +4,7 @@ import {
   UiPanel,
   UiProgress,
   UiTree,
-} from '@vgui/vue'
+} from '@alexovn/vgui-vue'
 
 const nodes = [
   {

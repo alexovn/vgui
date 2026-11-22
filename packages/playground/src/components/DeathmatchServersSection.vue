@@ -11,7 +11,7 @@ import {
   UiSelect,
   UiTable,
   UiTabs,
-} from '@vgui/vue'
+} from '@alexovn/vgui-vue'
 import { ref } from 'vue'
 import { actions, options } from '../gallery-data'
 

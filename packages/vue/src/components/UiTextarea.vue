@@ -13,9 +13,3 @@ useForwardExpose()
     class="vgui-textarea textarea"
   />
 </template>
-
-<style scoped>
-.textarea {
-  resize: vertical;
-}
-</style>

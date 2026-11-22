@@ -1,7 +1,6 @@
 {
-  "name": "playground",
+  "name": "@alexovn/vgui-playground",
   "type": "module",
-  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -10,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vgui/css": "workspace:*",
-    "@vgui/vue": "workspace:*",
+    "@alexovn/vgui": "workspace:*",
+    "@alexovn/vgui-vue": "workspace:*",
     "vue": "3.5.44"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { UiButton, UiSeparator } from '@vgui/vue'
+import { UiButton, UiSeparator } from '@alexovn/vgui-vue'
 import GithubIcon from './GithubIcon.vue'
 
 const menu = [

@@ -1,7 +1,19 @@
 {
-  "name": "@vgui/css",
+  "name": "@alexovn/vgui",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "VGUI-inspired CSS controls, fonts, and themes",
+  "author": "Nikita Aleksov (https://github.com/alexovn/)",
+  "license": "MIT AND LGPL-2.1-or-later",
+  "homepage": "https://github.com/alexovn/vgui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexovn/vgui.git",
+    "directory": "packages/vgui"
+  },
+  "bugs": {
+    "url": "https://github.com/alexovn/vgui/issues"
+  },
   "sideEffects": [
     "**/*.css"
   ],
@@ -37,10 +49,12 @@
     "./components/tree.css": "./src/components/tree.css"
   },
   "files": [
+    "LICENSE",
     "LICENSE.WineTahomaBit",
-    "LICENSE.cs16-css",
-    "LICENSE.vgui-css",
     "README.md",
     "src"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

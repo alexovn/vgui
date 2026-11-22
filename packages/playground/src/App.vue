@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UiTheme } from '@vgui/vue'
+import type { UiTheme } from '@alexovn/vgui-vue'
 import { ref, watch } from 'vue'
 import AppFooter from './components/AppFooter.vue'
 import AppHeader from './components/AppHeader.vue'

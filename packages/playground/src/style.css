@@ -2,7 +2,7 @@
 @layer theme, base, vgui, components, utilities;
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/preflight.css' layer(base);
-@import '@vgui/css';
+@import '@alexovn/vgui';
 @import 'tailwindcss/utilities.css' layer(utilities) source('./');
 
 @theme inline {

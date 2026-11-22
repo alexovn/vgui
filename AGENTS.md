@@ -2,14 +2,14 @@
 
 ## Structure and code
 
-- Keep shared styles, themes, and assets in `packages/vgui/src` (`@vgui/css`) and component behavior in `packages/vue/src` (`@vgui/vue`). Keep Reka UI parts private. Add playground examples in `packages/playground/src` for new behavior.
+- Keep shared styles, themes, and assets in `packages/vgui/src` (`@alexovn/vgui`) and component behavior in `packages/vue/src` (`@alexovn/vgui-vue`). Keep Reka UI parts private. Add playground examples in `packages/playground/src` for new behavior.
 - Use `<script setup lang="ts">` and strict TypeScript for Vue components. Name public components `Ui*.vue` and export them and their public types from `packages/vue/src/index.ts`.
 - Use kebab-case CSS filenames, `vgui-` classes, and `--vgui-*` custom properties. Follow the root ESLint config for formatting.
 - Preserve upstream attribution and bundled licenses when changing derived styles or assets. Record sources and revisions in `docs/references.md` and `docs/source-revisions.json`.
 
 ## Validation
 
-Use Node 22.13+ and pnpm 10.32.1. Run `pnpm lint`, `pnpm -r typecheck`, and `pnpm -r build` from the repository root before submitting changes.
+Use Node `^22.22.2 || >=24.15.0` and pnpm `12.21.0`. Run `pnpm lint`, `pnpm -r typecheck`, and `pnpm -r build` from the repository root before submitting changes.
 
 For UI changes, run `pnpm dev` and check the affected controls in both themes in current Chrome, Firefox, and Safari. Report which checks you ran.
 
