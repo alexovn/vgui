@@ -12,6 +12,8 @@
     --vgui-dark: #292d23;
     --vgui-accent: #c4b550;
     --vgui-selection: #958831;
+    --vgui-text-selection-bg: #958831;
+    --vgui-text-selection-color: #fff;
     --vgui-tooltip-bg: #958831;
     --vgui-tooltip-text: #000;
     --vgui-tooltip-border: #282e22;
@@ -21,6 +23,12 @@
     --vgui-error: #ffb4a8;
     color: var(--vgui-text);
     color-scheme: dark;
+  }
+  :where(.vgui-theme, [data-vgui-theme], .vgui-theme *, [data-vgui-theme] *) {
+    &::selection {
+      background-color: var(--vgui-text-selection-bg);
+      color: var(--vgui-text-selection-color);
+    }
   }
   :where([class*='vgui-']) {
     box-sizing: border-box;

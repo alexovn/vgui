@@ -11,6 +11,8 @@
     --vgui-dark: #292d23;
     --vgui-accent: #c4b550;
     --vgui-selection: #958831;
+    --vgui-text-selection-bg: #958831;
+    --vgui-text-selection-color: #fff;
     --vgui-tooltip-bg: #958831;
     --vgui-tooltip-border: #282e22;
     --vgui-checkmark-color: #c4b550;

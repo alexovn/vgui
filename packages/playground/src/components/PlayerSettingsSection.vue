@@ -29,6 +29,7 @@ const volume = ref([65])
   >
     <p class="my-2 text-sm text-vgui-muted">
       Set up your player profile and audio before joining a Half-Life 2: Deathmatch server.
+      Select text in the player name field to preview the theme’s highlight.
     </p>
 
     <UiMenubar

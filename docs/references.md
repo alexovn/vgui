@@ -13,10 +13,14 @@ The olive and slate themes are web interpretations of VGUI 2. Git revisions for 
 | Light bevel edge | `#899281` | `#c8c8c8` |
 | Dark bevel edge | `#292d23` | `rgb(40 40 40 / 75%)` |
 | Accent | `#c4b550` | `#e3b651` |
-| Selection background | `#958831` | `#887544` |
+| Selected control background | `#958831` | `#887544` |
+| Text selection background | `#958831` | `#e09c30` |
+| Selected text | `#ffffff` | `#404040` |
 | Scrollbar track | `#5a6a50` | `#505050` |
 
 The olive surface, recessed surface, text, bevels, and accent follow the fork's shared Steam stylesheet. Slate adapts the grey scheme's bevels and uses opaque neutral surfaces in place of the translucent ones used over game imagery. Both themes share control dimensions and use the host application's typography. [Olive tokens][olive] · [Slate tokens][slate] · [Original vgui.css][original] · [Fork's shared Steam styles][shared] · [Grey scheme][grey] · [Olive screenshot][olive-shot] · [Grey screenshot][grey-shot]
+
+Text selection follows `SelectionBG` and `SelectedText` in Valve's October 8, 2004 installer. The MSI maps the default scheme to `resource/TrackerScheme.res` and the Grey skin to `skins/Grey/Resource/TrackerScheme.res`. Styled highlights apply inside themed regions, including fields. Browsers supply their own selection colors in forced-colors mode. [Archived Steam installer][installer] · [Selection CSS][tokens]
 
 ## Controls
 
@@ -41,6 +45,7 @@ The olive surface, recessed surface, text, bevels, and accent follow the fork's 
 - Native scroll containers use `scrollbar-color` or, where the browser supports `::-webkit-scrollbar`, bevels and arrow-button styling. The visible native scrollbar depends on the browser and platform settings. `UiScrollArea` uses custom tracks, thumbs, and a corner. The stylesheet also has overrides for browsers that expose forced colors. [Scrollbar CSS][scroll] · [CSS Scrollbars][scrollbars-spec] · [WebKit scrollbar styling][webkit] · [CSS Color Adjustment][forced-colors]
 
 [olive]: ../packages/vgui/src/themes/olive.css
+[tokens]: ../packages/vgui/src/tokens.css
 [slate]: ../packages/vgui/src/themes/slate.css
 [original]: https://github.com/AlpyneDreams/vgui.css/tree/d8b12f50a89f7f0c59e3a0cb39f07cd8ca5f0ae7
 [fork]: https://github.com/leonill007/vgui.css/tree/0c74bb765fa32219a26aa9a4db506a38dc857b16
