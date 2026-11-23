@@ -36,7 +36,6 @@
     overflow: auto;
     font: inherit;
     color: var(--vgui-text);
-    box-shadow: 3px 3px 0 #0005;
   }
   .vgui-dialog-title {
     padding-right: 28px;
