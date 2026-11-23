@@ -6,6 +6,11 @@
     "sha256": "b7c29c7eb744f79cb612cc224b428f060031afedcef64a34cb96880d1cc2fea5"
   },
   {
+    "name": "Steam client screenshot",
+    "revision": "2004-08-28",
+    "url": "https://i.redd.it/zd4wjd91mzm51.png"
+  },
+  {
     "repo": "ungstein/OG-Steam",
     "revision": "411aa955e76759bf24cee9dc38fa459cb9040823",
     "url": "https://github.com/ungstein/OG-Steam/tree/411aa955e76759bf24cee9dc38fa459cb9040823"

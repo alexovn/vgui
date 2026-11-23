@@ -36,6 +36,7 @@ Text selection follows `SelectionBG` and `SelectedText` in Valve's October 8, 20
 | `checkmark.svg` | A 10 × 10 SVG rendered as a 13 × 13 CSS mask replaces the fork's theme-specific checkmark PNGs. The tick is gold in olive and white in slate. OG-Steam's `chkSelStd.tga` is the olive color reference. The mixed state uses a CSS bar in the same theme color. [Checkbox CSS][checkbox] · [Original PNG reference][fork] · [OG-Steam checkmark][og-tick] · [MIT license, Jeffrey Ellison][vgui-license] |
 | `radio-dot.svg` | A 6 × 6 CSS mask merges the cs16.css checked indicator's pixel paths into one outline. The dot uses a theme token (gold in olive, white in slate) and switches to `CanvasText` in forced colors. Both checked radio and checkbox labels use the theme accent. [Radio CSS][radio] · [cs16.css radio source][cs16-radio] · [MIT license, Samuel Breznjak][cs16-license] |
 | `arrow-{up,down,left,right}.svg` | Pixel arrow SVGs supply the native scrollbar buttons. The down and right arrows also serve as masks for select triggers and submenu indicators. [Scrollbar CSS][scroll] · [Select CSS][select] · [Menu CSS][menu] |
+| `close.svg` | A 10 × 10 stepped X drawn from visual reference to the classic Steam title-bar glyph. It uses `currentColor` when inlined and can also serve as a CSS mask. [August 2004 Steam capture][steam-close-2004] |
 | `WineTahomaBit.ttf` | Unmodified TTF from Steamed's conversion of Xenthio's WineTahomaBit. Its embedded notice credits Wine Tahoma Regular to Larry Snyder (2004), based on Bitstream Vera Sans (Bitstream Inc., 2003). The CSS package ships the font and Steamed's LGPL 2.1 license file. The full CSS entry point registers the regular font face, and the playground applies it on `body` so teleported content inherits it. [Steamed font source][steamed] · [Bundled font license][font-license] · [Font declaration][fonts] |
 
 ## Runtime and browser support
@@ -66,6 +67,7 @@ Text selection follows `SelectionBG` and `SelectedText` in Valve's October 8, 20
 [sdk-slider]: https://github.com/ValveSoftware/source-sdk-2013/blob/be57e3d01ac7d7aa6a2cacbfef187c0b46616db0/src/vgui2/vgui_controls/Slider.cpp
 [hl2dm-audio]: https://university.hl2dm.com/img/guides/options_audio.png
 [installer]: https://archive.org/details/steam_10-08-2004
+[steam-close-2004]: https://i.redd.it/zd4wjd91mzm51.png
 [tooltip]: ../packages/vgui/src/components/tooltip.css
 [vue-tooltip]: ../packages/vue/src/components/UiTooltip.vue
 [checkbox]: ../packages/vgui/src/components/checkbox.css

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { DialogRootEmits, DialogRootProps } from 'reka-ui'
+import CloseIcon from '@alexovn/vgui/assets/close.svg?raw'
 import {
   DialogClose,
   DialogContent,
@@ -14,6 +15,7 @@ import {
 import { computed } from 'vue'
 
 import { useTheme } from '../theme'
+import UiButton from './UiButton.vue'
 
 const props = defineProps<DialogRootProps & { title: string, description: string }>()
 const emit = defineEmits<DialogRootEmits>()
@@ -35,8 +37,10 @@ const theme = useTheme()
     >
       <slot name="trigger" />
     </DialogTrigger>
+
     <DialogPortal>
       <DialogOverlay class="vgui-overlay" />
+
       <DialogContent
         class="vgui-dialog"
         v-bind="{ 'data-vgui-theme': theme }"
@@ -44,16 +48,29 @@ const theme = useTheme()
         <DialogTitle class="vgui-dialog-title">
           {{ title }}
         </DialogTitle>
+
         <DialogDescription class="vgui-dialog-description">
           {{ description }}
         </DialogDescription>
+
         <DialogClose
-          class="vgui-button vgui-dialog-close"
           aria-label="Close dialog"
+          as-child
         >
-          ×
+          <UiButton
+            class="vgui-dialog-close vgui-dialog-close--icon"
+            square
+          >
+            <span
+              class="vgui-icon"
+              aria-hidden="true"
+              v-html="CloseIcon"
+            />
+          </UiButton>
         </DialogClose>
+
         <slot />
+
         <div
           v-if="$slots.footer"
           class="vgui-dialog-footer"

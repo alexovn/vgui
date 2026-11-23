@@ -1,4 +1,5 @@
 @import './button.css';
+@import './icon.css';
 
 /* Requires tokens.css and common.css; load a theme separately as needed. */
 @layer vgui.components {
@@ -44,6 +45,8 @@
     position: absolute;
     right: 8px;
     top: 8px;
+  }
+  .vgui-dialog-close:where(:not(.vgui-dialog-close--icon)) {
     padding: 0 5px;
     min-height: 18px;
   }

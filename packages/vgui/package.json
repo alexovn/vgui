@@ -41,6 +41,7 @@
     "./components/separator.css": "./src/components/separator.css",
     "./components/tabs.css": "./src/components/tabs.css",
     "./components/dialog.css": "./src/components/dialog.css",
+    "./components/icon.css": "./src/components/icon.css",
     "./components/tooltip.css": "./src/components/tooltip.css",
     "./components/slider.css": "./src/components/slider.css",
     "./components/progress.css": "./src/components/progress.css",
