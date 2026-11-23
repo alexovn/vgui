@@ -20,3 +20,24 @@
     font-family: WineTahomaBit, Tahoma, Arial, sans-serif;
   }
 }
+
+@layer components {
+  .form-field {
+    @apply
+      flex-col
+      items-stretch
+      gap-1
+      md:grid
+      md:gap-3
+      [&>.vgui-label]:w-auto
+      [&>.vgui-label]:shrink-0
+      md:[&>.vgui-label]:self-center;
+  }
+
+  .field {
+    @apply
+      min-w-0
+      flex-none
+      md:flex-1;
+  }
+}

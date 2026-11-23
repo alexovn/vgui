@@ -49,7 +49,7 @@ const volume = ref([65])
     <form class="flex flex-col gap-3 py-2.5">
       <UiFormField
         label="Player name"
-        class="form-field"
+        class="form-field md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]"
       >
         <UiInput
           v-model="name"
@@ -60,7 +60,7 @@ const volume = ref([65])
 
       <UiFormField
         label="Player bio"
-        class="form-field"
+        class="form-field md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]"
       >
         <UiTextarea
           name="notes"
@@ -72,7 +72,7 @@ const volume = ref([65])
 
       <UiFormField
         label="Server browser source"
-        class="form-field"
+        class="form-field md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]"
         group
       >
         <UiSelect
@@ -86,7 +86,7 @@ const volume = ref([65])
 
       <UiFormField
         label="Game volume"
-        class="form-field"
+        class="form-field md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]"
       >
         <div class="field flex items-start gap-2">
           <UiSlider
@@ -105,7 +105,7 @@ const volume = ref([65])
 
       <UiFormField
         label="Audio"
-        class="form-field"
+        class="form-field md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]"
         group
       >
         <label class="vgui-choice field">
@@ -119,7 +119,7 @@ const volume = ref([65])
 
       <UiFormField
         label="Connection"
-        class="form-field"
+        class="form-field md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]"
         group
       >
         <UiRadioGroup
@@ -149,27 +149,3 @@ const volume = ref([65])
     </form>
   </UiPanel>
 </template>
-
-<style scoped>
-@import '../style.css';
-
-:deep(.form-field) {
-  @apply
-    flex-col
-    items-stretch
-    gap-1
-    md:grid
-    md:grid-cols-[minmax(0,0.3fr)_minmax(0,1fr)]
-    md:gap-3
-    [&>.vgui-label]:w-auto
-    [&>.vgui-label]:shrink-0
-    md:[&>.vgui-label]:self-center;
-}
-
-:deep(.field) {
-  @apply
-    min-w-0
-    flex-none
-    md:flex-1;
-}
-</style>

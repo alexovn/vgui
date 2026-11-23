@@ -4,9 +4,9 @@ import {
   UiContextMenu,
   UiDialog,
   UiDropdownMenu,
+  UiFormField,
   UiGroupBox,
   UiInput,
-  UiLabel,
   UiPanel,
   UiSelect,
   UiTable,
@@ -105,27 +105,31 @@ const rows = [
         </template>
 
         <UiGroupBox
-          class="min-w-0"
+          class="min-w-0 flex flex-col gap-2"
           legend="Player"
         >
-          <UiLabel for="dialog-name">
-            Player name
-          </UiLabel>
-          <UiInput
-            id="dialog-name"
-            v-model="name"
-          />
-          <div class="my-2">
-            <UiLabel for="dialog-source">
-              Server browser source
-            </UiLabel>
+          <UiFormField
+            label="Player name"
+            class="form-field md:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)]"
+          >
+            <UiInput
+              v-model="name"
+              name="player"
+              class="field"
+            />
+          </UiFormField>
+
+          <UiFormField
+            label="Server browser source"
+            class="form-field md:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)]"
+          >
             <UiSelect
               id="dialog-source"
               v-model="selection"
               :options="options"
               label="Server browser source"
             />
-          </div>
+          </UiFormField>
         </UiGroupBox>
 
         <template #footer>

@@ -31,7 +31,7 @@ function setTheme(value: string) {
       <UiPanel>
         <UiFormField
           label="Theme"
-          class="form-field"
+          class="form-field md:flex md:flex-row md:items-baseline md:[&>.vgui-label]:w-18 md:[&>.vgui-label]:self-auto"
         >
           <UiSelect
             :model-value="theme"
@@ -44,27 +44,3 @@ function setTheme(value: string) {
     </div>
   </header>
 </template>
-
-<style scoped>
-@import '../style.css';
-
-:deep(.form-field) {
-  @apply
-    flex-col
-    items-stretch
-    gap-1
-    md:flex-row
-    md:items-baseline
-    md:gap-3
-    [&>.vgui-label]:w-auto
-    [&>.vgui-label]:shrink-0
-    md:[&>.vgui-label]:w-18;
-}
-
-:deep(.field) {
-  @apply
-    min-w-0
-    flex-none
-    md:flex-1;
-}
-</style>
