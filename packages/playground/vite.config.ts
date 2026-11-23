@@ -7,6 +7,7 @@ import { defineConfig } from 'vite'
 const here = (path: string) => fileURLToPath(new URL(path, import.meta.url))
 
 export default defineConfig({
+  base: process.env.PLAYGROUND_BASE ?? '/vgui/',
   root: here('./src'),
   publicDir: here('./public'),
   plugins: [
