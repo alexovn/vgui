@@ -13,8 +13,9 @@ npm install @alexovn/vgui
 | Import | Includes |
 | --- | --- |
 | `@alexovn/vgui` | Tokens, both themes, the WineTahomaBit font face, and all controls |
-| `@alexovn/vgui/tokens.css` | Base tokens and default olive palette |
-| `@alexovn/vgui/themes/olive.css`, `@alexovn/vgui/themes/slate.css` | Theme overrides |
+| `@alexovn/vgui/tokens.css` | Base tokens and styles, including the default olive theme |
+| `@alexovn/vgui/themes/olive.css` | Default olive palette on VGUI theme scopes |
+| `@alexovn/vgui/themes/slate.css` | Slate palette for `data-vgui-theme="slate"` |
 | `@alexovn/vgui/components.css` | All controls and shared states |
 | `@alexovn/vgui/common.css` | Shared focus, disabled, and invalid styles for individual imports |
 | `@alexovn/vgui/components/<name>.css` | Individual control styles and their stylesheet dependencies |

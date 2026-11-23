@@ -1,4 +1,5 @@
 @layer vgui.themes {
+  :where(.vgui-theme, [data-vgui-theme]),
   [data-vgui-theme='olive'] {
     --vgui-bg: #4c5844;
     --vgui-input: #3e4637;
